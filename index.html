@@ -69,11 +69,11 @@ section{padding:60px 20px;}
 .ptable-head{background:var(--dark);color:#fff;font-family:'Oswald',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;padding:7px 14px;margin-top:4px;transition:background 0.2s;}
 .ptable-head:hover{background:#c0392b;}
 .ptable-head a{color:#fff;text-decoration:none;display:flex;justify-content:space-between;align-items:center;}
-.ptable-row{display:flex;justify-content:space-between;align-items:center;padding:7px 14px;font-size:14px;border-bottom:1px solid #f0f0f0;transition:background 0.15s;}
+.ptable-row{display:flex;justify-content:space-between;align-items:center;padding:8px 14px;font-size:14px;border-bottom:1px solid #f0f0f0;transition:background 0.15s;gap:8px;}.ptable-row span:first-child{flex:1;color:#444;}.ptable-row span:last-child{flex-shrink:0;font-weight:700;color:var(--dark);text-align:right;display:flex;align-items:center;gap:5px;}
 .ptable-row:hover{background:#fafafa;}
-.ptable-row span:first-child{color:#444;}
-.ptable-row span:last-child{font-weight:700;color:var(--dark);white-space:nowrap;display:flex;align-items:center;gap:6px;}
-.ptable-row span:last-child em{font-style:normal;font-size:11px;color:#aaa;font-weight:400;white-space:nowrap;}
+.ptable-row span:first-child{color:#444;flex:1;min-width:0;}
+.ptable-row span:last-child{font-weight:700;color:var(--dark);white-space:nowrap;text-align:right;flex-shrink:0;}
+.ptable-row span:last-child em{font-style:normal;font-size:11px;color:#aaa;font-weight:400;margin-left:3px;}
 .ptable-hot{background:#fff8f0;}
 .ptable-hot span:last-child{color:var(--gold);}
 .prices-note-block{margin-top:20px;background:#f8f8f8;border-left:4px solid var(--gold);border-radius:4px;padding:12px 18px;font-size:13px;color:#555;line-height:1.8;}
@@ -265,6 +265,7 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
     <div class="ptable-head"><a href="med.html" target="_blank">🟤 Медь <span style="opacity:0.6;font-size:11px;">подробнее →</span></a></div>
     <div class="ptable-row ptable-hot"><span>Медь</span><span style="color:var(--gold);font-weight:700;display:flex;align-items:center;gap:6px;"><span data-price="med">460 грн/кг</span> <em style="color:#aaa;font-weight:400;">-0.5%</em></span></div>
     <div class="ptable-row ptable-hot"><span>Медь блеск</span><span data-price="med_blesk">470 грн/кг</span></div>
+    <div class="ptable-row"><span>Кабель в изоляции</span><span>150–250 грн/кг</span></div>
     <div class="ptable-head"><a href="latun.html" target="_blank">🔶 Латунь <span style="opacity:0.6;font-size:11px;">подробнее →</span></a></div>
     <div class="ptable-row"><span>Латунь</span><span data-price="latun">255 грн/кг</span></div>
     <div class="ptable-row"><span>Радиаторы</span><span><span data-price="latun">255 грн/кг</span> <em>-2%</em></span></div>
@@ -284,16 +285,37 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
     <div class="ptable-head"><span>🔩 Свинец, Титан</span></div>
     <div class="ptable-row"><span>Свинец</span><span data-price="svinec">63 грн/кг</span></div>
     <div class="ptable-row"><span>Титан</span><span data-price="titan">76 грн/кг</span></div>
+    <div class="ptable-head"><a href="cherniy-lom.html">⚫ Чёрный лом <span style="opacity:0.6;font-size:11px;">подробнее →</span></a></div>
+    <div class="ptable-row"><span>Сталь, чугун</span><span>от 4 грн/кг</span></div>
+    <div class="ptable-row"><span>Арматура, трубы</span><span style="color:var(--gold);font-weight:700;">существенно дороже</span></div>
+    <div class="ptable-row"><span>Бытовая техника</span><span>от 4 грн/кг + засор</span></div>
   </div>
 </div>
-    <div class="prices-note-block"><div style="margin-bottom:6px;">Возврат транспортных расходов при поставке от 1 тонны</div><div style="margin-bottom:6px;">Организуем транспорт по договорённости</div><div style="margin-bottom:6px;">Проводим спектральный анализ любых видов ломов</div><div style="margin-bottom:6px;">Постоянным поставщикам — бонусы! 🤫</div></div>
-    <div style="text-align:center;margin-top:24px;">
-      <div style="font-size:13px;color:#999;margin-bottom:8px;">Уточняйте по телефону:</div>
+        <div style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
+      <div style="background:#fff;border-radius:8px;padding:16px 18px;border-left:4px solid var(--red);box-shadow:0 1px 6px rgba(0,0,0,0.06);">
+        <div style="font-size:18px;margin-bottom:6px;">🚛</div>
+        <div style="font-size:14px;color:#333;font-weight:700;line-height:1.4;">Возврат транспортных расходов при поставке от 1 тонны</div>
+      </div>
+      <div style="background:#fff;border-radius:8px;padding:16px 18px;border-left:4px solid var(--red);box-shadow:0 1px 6px rgba(0,0,0,0.06);">
+        <div style="font-size:18px;margin-bottom:6px;">📦</div>
+        <div style="font-size:14px;color:#333;font-weight:700;line-height:1.4;">Организуем транспорт по договорённости</div>
+      </div>
+      <div style="background:#fff;border-radius:8px;padding:16px 18px;border-left:4px solid var(--red);box-shadow:0 1px 6px rgba(0,0,0,0.06);">
+        <div style="font-size:18px;margin-bottom:6px;">🔬</div>
+        <div style="font-size:14px;color:#333;font-weight:700;line-height:1.4;">Спектральный анализ любых видов ломов — бесплатно</div>
+      </div>
+      <div style="background:#fff;border-radius:8px;padding:16px 18px;border-left:4px solid var(--gold);box-shadow:0 1px 6px rgba(0,0,0,0.06);">
+        <div style="font-size:18px;margin-bottom:6px;">🤫</div>
+        <div style="font-size:14px;color:#333;font-weight:700;line-height:1.4;">Постоянным поставщикам — бонусы!</div>
+      </div>
+    </div><div style="font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:4px;">Бесплатный вывоз</div><div style="font-size:13px;color:#666;line-height:1.5;">при поставке от 1 тонны по Одессе и области</div></div><div style="background:#fff;border-radius:8px;padding:16px 18px;border-left:4px solid var(--red);box-shadow:0 1px 6px rgba(0,0,0,0.06);"><div style="font-size:24px;margin-bottom:8px;">🚗</div><div style="font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:4px;">Организуем транспорт</div><div style="font-size:13px;color:#666;line-height:1.5;">заедем сами по договорённости</div></div><div style="background:#fff;border-radius:8px;padding:16px 18px;border-left:4px solid var(--red);box-shadow:0 1px 6px rgba(0,0,0,0.06);"><div style="font-size:24px;margin-bottom:8px;">🔬</div><div style="font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:4px;">Спектральный анализ</div><div style="font-size:13px;color:#666;line-height:1.5;">любых видов ломов — бесплатно</div></div><div style="background:#fff;border-radius:8px;padding:16px 18px;border-left:4px solid var(--red);box-shadow:0 1px 6px rgba(0,0,0,0.06);"><div style="font-size:24px;margin-bottom:8px;">🎁</div><div style="font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:4px;">Бонусы</div><div style="font-size:13px;color:#666;line-height:1.5;">постоянным поставщикам</div></div></div></div><div style="margin-bottom:6px;">Организуем транспорт по договорённости</div><div style="margin-bottom:6px;">Проводим спектральный анализ любых видов ломов</div><div style="margin-bottom:6px;">Постоянным поставщикам — бонусы! 🤫</div></div>
+    <div style="text-align:center;margin-top:32px;">
+      <div style="font-size:15px;color:#777;margin-bottom:12px;font-weight:700;">Уточняйте по телефону:</div>
       <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-        <a href="tel:+380937277912" style="color:var(--red);font-weight:700;font-size:16px;">093 727 79 12</a>
-        <span style="font-size:12px;color:#aaa;">Евгений</span>
-        <a href="tel:+380503179317" style="color:var(--red);font-weight:700;font-size:16px;">050 317 93 17</a>
-        <span style="font-size:12px;color:#aaa;">Иван</span>
+        <a href="tel:+380937277912" style="color:var(--red);font-weight:700;font-size:20px;letter-spacing:0.5px;">093 727 79 12</a>
+        <span style="font-size:14px;color:#888;font-weight:600;">Евгений</span>
+        <a href="tel:+380503179317" style="color:var(--red);font-weight:700;font-size:20px;letter-spacing:0.5px;">050 317 93 17</a>
+        <span style="font-size:14px;color:#888;font-weight:600;">Иван</span>
       </div>
     </div>
   </div>
