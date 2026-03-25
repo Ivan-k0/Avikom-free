@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin.html
+
+Sitemap: https://metal-avikom.com.ua/sitemap.xml

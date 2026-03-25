@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Авто-Виком — Изменить цены</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f4f4f4;color:#222;font-size:16px;}
+    .top{background:#c0392b;color:#fff;padding:16px 20px;display:flex;align-items:center;gap:12px;}
+    .top h1{font-size:18px;font-weight:700;}
+    .top small{font-size:12px;opacity:0.8;display:block;margin-top:2px;}
+    .container{max-width:600px;margin:0 auto;padding:16px;}
+    .card{background:#fff;border-radius:10px;margin-bottom:16px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,0.08);}
+    .card-head{background:#1a1a1a;color:#fff;padding:12px 16px;font-weight:700;font-size:14px;letter-spacing:0.5px;text-transform:uppercase;}
+    .card-body{padding:12px 16px;}
+    .price-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid #f0f0f0;gap:12px;}
+    .price-row:last-child{border-bottom:none;}
+    .price-row label{font-size:14px;color:#444;flex:1;}
+    .price-row .note{font-size:11px;color:#aaa;display:block;}
+    .price-input{display:flex;align-items:center;gap:4px;flex-shrink:0;}
+    .price-input input{
+      width:80px;border:1.5px solid #ddd;border-radius:6px;
+      padding:7px 8px;font-size:15px;font-weight:700;text-align:center;
+      outline:none;-webkit-appearance:none;
+    }
+    .price-input input:focus{border-color:#c0392b;}
+    .price-input span{font-size:12px;color:#888;}
+    .save-btn{
+      width:100%;background:#c0392b;color:#fff;border:none;
+      padding:16px;border-radius:10px;font-size:18px;font-weight:700;
+      cursor:pointer;margin-top:8px;margin-bottom:24px;
+      display:flex;align-items:center;justify-content:center;gap:10px;
+    }
+    .save-btn:active{background:#a93226;}
+    .toast{
+      display:none;position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
+      background:#27ae60;color:#fff;padding:14px 28px;border-radius:30px;
+      font-weight:700;font-size:15px;z-index:999;box-shadow:0 4px 20px rgba(0,0,0,0.2);
+    }
+    .toast.show{display:block;}
+    .tg-note{background:#e8f4fd;border-left:4px solid #229ED9;border-radius:6px;padding:12px 14px;margin-bottom:16px;font-size:13px;color:#444;}
+    .tg-note strong{color:#229ED9;}
+  </style>
+</head>
+<body>
+
+<div class="top">
+  <div>
+    <h1>⚙️ Авто-Виком</h1>
+    <small>Управление ценами</small>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="tg-note">
+    <strong>💡 Совет:</strong> Актуальные цены также публикуйте в Telegram-канале <strong>@avikom1998</strong> — клиенты будут видеть их там в первую очередь.
+  </div>
+
+  <!-- АЛЮМИНИЙ -->
+  <div class="card">
+    <div class="card-head">🔩 Алюминий</div>
+    <div class="card-body">
+      <div class="price-row"><label>Первичный</label><div class="price-input"><input type="number" id="aly_perv" value="123"/><span>грн/кг</span></div></div>
+      <div class="price-row"><label>Профиль</label><div class="price-input"><input type="number" id="aly_prof" value="106"/><span>грн/кг</span></div></div>
+      <div class="price-row"><label>Микс</label><div class="price-input"><input type="number" id="aly_mix" value="86"/><span>грн/кг</span></div></div>
+      <div class="price-row"><label>Моторный</label><div class="price-input"><input type="number" id="aly_mot" value="86"/><span>грн/кг</span></div></div>
+      <div class="price-row"><label>Радиатор</label><div class="price-input"><input type="number" id="aly_rad" value="55"/><span>грн/кг</span></div></div>
+      <div class="price-row"><label>Банка</label><div class="price-input"><input type="number" id="aly_bank" value="72"/><span>грн/кг</span></div></div>
+      <div class="price-row"><label>ЦАМ</label><div class="price-input"><input type="number" id="aly_zam" value="56"/><span>грн/кг</span></div></div>
+      <div class="price-row"><label>Магний</label><div class="price-input"><input type="number" id="mag" value="25"/><span>грн/кг</span></div></div>
+    </div>
+  </div>
+
+  <!-- МЕДЬ -->
+  <div class="card">
+    <div class="card-head">🟤 Медь</div>
+    <div class="card-body">
+      <div class="price-row"><label>Медь (микс)<span class="note">-0.5% засор</span></label><div class="price-input"><input type="number" id="med_mix" value="460"/><span>грн/кг</span></div></div>
+      <div class="price-row"><label>Медь-блеск</label><div class="price-input"><input type="number" id="med_blesk" value="470"/><span>грн/кг</span></div></div>
+    </div>
+  </div>
+
+  <!-- ЛАТУНЬ -->
+  <div class="card">
+    <div class="card-head">🔶 Латунь</div>
+    <div class="card-body">
+      <div class="price-row">
+        <label>Латунь и радиаторы<span class="note">Радиаторы = та же цена -2%</span></label>
+        <div class="price-input"><input type="number" id="latun" value="255"/><span>грн/кг</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- НЕРЖАВЕЙКА -->
+  <div class="card">
+    <div class="card-head">⚙️ Нержавейка</div>
+    <div class="card-body">
+      <div class="price-row"><label>Нержавейка Ni 10%</label><div class="price-input"><input type="number" id="nerj_10" value="26"/><span>грн/кг</span></div></div>
+      <div class="price-row"><label>Нержавейка Ni 8%</label><div class="price-input"><input type="number" id="nerj_8" value="22"/><span>грн/кг</span></div></div>
+    </div>
+  </div>
+
+  <!-- АКБ -->
+  <div class="card">
+    <div class="card-head">🔋 АКБ</div>
+    <div class="card-body">
+      <div class="price-row"><label>Белые</label><div class="price-input"><input type="number" id="akb_white" value="24"/><span>грн/кг</span></div></div>
+      <div class="price-row"><label>Белые залитые</label><div class="price-input"><input type="number" id="akb_white_z" value="20"/><span>грн/кг</span></div></div>
+      <div class="price-row"><label>Гелевые</label><div class="price-input"><input type="number" id="akb_gel" value="17"/><span>грн/кг</span></div></div>
+      <div class="price-row"><label>Эбонитовые (чёрные)</label><div class="price-input"><input type="number" id="akb_eb" value="14"/><span>грн/кг</span></div></div>
+      <div class="price-row"><label>ТНЖ большие</label><div class="price-input"><input type="number" id="akb_tnz_b" value="15"/><span>грн/кг</span></div></div>
+      <div class="price-row"><label>ТНЖ малые</label><div class="price-input"><input type="number" id="akb_tnz_m" value="13"/><span>грн/кг</span></div></div>
+      <div class="price-row"><label>ТНЖ 4 клеммы</label><div class="price-input"><input type="number" id="akb_tnz_k" value="7"/><span>грн/кг</span></div></div>
+    </div>
+  </div>
+
+  <!-- ПРОЧИЕ -->
+  <div class="card">
+    <div class="card-head">🔩 Прочие</div>
+    <div class="card-body">
+      <div class="price-row"><label>Свинец</label><div class="price-input"><input type="number" id="svinec" value="63"/><span>грн/кг</span></div></div>
+      <div class="price-row"><label>Титан</label><div class="price-input"><input type="number" id="titan" value="76"/><span>грн/кг</span></div></div>
+    </div>
+  </div>
+
+  <button class="save-btn" onclick="savePrices()">💾 Сохранить и отправить в Telegram</button>
+
+</div>
+
+<div class="toast" id="toast">✅ Цены сохранены!</div>
+
+<script>
+// Load saved prices on open
+window.onload = function() {
+  var saved = localStorage.getItem('avikom_prices');
+  if (saved) {
+    try {
+      var prices = JSON.parse(saved);
+      Object.keys(prices).forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) el.value = prices[id];
+      });
+    } catch(e) {}
+  }
+};
+
+async function savePrices() {
+  // Collect all values
+  var ids = ['aly_perv','aly_prof','aly_mix','aly_mot','aly_rad','aly_bank','aly_zam','mag',
+             'med_mix','med_blesk','latun','nerj_10','nerj_8',
+             'akb_white','akb_white_z','akb_gel','akb_eb','akb_tnz_b','akb_tnz_m','akb_tnz_k',
+             'svinec','titan'];
+  var prices = {};
+  ids.forEach(function(id){ var el=document.getElementById(id); if(el) prices[id]=el.value; });
+
+  // Save locally
+  localStorage.setItem('avikom_prices', JSON.stringify(prices));
+
+  // Build Telegram message
+  var latun = prices['latun'];
+  var latun_rad = Math.round(latun * 0.98);
+  var now = new Date().toLocaleString('ru-UA',{timeZone:'Europe/Kiev'});
+
+  var msg =
+    '📊 *ОБНОВЛЕНИЕ ЦЕН — АВТО-ВИКОМ*\n' +
+    '_' + now + '_\n\n' +
+    '🔩 *Алюминий*\n' +
+    'Первичный: ' + prices['aly_perv'] + ' грн/кг\n' +
+    'Профиль: ' + prices['aly_prof'] + ' грн/кг\n' +
+    'Микс / Мотор: ' + prices['aly_mix'] + ' грн/кг\n' +
+    'Радиатор: ' + prices['aly_rad'] + ' грн/кг\n' +
+    'Банка: ' + prices['aly_bank'] + ' грн/кг\n' +
+    'ЦАМ: ' + prices['aly_zam'] + ' грн/кг\n' +
+    'Магний: ' + prices['mag'] + ' грн/кг\n\n' +
+    '🟤 *Медь*\n' +
+    'Медь: ' + prices['med_mix'] + ' грн/кг (-0.5%)\n' +
+    'Медь-блеск: ' + prices['med_blesk'] + ' грн/кг\n\n' +
+    '🔶 *Латунь*\n' +
+    'Латунь: ' + latun + ' грн/кг\n' +
+    'Радиаторы: ' + latun_rad + ' грн/кг (-2%)\n\n' +
+    '⚙️ *Нержавейка*\n' +
+    'Ni 10%: ' + prices['nerj_10'] + ' грн/кг\n' +
+    'Ni 8%: ' + prices['nerj_8'] + ' грн/кг\n\n' +
+    '🔋 *АКБ*\n' +
+    'Белые: ' + prices['akb_white'] + ' / залитые: ' + prices['akb_white_z'] + ' грн/кг\n' +
+    'Гелевые: ' + prices['akb_gel'] + ' / Эбонит: ' + prices['akb_eb'] + ' грн/кг\n' +
+    'ТНЖ большие: ' + prices['akb_tnz_b'] + ' / малые: ' + prices['akb_tnz_m'] + ' / 4 кл: ' + prices['akb_tnz_k'] + ' грн/кг\n\n' +
+    '🔩 *Прочие*\n' +
+    'Свинец: ' + prices['svinec'] + ' грн/кг\n' +
+    'Титан: ' + prices['titan'] + ' грн/кг\n\n' +
+    '📞 050 317 93 17 (Иван)\n📞 093 727 79 12 (Евгений)';
+
+  try {
+    var res = await fetch('https://api.telegram.org/bot8527453061:AAGHfFHEn7zOgXI84O3YXM9Iw1fPgPzV1gA/sendMessage', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({chat_id: 40272357, text: msg, parse_mode: 'Markdown'})
+    });
+    var data = await res.json();
+    if (data.ok) {
+      showToast('✅ Цены сохранены и отправлены в Telegram!');
+    } else {
+      showToast('💾 Цены сохранены (Telegram: ' + (data.description||'ошибка') + ')');
+    }
+  } catch(e) {
+    showToast('💾 Цены сохранены локально');
+  }
+}
+
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(function(){ t.classList.remove('show'); }, 3500);
+}
+</script>
+</body>
+</html>
