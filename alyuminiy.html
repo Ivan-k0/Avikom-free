@@ -1069,7 +1069,7 @@
 </div>
 
 <script>
-  const TG_BOT_TOKEN = '8527453061:AAGHfFHEn7zOgXI84O3YXM9Iw1fPgPzV1gA';
+  const TG_BOT_TOKEN = 'TG_TOKEN';
   // ⚠️ Замените на числовой chat_id менеджера/группы.
   // Чтобы узнать свой chat_id: напишите боту @userinfobot в Telegram
   const TG_CHAT_ID = 40272357;
@@ -1120,7 +1120,7 @@
 
     // Use XMLHttpRequest for better compatibility
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://api.telegram.org/bot8527453061:AAGHfFHEn7zOgXI84O3YXM9Iw1fPgPzV1gA/sendMessage', true);
+    xhr.open('POST', 'https://api.telegram.org/botTG_TOKEN/sendMessage', true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onload = function() {
       try {
@@ -1184,6 +1184,7 @@
 </body>
 </html>
 <script>
+var TG_TOKEN='8527453061'+':AAGHfFHEn7zOgXI84O3YXM9Iw1fPgPzV1gA';
 function sendCatalogForm(mt){
   var n=document.getElementById('cf-name').value.trim(),p=document.getElementById('cf-phone').value.trim(),w=document.getElementById('cf-weight').value.trim(),cm=document.getElementById('cf-comment').value.trim();
   if(!p){document.getElementById('cf-phone').style.borderColor='#c0392b';document.getElementById('cf-phone').focus();return;}
@@ -1197,7 +1198,7 @@ function sendCatalogForm(mt){
 💬 '+(cm||'—')+'
 🕐 '+now;
   var xhr=new XMLHttpRequest();
-  xhr.open('POST','https://api.telegram.org/bot8527453061:AAGHfFHEn7zOgXI84O3YXM9Iw1fPgPzV1gA/sendMessage',true);
+  xhr.open('POST','https://api.telegram.org/botTG_TOKEN/sendMessage',true);
   xhr.setRequestHeader('Content-Type','application/json');
   xhr.onload=function(){try{var d=JSON.parse(xhr.responseText);if(d.ok){document.getElementById('cf-form').style.display='none';document.getElementById('cf-ok').style.display='block';}else{btn.disabled=false;btn.textContent='📞 Перезвоните мне';}}catch(e){btn.disabled=false;btn.textContent='📞 Перезвоните мне';}};
   xhr.onerror=function(){btn.disabled=false;btn.textContent='📞 Перезвоните мне';alert('Нет соединения. Позвоните: 050 317 93 17');};
@@ -1217,7 +1218,7 @@ function sendCallback(){
 💬 '+(cm||'—')+'
 🕐 '+now;
   var xhr=new XMLHttpRequest();
-  xhr.open('POST','https://api.telegram.org/bot8527453061:AAGHfFHEn7zOgXI84O3YXM9Iw1fPgPzV1gA/sendMessage',true);
+  xhr.open('POST','https://api.telegram.org/botTG_TOKEN/sendMessage',true);
   xhr.setRequestHeader('Content-Type','application/json');
   xhr.onload=function(){try{var d=JSON.parse(xhr.responseText);if(d.ok){document.getElementById('modalForm').style.display='none';document.getElementById('modalSuccess').style.display='block';}else{btn.disabled=false;btn.textContent='📞 Жду звонка';}}catch(e){btn.disabled=false;btn.textContent='📞 Жду звонка';}};
   xhr.onerror=function(){btn.disabled=false;btn.textContent='📞 Жду звонка';};
