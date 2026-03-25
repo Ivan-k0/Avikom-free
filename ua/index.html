@@ -13,12 +13,12 @@
   <link rel="alternate" hreflang="x-default" href="https://metal-avikom.com.ua/"/>
   <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <script src="../img/prices.js" defer></script>
+  <script src="../prices.js" defer></script>
   <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{--red:#c0392b;--dark:#1a1a1a;--gray:#f5f5f5;--text:#333;--border:#ddd;--gold:#e67e22;}
 html{scroll-behavior:smooth;}
-body{font-family:'PT Sans',sans-serif;color:var(--text);font-size:16px;line-height:1.6;}
+body{font-family:'PT Sans',sans-serif;color:#333 !important;font-size:16px;line-height:1.6;color-scheme:light;}
 a{text-decoration:none;color:inherit;}
 header{background:#f8f6f3;border-bottom:2px solid var(--red);position:sticky;top:0;z-index:200;box-shadow:0 1px 6px rgba(0,0,0,0.08);}
 .header-inner{max-width:1100px;margin:0 auto;padding:0 20px;height:46px;display:flex;align-items:center;justify-content:space-between;gap:8px;}
@@ -59,7 +59,7 @@ nav a:hover{color:var(--red);}
 .hero-stat .label{font-size:13px;color:rgba(255,255,255,0.6);margin-top:4px;}
 section{padding:60px 20px;}
 .container{max-width:1100px;margin:0 auto;}
-.section-title{font-family:'Oswald',sans-serif;font-size:clamp(24px,3vw,36px);font-weight:700;margin-bottom:8px;color:var(--dark);}
+.section-title{font-family:'Oswald',sans-serif;font-size:clamp(24px,3vw,36px);font-weight:700;margin-bottom:8px;color:#1a1a1a !important;}
 .section-title span{color:var(--red);}
 .section-sub{color:#777;margin-bottom:40px;font-size:15px;}
 .divider{width:60px;height:4px;background:var(--red);margin:12px 0 32px;}
@@ -72,21 +72,21 @@ section{padding:60px 20px;}
 .ptable-row{display:flex;justify-content:space-between;align-items:center;padding:7px 14px;font-size:14px;border-bottom:1px solid #f0f0f0;transition:background 0.15s;}
 .ptable-row:hover{background:#fafafa;}
 .ptable-row span:first-child{color:#444;}
-.ptable-row span:last-child{font-weight:700;color:var(--dark);white-space:nowrap;}
-.ptable-row span:last-child em{font-style:normal;font-size:11px;color:#aaa;margin-left:4px;font-weight:400;}
+.ptable-row span:last-child{font-weight:700;color:var(--dark);white-space:nowrap;display:flex;align-items:center;gap:6px;}
+.ptable-row span:last-child em{font-style:normal;font-size:11px;color:#aaa;font-weight:400;white-space:nowrap;}
 .ptable-hot{background:#fff8f0;}
 .ptable-hot span:last-child{color:var(--gold);}
 .prices-note-block{margin-top:20px;background:#f8f8f8;border-left:4px solid var(--gold);border-radius:4px;padding:12px 18px;font-size:13px;color:#555;line-height:1.8;}
 .steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:24px;counter-reset:steps;}
-.step{text-align:center;counter-increment:steps;position:relative;}
-.step::before{content:counter(steps);display:block;width:56px;height:56px;background:var(--red);color:#fff;font-family:'Oswald',sans-serif;font-size:26px;font-weight:700;border-radius:50%;line-height:56px;margin:0 auto 16px;}
-.step h3{font-family:'Oswald',sans-serif;font-size:17px;margin-bottom:8px;}
-.step p{font-size:14px;color:#666;}
+.step{text-align:center;counter-increment:steps;position:relative;padding:0 10px;}
+.step::before{content:counter(steps);display:block;width:56px;height:56px;background:#c0392b;color:#fff !important;font-family:'Oswald',sans-serif;font-size:26px;font-weight:700;border-radius:50%;line-height:56px;margin:0 auto 16px;}
+.step h3{font-family:'Oswald',sans-serif;font-size:17px;margin-bottom:8px;color:#1a1a1a !important;}
+.step p{font-size:14px;color:#444 !important;}
 .adv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:28px;}
 .adv-item{display:flex;gap:20px;align-items:flex-start;}
 .adv-icon{width:56px;height:56px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:24px;}
-.adv-text h3{font-family:'Oswald',sans-serif;font-size:18px;margin-bottom:6px;color:#1a1a1a;}
-.adv-text p{font-size:14px;color:#444;line-height:1.6;}
+.adv-text h3{font-family:'Oswald',sans-serif;font-size:18px;margin-bottom:6px;color:#1a1a1a !important;}
+.adv-text p{font-size:14px;color:#444 !important;line-height:1.6;}
 .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;}
 .gallery-item{border-radius:8px;overflow:hidden;aspect-ratio:4/3;position:relative;}
 .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s;}
@@ -151,7 +151,23 @@ footer{background:var(--dark);color:rgba(255,255,255,0.7);padding:48px 20px 24px
   .hero-btns .btn-primary,.hero-btns button{width:100%;text-align:center;justify-content:center;}
   section{padding:44px 16px;}
 }
-</style>
+
+    /* Force light mode - prevent Noir/dark mode overrides */
+    @media (prefers-color-scheme: dark) {
+      body { background:#f8f6f3 !important; color:#333 !important; }
+      .step h3 { color:#1a1a1a !important; }
+      .step p { color:#444 !important; }
+      .adv-text h3 { color:#1a1a1a !important; }
+      .adv-text p { color:#444 !important; }
+      .section-title { color:#1a1a1a !important; }
+      .section-sub { color:#555 !important; }
+      .ptable-row span:first-child { color:#333 !important; }
+      .faq-q { color:#1a1a1a !important; }
+      .faq-a { color:#444 !important; }
+      .map-info ul li { color:#333 !important; }
+      header { background:#fff !important; }
+    }
+  </style>
 <script>
 var TG_TOKEN='8527453061'+':AAGHfFHEn7zOgXI84O3YXM9Iw1fPgPzV1gA';
 function openModal(){var m=document.getElementById('callbackModal');if(m){m.classList.add('active');document.body.style.overflow='hidden';}}
@@ -213,7 +229,7 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
     </div>
   </div>
 </header>
-<section class="hero" style="background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.72)),url('../img/img/hero.jpg') center/cover no-repeat">
+<section class="hero" style="background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.72)),url('../img/hero.jpg') center/cover no-repeat">
   <div class="hero-inner">
     <div class="hero-badge">⚙ Працюємо 1998 · Без вихідних!</div>
     <h1>Прийом <em>кольорового</em> і чорного металобрухту в Одесі</h1>
@@ -301,17 +317,17 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
     <div class="section-title">Наші <span>фото</span></div>
     <div class="divider"></div>
     <p class="section-sub">Територія складу, обладнання та робота з металобрухтом</p>
-    <div class="gallery-grid"><div class="gallery-item"><img src="../img/img/copper1.jpg" alt="Медная катанка — приём меди в Одессе" loading="lazy"></div>
-<div class="gallery-item"><img src="../img/img/copper2.jpg" alt="Медный кабель и проволока" loading="lazy"></div>
-<div class="gallery-item"><img src="../img/img/brass1.jpg" alt="Латунь — фитинги и арматура" loading="lazy"></div>
-<div class="gallery-item"><img src="../img/img/brass2.jpg" alt="Латунные шестерни и литьё" loading="lazy"></div>
-<div class="gallery-item"><img src="../img/img/alu_shav.jpg" alt="Алюминиевая стружка" loading="lazy"></div>
-<div class="gallery-item"><img src="../img/img/alu_mix.jpg" alt="Алюминий микс — приём лома" loading="lazy"></div>
-<div class="gallery-item"><img src="../img/img/cans.jpg" alt="Алюминиевая банка прессованная" loading="lazy"></div>
-<div class="gallery-item"><img src="../img/img/akb.jpg" alt="Приём аккумуляторов АКБ" loading="lazy"></div>
-<div class="gallery-item"><img src="../img/img/warehouse1.jpg" alt="Территория склада — погрузчик" loading="lazy"></div>
-<div class="gallery-item"><img src="../img/img/sparks.jpg" alt="Работа на складе Авто-Виком" loading="lazy"></div>
-<div class="gallery-item"><img src="../img/img/crane.jpg" alt="Погрузка металлолома краном" loading="lazy"></div></div>
+    <div class="gallery-grid"><div class="gallery-item"><img src="../img/copper1.jpg" alt="Медная катанка — приём меди в Одессе" loading="lazy"></div>
+<div class="gallery-item"><img src="../img/copper2.jpg" alt="Медный кабель и проволока" loading="lazy"></div>
+<div class="gallery-item"><img src="../img/brass1.jpg" alt="Латунь — фитинги и арматура" loading="lazy"></div>
+<div class="gallery-item"><img src="../img/brass2.jpg" alt="Латунные шестерни и литьё" loading="lazy"></div>
+<div class="gallery-item"><img src="../img/alu_shav.jpg" alt="Алюминиевая стружка" loading="lazy"></div>
+<div class="gallery-item"><img src="../img/alu_mix.jpg" alt="Алюминий микс — приём лома" loading="lazy"></div>
+<div class="gallery-item"><img src="../img/cans.jpg" alt="Алюминиевая банка прессованная" loading="lazy"></div>
+<div class="gallery-item"><img src="../img/akb.jpg" alt="Приём аккумуляторов АКБ" loading="lazy"></div>
+<div class="gallery-item"><img src="../img/warehouse1.jpg" alt="Территория склада — погрузчик" loading="lazy"></div>
+<div class="gallery-item"><img src="../img/sparks.jpg" alt="Работа на складе Авто-Виком" loading="lazy"></div>
+<div class="gallery-item"><img src="../img/crane.jpg" alt="Погрузка металлолома краном" loading="lazy"></div></div>
   </div>
 </section>
 <section id="map" style="background:var(--gray);">
@@ -385,22 +401,36 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
 window.openModal=function(){var m=document.getElementById('callbackModal');if(m){m.classList.add('active');document.body.style.overflow='hidden';}};
 window.closeModal=function(){var m=document.getElementById('callbackModal');if(m){m.classList.remove('active');document.body.style.overflow='';}setTimeout(function(){var f=document.getElementById('modalForm');var s=document.getElementById('modalSuccess');if(f)f.style.display='';if(s)s.style.display='none';var b=document.getElementById('cb-submit');if(b){b.disabled=false;b.textContent='📞 Жду звонка';}['cb-name','cb-phone','cb-comment'].forEach(function(id){var el=document.getElementById(id);if(el)el.value='';});},300);};
 function sendCallback(){
-  var n=document.getElementById('cb-name').value.trim(),p=document.getElementById('cb-phone').value.trim(),cm=document.getElementById('cb-comment').value.trim();
+  var n=document.getElementById('cb-name').value.trim();
+  var p=document.getElementById('cb-phone').value.trim();
+  var cm=document.getElementById('cb-comment').value.trim();
   if(!p){document.getElementById('cb-phone').style.borderColor='#c0392b';document.getElementById('cb-phone').focus();return;}
-  var btn=document.getElementById('cb-submit');btn.disabled=true;btn.textContent='Отправляем...';
+  var btn=document.getElementById('cb-submit');
+  btn.disabled=true; btn.textContent='Отправляем...';
   var now=new Date().toLocaleString('ru-UA',{timeZone:'Europe/Kiev'});
-  var txt='📥 Перезвонить
-
-👤 '+(n||'—')+'
-📞 '+p+'
-💬 '+(cm||'—')+'
-🕐 '+now;
+  var txt='Заявка: Перезвонить\n\nИмя: '+(n||'-')+'\nТел: '+p+'\nКомм: '+(cm||'-')+'\nВремя: '+now;
+  var tk='8527453061'+':'+'AAGHfFHEn7zOgXI84O3YXM9Iw1fPgPzV1gA';
+  var url='https://api.telegram.org/bot'+tk+'/sendMessage';
   var xhr=new XMLHttpRequest();
-  xhr.open('POST','https://api.telegram.org/botTG_TOKEN/sendMessage',true);
+  xhr.open('POST',url,true);
   xhr.setRequestHeader('Content-Type','application/json');
-  xhr.onload=function(){try{var d=JSON.parse(xhr.responseText);if(d.ok){document.getElementById('modalForm').style.display='none';document.getElementById('modalSuccess').style.display='block';}else{btn.disabled=false;btn.textContent='📞 Жду звонка';}}catch(e){btn.disabled=false;btn.textContent='📞 Жду звонка';}};
-  xhr.onerror=function(){btn.disabled=false;btn.textContent='📞 Жду звонка';};
-  xhr.send(JSON.stringify({chat_id:40272357,text:txt}));
+  xhr.onload=function(){
+    try{
+      var d=JSON.parse(xhr.responseText);
+      if(d.ok){
+        document.getElementById('modalForm').style.display='none';
+        document.getElementById('modalSuccess').style.display='block';
+      }else{
+        btn.disabled=false; btn.textContent='Жду звонка';
+        alert('Ошибка отправки. Позвоните: 050 317 93 17');
+      }
+    }catch(e){btn.disabled=false; btn.textContent='Жду звонка';}
+  };
+  xhr.onerror=function(){
+    btn.disabled=false; btn.textContent='Жду звонка';
+    alert('Нет соединения. Позвоните: 050 317 93 17');
+  };
+  xhr.send(JSON.stringify({chat_id:40272357, text:txt}));
 }
 function toggleMenu(){var b=document.getElementById('burger'),m=document.getElementById('mobileMenu');b.classList.toggle('open');m.classList.toggle('open');}
 function closeMenu(){document.getElementById('burger').classList.remove('open');document.getElementById('mobileMenu').classList.remove('open');}
