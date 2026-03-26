@@ -129,6 +129,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
 @media(max-width:900px){.cat-body{grid-template-columns:1fr;}.cat-sidebar{order:-1;}.sform{position:static;}.steps-row{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:680px){nav,.btn-hdr{display:none;}.burger{display:flex;}.cat-hero{padding:36px 16px 32px;}.steps-row{grid-template-columns:1fr 1fr;}}
 </style>
+  <script src="prices.js" defer></script>
 </head>
 <body>
 <div class="modal-overlay" id="cbModal">
@@ -199,7 +200,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
   <div class="cat-main">
     <div class="types-box">
       <h3>Что принимаем и цены</h3>
-      <ul><li><span>Латунь чистая (фитинги, краны)</span><span class="price">255 грн/кг</span></li><li><span>Латунные радиаторы</span><span class="price">255 грн/кг -2%</span></li><li><span>Латунная стружка</span><span class="price">255 грн/кг</span></li><li><span>Латунное литьё</span><span class="price">255 грн/кг</span></li><li><span>Гильзы латунные</span><span class="price">255 грн/кг</span></li><li><span>БРАЖ (бронза)</span><span class="price">по договорённости</span></li></ul>
+      <ul><li><span>Латунь чистая (фитинги, краны)</span><span class="price" data-price="latun">255 грн/кг</span></li><li><span>Латунные радиаторы</span><span class="price">255 грн/кг -2%</span></li><li><span>Латунная стружка</span><span class="price" data-price="latun">255 грн/кг</span></li><li><span>Латунное литьё</span><span class="price" data-price="latun">255 грн/кг</span></li><li><span>Гильзы латунные</span><span class="price" data-price="latun">255 грн/кг</span></li><li><span>БРАЖ (бронза)</span><span class="price">по договорённости</span></li></ul>
     </div>
     <div class="seo-body">
 
@@ -209,7 +210,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
     <h2>Виды латуни — что принимаем</h2>
     <table class="seo-table">
       <tr><th>Вид лома</th><th>Описание</th><th>Цена</th></tr>
-      <tr><td>Латунь чистая (кусковая)</td><td>Фитинги, краны, вентили, шаровые краны, профиль</td><td>255 грн/кг</td></tr>
+      <tr><td>Латунь чистая (кусковая)</td><td>Фитинги, краны, вентили, шаровые краны, профиль</td><td><span data-price="latun">255 грн/кг</span></td></tr>
       <tr><td>Латунные радиаторы</td><td>Автомобильные, отопительные, медно-латунные</td><td>255 грн/кг -2%</td></tr>
       <tr><td>Латунная стружка</td><td>Производственные отходы токарной обработки</td><td>255 грн/кг</td></tr>
       <tr><td>Латунное литьё</td><td>Крупные отливки, корпуса насосов, подшипники</td><td>255 грн/кг</td></tr>

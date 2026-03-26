@@ -129,6 +129,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
 @media(max-width:900px){.cat-body{grid-template-columns:1fr;}.cat-sidebar{order:-1;}.sform{position:static;}.steps-row{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:680px){nav,.btn-hdr{display:none;}.burger{display:flex;}.cat-hero{padding:36px 16px 32px;}.steps-row{grid-template-columns:1fr 1fr;}}
 </style>
+  <script src="prices.js" defer></script>
 </head>
 <body>
 <div class="modal-overlay" id="cbModal">
@@ -199,7 +200,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
   <div class="cat-main">
     <div class="types-box">
       <h3>Что принимаем и цены</h3>
-      <ul><li><span>АКБ белые (кислотные)</span><span class="price">24 грн/кг</span></li><li><span>АКБ белые залитые</span><span class="price">20 грн/кг</span></li><li><span>АКБ гелевые / AGM</span><span class="price">17 грн/кг</span></li><li><span>АКБ эбонитовые (чёрные)</span><span class="price">14 грн/кг</span></li><li><span>АКБ ТНЖ большие</span><span class="price">15 грн/кг</span></li><li><span>АКБ ТНЖ малые</span><span class="price">13 грн/кг</span></li><li><span>АКБ ТНЖ 4 клеммы</span><span class="price">7 грн/кг</span></li></ul>
+      <ul><li><span>АКБ белые (кислотные)</span><span class="price" data-price="akb_w">24 грн/кг</span></li><li><span>АКБ белые залитые</span><span class="price" data-price="akb_wz">20 грн/кг</span></li><li><span>АКБ гелевые / AGM</span><span class="price" data-price="akb_gel">17 грн/кг</span></li><li><span>АКБ эбонитовые (чёрные)</span><span class="price" data-price="akb_eb">14 грн/кг</span></li><li><span>АКБ ТНЖ большие</span><span class="price" data-price="akb_tnz_b">15 грн/кг</span></li><li><span>АКБ ТНЖ малые</span><span class="price" data-price="akb_tnz_m">13 грн/кг</span></li><li><span>АКБ ТНЖ 4 клеммы</span><span class="price" data-price="akb_tnz_k">7 грн/кг</span></li></ul>
     </div>
     <div class="seo-body">
 
@@ -210,15 +211,15 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
     <h2>Цены на аккумуляторы в Одессе 2025</h2>
     <table class="seo-table">
       <tr><th>Тип АКБ</th><th>Описание</th><th>Цена</th></tr>
-      <tr><td>АКБ белые (полипропилен)</td><td>Современный светлый корпус. Кислотные. Большинство авто.</td><td>24 грн/кг</td></tr>
-      <tr><td>АКБ белые залитые</td><td>Белые, с электролитом внутри</td><td>20 грн/кг</td></tr>
-      <tr><td>АКБ гелевые / AGM</td><td>Необслуживаемые, гелевый электролит</td><td>17 грн/кг</td></tr>
-      <tr><td>АКБ эбонитовые (чёрные)</td><td>Старый чёрный советский корпус</td><td>14 грн/кг</td></tr>
-      <tr><td>АКБ ТНЖ большие</td><td>Тяговые никель-железные, крупные</td><td>15 грн/кг</td></tr>
-      <tr><td>АКБ ТНЖ малые</td><td>Тяговые никель-железные, мелкие</td><td>13 грн/кг</td></tr>
-      <tr><td>АКБ ТНЖ 4 клеммы</td><td>Никель-железные с 4 клеммами</td><td>7 грн/кг</td></tr>
+      <tr><td>АКБ белые (полипропилен)</td><td>Современный светлый корпус. Кислотные. Большинство авто.</td><td><span data-price="akb_w">24 грн/кг</span></td></tr>
+      <tr><td>АКБ белые залитые</td><td>Белые, с электролитом внутри</td><td><span data-price="akb_wz">20 грн/кг</span></td></tr>
+      <tr><td>АКБ гелевые / AGM</td><td>Необслуживаемые, гелевый электролит</td><td><span data-price="akb_gel">17 грн/кг</span></td></tr>
+      <tr><td>АКБ эбонитовые (чёрные)</td><td>Старый чёрный советский корпус</td><td><span data-price="akb_eb">14 грн/кг</span></td></tr>
+      <tr><td>АКБ ТНЖ большие</td><td>Тяговые никель-железные, крупные</td><td><span data-price="akb_tnz_b">15 грн/кг</span></td></tr>
+      <tr><td>АКБ ТНЖ малые</td><td>Тяговые никель-железные, мелкие</td><td><span data-price="akb_tnz_m">13 грн/кг</span></td></tr>
+      <tr><td>АКБ ТНЖ 4 клеммы</td><td>Никель-железные с 4 клеммами</td><td><span data-price="akb_tnz_k">7 грн/кг</span></td></tr>
     </table>
-    <div class="ibox">💡 Также принимаем <strong>свинец — 63 грн/кг</strong>. Актуальные цены в <a href="https://t.me/avikom1998" target="_blank" style="color:var(--red);">Telegram @avikom1998</a></div>
+    <div class="ibox">💡 Также принимаем <strong>свинец — <span data-price="svinec">63 грн/кг</span></strong>. Актуальные цены в <a href="https://t.me/avikom1998" target="_blank" style="color:var(--red);">Telegram @avikom1998</a></div>
 
     <h2>Сколько можно заработать на сдаче аккумулятора?</h2>
     <p>Обычный автомобильный аккумулятор весит <strong>12–20 кг</strong>. По цене 24 грн/кг получите <strong>288–480 грн</strong> за один АКБ. Грузовые аккумуляторы весят 30-60 кг = 720–1440 грн. Промышленные ТНЖ аккумуляторы весят сотни килограмм — звоните для расчёта.</p>

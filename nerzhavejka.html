@@ -129,6 +129,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
 @media(max-width:900px){.cat-body{grid-template-columns:1fr;}.cat-sidebar{order:-1;}.sform{position:static;}.steps-row{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:680px){nav,.btn-hdr{display:none;}.burger{display:flex;}.cat-hero{padding:36px 16px 32px;}.steps-row{grid-template-columns:1fr 1fr;}}
 </style>
+  <script src="prices.js" defer></script>
 </head>
 <body>
 <div class="modal-overlay" id="cbModal">
@@ -199,7 +200,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
   <div class="cat-main">
     <div class="types-box">
       <h3>Что принимаем и цены</h3>
-      <ul><li><span>Нержавейка Ni 10% (AISI 304/316)</span><span class="price">26 грн/кг</span></li><li><span>Нержавейка Ni 8%</span><span class="price">22 грн/кг</span></li><li><span>Трубы, листы, профиль</span><span class="price">26 грн/кг</span></li><li><span>Нержавеющая стружка</span><span class="price">по договорённости</span></li><li><span>Титан и сплавы</span><span class="price">76 грн/кг</span></li></ul>
+      <ul><li><span>Нержавейка Ni 10% (AISI 304/316)</span><span class="price" data-price="nerj_10">26 грн/кг</span></li><li><span>Нержавейка Ni 8%</span><span class="price" data-price="nerj_8">22 грн/кг</span></li><li><span>Трубы, листы, профиль</span><span class="price" data-price="nerj_10">26 грн/кг</span></li><li><span>Нержавеющая стружка</span><span class="price">по договорённости</span></li><li><span>Титан и сплавы</span><span class="price" data-price="titan">76 грн/кг</span></li></ul>
     </div>
     <div class="seo-body">
 
@@ -209,9 +210,9 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
     <h2>Цены на нержавейку в Одессе 2025</h2>
     <table class="seo-table">
       <tr><th>Марка / вид</th><th>Содержание никеля</th><th>Цена</th></tr>
-      <tr><td>Нержавейка аустенитная (AISI 304)</td><td>Ni 10%</td><td>26 грн/кг</td></tr>
-      <tr><td>Нержавейка (AISI 304)</td><td>Ni 8%</td><td>22 грн/кг</td></tr>
-      <tr><td>Титан и титановые сплавы</td><td>—</td><td>76 грн/кг</td></tr>
+      <tr><td>Нержавейка аустенитная (AISI 304)</td><td>Ni 10%</td><td><span data-price="nerj_10">26 грн/кг</span></td></tr>
+      <tr><td>Нержавейка (AISI 304)</td><td>Ni 8%</td><td><span data-price="nerj_8">22 грн/кг</span></td></tr>
+      <tr><td>Титан и титановые сплавы</td><td>—</td><td><span data-price="titan">76 грн/кг</span></td></tr>
     </table>
     <div class="ibox">⚙️ Не знаете марку? Не нужно — наш <strong>спектральный анализатор</strong> определит состав за 30 секунд прямо при приёмке. Бесплатно.</div>
 

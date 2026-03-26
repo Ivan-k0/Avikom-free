@@ -129,6 +129,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
 @media(max-width:900px){.cat-body{grid-template-columns:1fr;}.cat-sidebar{order:-1;}.sform{position:static;}.steps-row{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:680px){nav,.btn-hdr{display:none;}.burger{display:flex;}.cat-hero{padding:36px 16px 32px;}.steps-row{grid-template-columns:1fr 1fr;}}
 </style>
+  <script src="prices.js" defer></script>
 </head>
 <body>
 <div class="modal-overlay" id="cbModal">
@@ -199,7 +200,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
   <div class="cat-main">
     <div class="types-box">
       <h3>Что принимаем и цены</h3>
-      <ul><li><span>Алюминий первичный</span><span class="price">123 грн/кг</span></li><li><span>Алюминий профиль</span><span class="price">106 грн/кг</span></li><li><span>Алюминий микс</span><span class="price">86 грн/кг</span></li><li><span>Алюминий моторный</span><span class="price">86 грн/кг</span></li><li><span>Банка алюминиевая</span><span class="price">72 грн/кг</span></li><li><span>ЦАМ</span><span class="price">56 грн/кг</span></li><li><span>Алюминий радиатор</span><span class="price">55 грн/кг</span></li><li><span>Магний</span><span class="price">25 грн/кг</span></li></ul>
+      <ul><li><span>Алюминий первичный</span><span class="price" data-price="aly_perv">123 грн/кг</span></li><li><span>Алюминий профиль</span><span class="price" data-price="aly_prof">106 грн/кг</span></li><li><span>Алюминий микс</span><span class="price" data-price="aly_mix">86 грн/кг</span></li><li><span>Алюминий моторный</span><span class="price" data-price="aly_mix">86 грн/кг</span></li><li><span>Банка алюминиевая</span><span class="price" data-price="aly_bank">72 грн/кг</span></li><li><span>ЦАМ</span><span class="price" data-price="zam">56 грн/кг</span></li><li><span>Алюминий радиатор</span><span class="price" data-price="aly_rad">55 грн/кг</span></li><li><span>Магний</span><span class="price" data-price="mag">25 грн/кг</span></li></ul>
     </div>
     <div class="seo-body">
 
@@ -210,14 +211,14 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
     <h2>Все виды алюминия — что принимаем и цены</h2>
     <table class="seo-table">
       <tr><th>Вид лома</th><th>Описание</th><th>Цена</th></tr>
-      <tr><td>Алюминий первичный</td><td>Чистый сплав, минимальный засор. Самый дорогой вид.</td><td>123 грн/кг</td></tr>
-      <tr><td>Алюминий профиль</td><td>Оконные рамы, двери, строительные профили, жалюзи</td><td>106 грн/кг</td></tr>
-      <tr><td>Алюминий микс</td><td>Смешанный лом: посуда, трубы, листы, строительный мусор</td><td>86 грн/кг</td></tr>
+      <tr><td>Алюминий первичный</td><td>Чистый сплав, минимальный засор. Самый дорогой вид.</td><td><span data-price="aly_perv">123 грн/кг</span></td></tr>
+      <tr><td>Алюминий профиль</td><td>Оконные рамы, двери, строительные профили, жалюзи</td><td><span data-price="aly_prof">106 грн/кг</span></td></tr>
+      <tr><td>Алюминий микс</td><td>Смешанный лом: посуда, трубы, листы, строительный мусор</td><td><span data-price="aly_mix">86 грн/кг</span></td></tr>
       <tr><td>Алюминий моторный</td><td>Блоки двигателей, головки цилиндров, картеры КПП</td><td>86 грн/кг</td></tr>
-      <tr><td>Алюминий радиатор</td><td>Автомобильные радиаторы охлаждения</td><td>55 грн/кг</td></tr>
-      <tr><td>Банка алюминиевая</td><td>Прессованные пивные и газированные банки</td><td>72 грн/кг</td></tr>
-      <tr><td>ЦАМ (цинко-алюм.)</td><td>Литьё под давлением, карбюраторы, корпуса</td><td>56 грн/кг</td></tr>
-      <tr><td>Магний</td><td>Магниевые сплавы</td><td>25 грн/кг</td></tr>
+      <tr><td>Алюминий радиатор</td><td>Автомобильные радиаторы охлаждения</td><td><span data-price="aly_rad">55 грн/кг</span></td></tr>
+      <tr><td>Банка алюминиевая</td><td>Прессованные пивные и газированные банки</td><td><span data-price="aly_bank">72 грн/кг</span></td></tr>
+      <tr><td>ЦАМ (цинко-алюм.)</td><td>Литьё под давлением, карбюраторы, корпуса</td><td><span data-price="zam">56 грн/кг</span></td></tr>
+      <tr><td>Магний</td><td>Магниевые сплавы</td><td><span data-price="mag">25 грн/кг</span></td></tr>
       <tr><td>Алюминиевая стружка</td><td>Производственные отходы, токарная стружка</td><td>по договорённости</td></tr>
       <tr><td>Алюминиевый кабель</td><td>Провода и кабели из алюминия</td><td>по договорённости</td></tr>
     </table>

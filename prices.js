@@ -1,24 +1,54 @@
 // ═══════════════════════════════════════
 // АВТО-ВИКОМ — Файл цен
-// Меняйте цифры здесь — обновится на всех языках
+// Меняйте цифры здесь — обновится на всех языках и всех страницах
 // ═══════════════════════════════════════
 var PRICES = {
-  aly_perv: 123, aly_prof: 106, aly_mix: 86, aly_mot: 86,
-  aly_rad: 55, aly_bank: 72, zam: 56, mag: 25,
-  med: 460, med_blesk: 470,
-  latun: 260,
-  nerj_10: 26, nerj_8: 22,
-  akb_w: 24, akb_wz: 20, akb_gel: 17, akb_eb: 14,
-  akb_tnz_b: 15, akb_tnz_m: 13, akb_tnz_k: 7,
-  svinec: 63, titan: 76
+  // АЛЮМИНИЙ
+  aly_perv: 123,   // Первичный
+  aly_prof: 106,   // Профиль
+  aly_mix:  86,    // Микс
+  aly_mot:  86,    // Моторный
+  aly_rad:  55,    // Радиатор
+  aly_bank: 72,    // Банка
+  zam:      56,    // ЦАМ
+  mag:      25,    // Магний
+
+  // МЕДЬ
+  med:       460,  // Медь (-0.5%)
+  med_blesk: 470,  // Медь-блеск
+
+  // ЛАТУНЬ
+  latun: 255,      // Латунь и радиаторы (-2%)
+
+  // НЕРЖАВЕЙКА
+  nerj_10: 26,     // Ni 10%
+  nerj_8:  22,     // Ni 8%
+
+  // АКБ
+  akb_w:    24,    // Белые
+  akb_wz:   20,    // Белые залитые
+  akb_gel:  17,    // Гелевые
+  akb_eb:   14,    // Эбонитовые
+  akb_tnz_b: 15,   // ТНЖ большие
+  akb_tnz_m: 13,   // ТНЖ малые
+  akb_tnz_k:  7,   // ТНЖ 4 клеммы
+
+  // ПРОЧИЕ
+  svinec: 63,      // Свинец
+  titan:  76,      // Титан
 };
 
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('[data-price]').forEach(function(el) {
     var key = el.getAttribute('data-price');
-    if (PRICES[key] !== undefined) {
-      var unit = el.textContent.indexOf('UAH') !== -1 ? ' UAH/kg' : ' грн/кг';
-      el.textContent = PRICES[key] + unit;
-    }
+    if (PRICES[key] === undefined) return;
+    
+    var val = PRICES[key];
+    var text = el.textContent;
+    
+    // Detect currency unit from existing text
+    var unit = text.indexOf('UAH') !== -1 ? ' UAH/kg' : ' грн/кг';
+    
+    el.textContent = val + unit;
   });
 });
