@@ -129,6 +129,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
 @media(max-width:900px){.cat-body{grid-template-columns:1fr;}.cat-sidebar{order:-1;}.sform{position:static;}.steps-row{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:680px){nav,.btn-hdr{display:none;}.burger{display:flex;}.cat-hero{padding:36px 16px 32px;}.steps-row{grid-template-columns:1fr 1fr;}}
 </style>
+  <script src="../prices.js" defer></script>
 </head>
 <body>
 <div class="modal-overlay" id="cbModal">
@@ -199,7 +200,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
   <div class="cat-main">
     <div class="types-box">
       <h3>Що приймаємо і ціни</h3>
-      <ul><li><span>Латунь чиста (фітинги, крани)</span><span class="price">255 грн/кг</span></li><li><span>Латунні радіатори</span><span class="price">255 грн/кг -2%</span></li><li><span>Латунна стружка</span><span class="price">255 грн/кг</span></li><li><span>Латунне лиття</span><span class="price">255 грн/кг</span></li><li><span>Гільзи латунні</span><span class="price">255 грн/кг</span></li></ul>
+      <ul><li><span>Латунь чиста (фітинги, крани)</span><span class="price" data-price="latun">255 грн/кг</span></li><li><span>Латунні радіатори</span><span class="price">255 грн/кг -2%</span></li><li><span>Латунна стружка</span><span class="price" data-price="latun">255 грн/кг</span></li><li><span>Латунне лиття</span><span class="price" data-price="latun">255 грн/кг</span></li><li><span>Гільзи латунні</span><span class="price" data-price="latun">255 грн/кг</span></li></ul>
     </div>
     <div class="seo-body">
 
@@ -209,7 +210,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
     <h2>Види латуні — що приймаємо</h2>
     <table class="seo-table">
       <tr><th>Вид брухту</th><th>Опис</th><th>Ціна</th></tr>
-      <tr><td>Латунь чиста (кускова)</td><td>Фітинги, крани, вентилі, шарові крани, профіль</td><td>255 грн/кг</td></tr>
+      <tr><td>Латунь чиста (кускова)</td><td>Фітинги, крани, вентилі, шарові крани, профіль</td><td><span data-price="latun">255 грн/кг</span></td></tr>
       <tr><td>Латунні радіатори</td><td>Автомобільні, опалювальні, мідно-латунні</td><td>255 грн/кг -2%</td></tr>
       <tr><td>Латунна стружка</td><td>Виробничі відходи токарної обробки</td><td>255 грн/кг</td></tr>
       <tr><td>Латунне лиття</td><td>Великі відливки, корпуси насосів, підшипники</td><td>255 грн/кг</td></tr>

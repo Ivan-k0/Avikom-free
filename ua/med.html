@@ -129,6 +129,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
 @media(max-width:900px){.cat-body{grid-template-columns:1fr;}.cat-sidebar{order:-1;}.sform{position:static;}.steps-row{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:680px){nav,.btn-hdr{display:none;}.burger{display:flex;}.cat-hero{padding:36px 16px 32px;}.steps-row{grid-template-columns:1fr 1fr;}}
 </style>
+  <script src="../prices.js" defer></script>
 </head>
 <body>
 <div class="modal-overlay" id="cbModal">
@@ -199,7 +200,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
   <div class="cat-main">
     <div class="types-box">
       <h3>Що приймаємо і ціни</h3>
-      <ul><li><span>Мідь-блиск (Millberry)</span><span class="price">470 грн/кг</span></li><li><span>Мідь мікс</span><span class="price">-0.5% → 460 грн/кг</span></li><li><span>Кабель в ізоляції</span><span class="price">за домовленістю</span></li><li><span>Мідні труби</span><span class="price">460 грн/кг</span></li><li><span>Стружка міді</span><span class="price">за домовленістю</span></li></ul>
+      <ul><li><span>Мідь-блиск (Millberry)</span><span class="price" data-price="med_blesk">470 грн/кг</span></li><li><span>Мідь мікс</span><span class="price">-0.5% → 460 грн/кг</span></li><li><span>Кабель в ізоляції</span><span class="price">за домовленістю</span></li><li><span>Мідні труби</span><span class="price" data-price="med">460 грн/кг</span></li><li><span>Стружка міді</span><span class="price">за домовленістю</span></li></ul>
     </div>
     <div class="seo-body">
 
@@ -210,11 +211,11 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
     <h2>Види міді які ми приймаємо — детально</h2>
     <table class="seo-table">
       <tr><th>Вид брухту</th><th>Опис</th><th>Ціна</th></tr>
-      <tr><td>Мідь-блиск (Millberry)</td><td>Чиста жила без ізоляції, без окислу. Яскравий помаранчевий блиск.</td><td>470 грн/кг</td></tr>
+      <tr><td>Мідь-блиск (Millberry)</td><td>Чиста жила без ізоляції, без окислу. Яскравий помаранчевий блиск.</td><td><span data-price="med_blesk">470 грн/кг</span></td></tr>
       <tr><td>Мідь мікс</td><td>Окислений дріт, вироби з припоєм, змішувачі, сантехніка</td><td>460 грн/кг (-0.5%)</td></tr>
       <tr><td>Кабель у ПВХ ізоляції</td><td>Проводи без очищення. Ціна за % вмісту міді</td><td>за домовленістю</td></tr>
       <tr><td>Мідна стружка</td><td>Виробничі відходи токарної обробки</td><td>за домовленістю</td></tr>
-      <tr><td>Мідні труби</td><td>Водопровідні, газові, теплообмінні</td><td>460 грн/кг</td></tr>
+      <tr><td>Мідні труби</td><td>Водопровідні, газові, теплообмінні</td><td><span data-price="med">460 грн/кг</span></td></tr>
       <tr><td>Обмотки двигунів</td><td>Мідна обмотка електродвигунів і трансформаторів</td><td>за домовленістю</td></tr>
     </table>
     <div class="ibox">💡 Не знаєте який у вас сорт? Привезіть — визначимо безкоштовним <strong>спектральним аналізом</strong> прямо на місці за 30 секунд.</div>

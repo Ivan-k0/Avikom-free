@@ -129,6 +129,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
 @media(max-width:900px){.cat-body{grid-template-columns:1fr;}.cat-sidebar{order:-1;}.sform{position:static;}.steps-row{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:680px){nav,.btn-hdr{display:none;}.burger{display:flex;}.cat-hero{padding:36px 16px 32px;}.steps-row{grid-template-columns:1fr 1fr;}}
 </style>
+  <script src="../prices.js" defer></script>
 </head>
 <body>
 <div class="modal-overlay" id="cbModal">
@@ -199,7 +200,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
   <div class="cat-main">
     <div class="types-box">
       <h3>Що приймаємо і ціни</h3>
-      <ul><li><span>АКБ білі (кислотні)</span><span class="price">24 грн/кг</span></li><li><span>АКБ білі залиті</span><span class="price">20 грн/кг</span></li><li><span>АКБ гелеві / AGM</span><span class="price">17 грн/кг</span></li><li><span>АКБ ебонітові (чорні)</span><span class="price">14 грн/кг</span></li><li><span>АКБ ТНЖ великі</span><span class="price">15 грн/кг</span></li><li><span>АКБ ТНЖ малі</span><span class="price">13 грн/кг</span></li><li><span>АКБ ТНЖ 4 клеми</span><span class="price">7 грн/кг</span></li></ul>
+      <ul><li><span>АКБ білі (кислотні)</span><span class="price" data-price="akb_w">24 грн/кг</span></li><li><span>АКБ білі залиті</span><span class="price" data-price="akb_wz">20 грн/кг</span></li><li><span>АКБ гелеві / AGM</span><span class="price" data-price="akb_gel">17 грн/кг</span></li><li><span>АКБ ебонітові (чорні)</span><span class="price" data-price="akb_eb">14 грн/кг</span></li><li><span>АКБ ТНЖ великі</span><span class="price" data-price="akb_tnz_b">15 грн/кг</span></li><li><span>АКБ ТНЖ малі</span><span class="price" data-price="akb_tnz_m">13 грн/кг</span></li><li><span>АКБ ТНЖ 4 клеми</span><span class="price" data-price="akb_tnz_k">7 грн/кг</span></li></ul>
     </div>
     <div class="seo-body">
 
@@ -210,13 +211,13 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
     <h2>Ціни на акумулятори в Одесі 2025</h2>
     <table class="seo-table">
       <tr><th>Тип АКБ</th><th>Опис</th><th>Ціна</th></tr>
-      <tr><td>АКБ білі (поліпропілен)</td><td>Сучасний світлий корпус. Кислотні.</td><td>24 грн/кг</td></tr>
-      <tr><td>АКБ білі залиті</td><td>Білі, з електролітом всередині</td><td>20 грн/кг</td></tr>
-      <tr><td>АКБ гелеві / AGM</td><td>Необслуговувані, гелевий електроліт</td><td>17 грн/кг</td></tr>
-      <tr><td>АКБ ебонітові (чорні)</td><td>Старий чорний радянський корпус</td><td>14 грн/кг</td></tr>
-      <tr><td>АКБ ТНЖ великі</td><td>Тягові нікель-залізні, великі</td><td>15 грн/кг</td></tr>
-      <tr><td>АКБ ТНЖ малі</td><td>Тягові нікель-залізні, малі</td><td>13 грн/кг</td></tr>
-      <tr><td>АКБ ТНЖ 4 клеми</td><td>Нікель-залізні з 4 клемами</td><td>7 грн/кг</td></tr>
+      <tr><td>АКБ білі (поліпропілен)</td><td>Сучасний світлий корпус. Кислотні.</td><td><span data-price="akb_w">24 грн/кг</span></td></tr>
+      <tr><td>АКБ білі залиті</td><td>Білі, з електролітом всередині</td><td><span data-price="akb_wz">20 грн/кг</span></td></tr>
+      <tr><td>АКБ гелеві / AGM</td><td>Необслуговувані, гелевий електроліт</td><td><span data-price="akb_gel">17 грн/кг</span></td></tr>
+      <tr><td>АКБ ебонітові (чорні)</td><td>Старий чорний радянський корпус</td><td><span data-price="akb_eb">14 грн/кг</span></td></tr>
+      <tr><td>АКБ ТНЖ великі</td><td>Тягові нікель-залізні, великі</td><td><span data-price="akb_tnz_b">15 грн/кг</span></td></tr>
+      <tr><td>АКБ ТНЖ малі</td><td>Тягові нікель-залізні, малі</td><td><span data-price="akb_tnz_m">13 грн/кг</span></td></tr>
+      <tr><td>АКБ ТНЖ 4 клеми</td><td>Нікель-залізні з 4 клемами</td><td><span data-price="akb_tnz_k">7 грн/кг</span></td></tr>
     </table>
     <div class="ibox">💡 Також приймаємо <strong>свинець — 63 грн/кг</strong>. Актуальні ціни в <a href="https://t.me/avikom1998" target="_blank" style="color:var(--red);">Telegram @avikom1998</a></div>
 
