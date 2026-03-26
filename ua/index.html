@@ -173,6 +173,85 @@ var TG_TOKEN='8527453061'+':AAGHfFHEn7zOgXI84O3YXM9Iw1fPgPzV1gA';
 function openModal(){var m=document.getElementById('callbackModal');if(m){m.classList.add('active');document.body.style.overflow='hidden';}}
 function closeModal(){var m=document.getElementById('callbackModal');if(m){m.classList.remove('active');document.body.style.overflow='';}setTimeout(function(){var f=document.getElementById('modalForm');var s=document.getElementById('modalSuccess');if(f)f.style.display='';if(s)s.style.display='none';var b=document.getElementById('cb-submit');if(b){b.disabled=false;b.textContent='📞 Жду звонка';}['cb-name','cb-phone','cb-comment'].forEach(function(id){var el=document.getElementById(id);if(el)el.value='';});},300);}
 </script>
+
+  <style>
+    /* ── Мягкий фон в светлой теме ── */
+    body { background: #f2ede8; }
+    section[style*="background:#fff"],
+    section[style*="background: #fff"] { background: #f8f5f1 !important; }
+
+    /* ── Тёмная тема ── */
+    @media (prefers-color-scheme: dark) {
+      body { background: #1a1a1a !important; color: #e0ddd8 !important; }
+
+      header { background: #242424 !important; border-bottom-color: #c0392b !important; }
+      .logo { color: #e05040 !important; }
+      nav a { color: #ccc !important; }
+      .burger span { background: #aaa !important; }
+      .mmenu { background: #2a2a2a !important; }
+      .mmenu a { color: #ddd !important; border-bottom-color: #333 !important; }
+
+      section { background: #1a1a1a !important; }
+      section[style*="background:#f"] { background: #222222 !important; }
+      section[style*="background: #f"] { background: #222222 !important; }
+      section[style*="background:#fff"] { background: #242424 !important; }
+      section[style*="background: #fff"] { background: #242424 !important; }
+      section[style*="background:var(--gray)"] { background: #222222 !important; }
+      #prices { background: #222222 !important; }
+
+      .section-title { color: #f0ece6 !important; }
+      .section-sub { color: #999 !important; }
+      .divider { background: #c0392b !important; }
+
+      /* Таблица цен */
+      .price-table-wrap { background: transparent !important; }
+      .ptable-head { background: #111 !important; }
+      .ptable-row { background: #2a2a2a !important; border-bottom-color: #333 !important; }
+      .ptable-row:hover { background: #333 !important; }
+      .ptable-row span:first-child { color: #ccc !important; }
+      .ptable-row span:last-child { color: #e0ddd8 !important; }
+      .ptable-hot { background: #2e2416 !important; }
+      .ptable-hot span:last-child { color: var(--gold) !important; }
+      .price-col { background: #2a2a2a !important; }
+
+      /* Шаги */
+      .step h3 { color: #f0ece6 !important; }
+      .step p { color: #999 !important; }
+
+      /* Преимущества */
+      .adv-text h3 { color: #f0ece6 !important; }
+      .adv-text p { color: #aaa !important; }
+
+      /* Карточки преимуществ (новый блок) */
+      div[style*="background:#fff;border-radius:10px"] { background: #2a2a2a !important; }
+      div[style*="background:#fff;border-radius:8px"] { background: #2a2a2a !important; }
+
+      /* Галерея */
+      .gallery-item { filter: brightness(0.85); }
+
+      /* Карта */
+      .map-info h3 { color: #f0ece6 !important; }
+      .map-info ul li { color: #ccc !important; }
+
+      /* FAQ */
+      .faq-q { color: #f0ece6 !important; }
+      .faq-a { color: #aaa !important; }
+      .faq-item { border-bottom-color: #333 !important; }
+
+      /* Форма модальная */
+      .modal { background: #2a2a2a !important; }
+      .modal h3 { color: #f0ece6 !important; }
+      .modal p { color: #aaa !important; }
+      .mf label { color: #ccc !important; }
+      .mf input, .mf textarea { background: #333 !important; border-color: #444 !important; color: #eee !important; }
+
+      /* Футер */
+      footer { background: #111 !important; }
+
+      /* Телефоны */
+      a[href^="tel"] { color: #e05040 !important; }
+    }
+  </style>
 </head>
 <body>
 <div class="modal-overlay" id="callbackModal">
@@ -268,7 +347,7 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
     <div class="ptable-row"><span>Кабель в ізоляції</span><span>150–250 грн/кг</span></div>
     <div class="ptable-head"><a href="../latun.html" target="_blank">🔶 Латунь <span style="opacity:0.6;font-size:11px;">детальніше →</span></a></div>
     <div class="ptable-row"><span>Латунь</span><span data-price="latun">255 грн/кг</span></div>
-    <div class="ptable-row"><span>Радіатори</span><span style="display:flex;align-items:center;gap:5px;justify-content:flex-end;"><span data-price="latun">255 грн/кг</span><em style="color:#888;font-size:11px;font-weight:400;">-2%</em></span></div>
+    <div class="ptable-row"><span>Радіатори</span><span data-price="latun">255 грн/кг</span></div>
   </div>
   <div class="price-col">
     <div class="ptable-head"><a href="../nerzhavejka.html" target="_blank">⚙️ Нержавійка <span style="opacity:0.6;font-size:11px;">детальніше →</span></a></div>
@@ -286,11 +365,17 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
     <div class="ptable-row"><span>Свинець</span><span data-price="svinec">63 грн/кг</span></div>
     <div class="ptable-row"><span>Титан</span><span data-price="titan">76 грн/кг</span></div>
     <div class="ptable-head"><a href="../cherniy-lom.html">⚫ Чорний метал <span style="opacity:0.6;font-size:11px;">детальніше →</span></a></div>
-    <div class="ptable-row"><span>Чорний метал (сталь, чавун)</span><span>від 4 грн/кг<em>, залежить від обсягу</em></span></div>
+    <div class="ptable-row"><span>Чорний метал</span><span>від 4 грн/кг+</span></div>
     <div class="ptable-row"><span>Арматура, труби</span><span style="color:var(--gold);font-weight:700;">суттєво дорожче</span></div>
-  </div>
+  
 </div>
-        <div style="font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:4px;">Безкоштовний вивіз</div><div style="font-size:13px;color:#666;line-height:1.5;">при поставці від 1 тонни по Одесі та області</div></div><div style="background:#fff;border-radius:8px;padding:16px 18px;border-left:4px solid var(--red);box-shadow:0 1px 6px rgba(0,0,0,0.06);"><div style="font-size:24px;margin-bottom:8px;">🚗</div><div style="font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:4px;">Організуємо транспорт</div><div style="font-size:13px;color:#666;line-height:1.5;">приїдемо самі за домовленістю</div></div><div style="background:#fff;border-radius:8px;padding:16px 18px;border-left:4px solid var(--red);box-shadow:0 1px 6px rgba(0,0,0,0.06);"><div style="font-size:24px;margin-bottom:8px;">🔬</div><div style="font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:4px;">Спектральний аналіз</div><div style="font-size:13px;color:#666;line-height:1.5;">будь-яких видів брухту — безкоштовно</div></div><div style="background:#fff;border-radius:8px;padding:16px 18px;border-left:4px solid var(--red);box-shadow:0 1px 6px rgba(0,0,0,0.06);"><div style="font-size:24px;margin-bottom:8px;">🎁</div><div style="font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:4px;">Бонуси</div><div style="font-size:13px;color:#666;line-height:1.5;">постійним постачальникам</div></div></div></div><div style="margin-bottom:6px;">Організуємо транспорт за домовленістю</div><div style="margin-bottom:6px;">Проводимо спектральний аналіз будь-яких видів брухту</div><div style="margin-bottom:6px;">Постійним постачальникам — бонуси! 🤫</div></div>
+</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px;margin-bottom:4px;">
+      <div style="background:#fff;border-radius:10px;padding:18px 14px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,0.07);border-top:3px solid var(--red);"><div style="font-size:30px;margin-bottom:10px;">🚛</div><div style="font-family:'Oswald',sans-serif;font-size:14px;font-weight:700;color:#1a1a1a;margin-bottom:5px;">Безкоштовний вивіз</div><div style="font-size:12px;color:#666;line-height:1.4;">від 1 тонни по Одесі</div></div>
+      <div style="background:#fff;border-radius:10px;padding:18px 14px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,0.07);border-top:3px solid var(--red);"><div style="font-size:30px;margin-bottom:10px;">🔬</div><div style="font-family:'Oswald',sans-serif;font-size:14px;font-weight:700;color:#1a1a1a;margin-bottom:5px;">Спектральний аналіз</div><div style="font-size:12px;color:#666;line-height:1.4;">будь-якого брухту — безкоштовно</div></div>
+      <div style="background:#fff;border-radius:10px;padding:18px 14px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,0.07);border-top:3px solid var(--red);"><div style="font-size:30px;margin-bottom:10px;">⚡</div><div style="font-family:'Oswald',sans-serif;font-size:14px;font-weight:700;color:#1a1a1a;margin-bottom:5px;">Оплата одразу</div><div style="font-size:12px;color:#666;line-height:1.4;">готівкою або на картку</div></div>
+      <div style="background:#fff;border-radius:10px;padding:18px 14px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,0.07);border-top:3px solid var(--red);"><div style="font-size:30px;margin-bottom:10px;">🎁</div><div style="font-family:'Oswald',sans-serif;font-size:14px;font-weight:700;color:#1a1a1a;margin-bottom:5px;">Бонуси</div><div style="font-size:12px;color:#666;line-height:1.4;">постійним постачальникам</div></div>
+      </div>
     <div style="text-align:center;margin-top:32px;">
       <div style="font-size:15px;color:#777;margin-bottom:12px;font-weight:700;">Уточнюйте по телефону:</div>
       <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
