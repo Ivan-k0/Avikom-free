@@ -250,6 +250,37 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
 
       /* Телефоны */
       a[href^="tel"] { color: #e05040 !important; }
+
+      /* Карточки преимуществ в тёмной теме */
+      div[style*="border-top:3px solid var(--red)"] {
+        background: #2a2a2a !important;
+      }
+      div[style*="border-top:3px solid var(--red)"] div[style*="font-family"] {
+        color: #f0ece6 !important;
+      }
+      div[style*="border-top:3px solid var(--red)"] div[style*="font-size:12px"] {
+        color: #aaa !important;
+      }
+      /* Price table rows */
+      .ptable-row span:first-child { color: #ccc !important; }
+      .ptable-row span:last-child { color: #e0ddd8 !important; }
+      .ptable-hot span:last-child { color: var(--gold) !important; }
+      /* Section titles and text */
+      .section-title { color: #f0ece6 !important; }
+      .section-sub { color: #aaa !important; }
+      /* Steps */
+      .step h3 { color: #f0ece6 !important; }
+      .step p { color: #999 !important; }
+      /* Advantages */
+      .adv-text h3 { color: #f0ece6 !important; }
+      .adv-text p { color: #aaa !important; }
+      /* FAQ */
+      .faq-q { color: #f0ece6 !important; }
+      .faq-a { color: #bbb !important; }
+      /* Map info */
+      .map-info li { color: #ccc !important; }
+      /* Footer links */
+      .footer-col a, .footer-col p { color: rgba(255,255,255,0.7) !important; }
     }
       .fb{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,0.3);transition:transform 0.2s;border:none;cursor:pointer;}
 .fb:hover{transform:scale(1.1);}
