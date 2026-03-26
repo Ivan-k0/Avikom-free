@@ -251,6 +251,13 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
       /* Телефоны */
       a[href^="tel"] { color: #e05040 !important; }
 
+      /* Hero тёмная тема */
+      .hero { background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.82)),url('../img/sparks.jpg') center/cover no-repeat !important; }
+
+      /* Кнопка Позвонить — всегда читаема */
+      .btn-primary { background: var(--red) !important; color: #fff !important; }
+      a.btn-primary { color: #fff !important; }
+
       /* Карточки преимуществ в тёмной теме */
       div[style*="border-top:3px solid var(--red)"] {
         background: #2a2a2a !important;
