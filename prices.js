@@ -35,7 +35,7 @@ var PRICES = {
 
   // ПРОЧИЕ
   svinec: 63,      // Свинец
-  titan:  76,      // Титан
+  titan:  77,      // Титан
 };
 
 document.addEventListener('DOMContentLoaded', function() {
