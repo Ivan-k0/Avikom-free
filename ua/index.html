@@ -57,9 +57,9 @@ nav a:hover{color:var(--red);}
 .btn-primary{background:var(--red);color:#fff;padding:14px 32px;border-radius:4px;font-weight:700;font-size:16px;display:inline-flex;align-items:center;gap:8px;transition:background 0.2s;}
 .btn-primary:hover{background:#a93226;}
 .btn-secondary{border:2px solid rgba(255,255,255,0.4);color:#fff;padding:12px 28px;border-radius:4px;font-weight:700;font-size:16px;transition:border-color 0.2s;}
-.hero-stats{display:flex;gap:48px;margin-top:48px;flex-wrap:wrap;}
-.hero-stat .num{font-family:'Oswald',sans-serif;font-size:40px;font-weight:700;color:var(--red);line-height:1;}
-.hero-stat .label{font-size:13px;color:rgba(255,255,255,0.6);margin-top:4px;}
+.hero-stats{display:flex;gap:32px;margin-top:48px;flex-wrap:wrap;justify-content:flex-start;align-items:center;}
+.hero-stat .num{font-family:'Oswald',sans-serif;font-size:36px;font-weight:700;color:var(--red);line-height:1;}
+.hero-stat .label{font-size:12px;color:rgba(255,255,255,0.65);margin-top:4px;white-space:nowrap;}
 section{padding:60px 20px;}
 .container{max-width:1100px;margin:0 auto;}
 .section-title{font-family:'Oswald',sans-serif;font-size:clamp(24px,3vw,36px);font-weight:700;margin-bottom:8px;color:#1a1a1a !important;}
@@ -374,6 +374,7 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
       <div class="hero-stat"><div class="num">25+</div><div class="label">Років на ринку</div></div>
       <div class="hero-stat"><div class="num">300+</div><div class="label">Партнерів</div></div>
       <div class="hero-stat"><div class="num">8:30</div><div class="label">Відкриваємось</div></div>
+      <div class="hero-stat"><div class="num">100+</div><div class="label">Ціни від</div></div>
     </div>
   </div>
 </section>
