@@ -306,14 +306,14 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
   </style>
   <style>@media(max-width:600px){.ben-grid{grid-template-columns:repeat(2,1fr)!important;}} .ben-responsive{}
     @media(max-width:480px){
-      .hero-stats{gap:12px 20px;margin-top:28px;}
-      .hero-stat .num{font-size:22px;}
-      .hero-stat .label{font-size:10px;}
+      .hero-stats{gap:8px 14px;margin-top:28px;flex-wrap:nowrap;}
+      .hero-stat .num{font-size:18px;}
+      .hero-stat .label{font-size:9px;}
     }
     @media(max-width:380px){
-      .hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px;}
-      .hero-stat .num{font-size:20px;}
-      .hero-stat .label{font-size:10px;}
+      .hero-stats{gap:6px 10px;margin-top:22px;flex-wrap:nowrap;}
+      .hero-stat .num{font-size:16px;}
+      .hero-stat .label{font-size:8px;}
     }
   </style>
 </head>
@@ -344,7 +344,7 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
       <a href="#advantages">Advantages</a>
       <a href="#map">Address</a>
       <a href="#faq">FAQ</a>
-      <button onclick="openModal()" style="background:transparent;border:2px solid #fff;color:#fff;padding:14px 32px;border-radius:4px;font-weight:700;font-size:16px;cursor:pointer;width:100%;max-width:400px;letter-spacing:0.3px;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">Request a Call</button>
+      <button onclick="openModal()" style="background:#fff;border:2px solid #fff;color:#1a1a1a;padding:14px 32px;border-radius:4px;font-weight:700;font-size:16px;cursor:pointer;width:100%;max-width:400px;letter-spacing:0.3px;transition:all 0.2s;" onmouseover="this.style.background='#e8e8e8';this.style.borderColor='#e8e8e8'" onmouseout="this.style.background='#fff';this.style.borderColor='#fff'">Request a Call</button>
     </nav>
     <div class="lang-switch">
       <a href="../index.html" class="">RU</a><span style="color:#ddd;font-size:10px;">|</span>
@@ -379,13 +379,13 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
     <p class="hero-desc">We buy <a href="med.html" target="_blank" style="color:var(--red);font-weight:700;">copper</a>, <a href="alyuminiy.html" target="_blank" style="color:var(--red);font-weight:700;">aluminium</a>, <a href="latun.html" target="_blank" style="color:var(--red);font-weight:700;">brass</a>, <a href="nerzhavejka.html" target="_blank" style="color:var(--red);font-weight:700;">stainless steel</a> and ferrous scrap at the highest prices.</p>
     <div class="hero-btns">
       <a class="btn-primary" href="tel:+380503179317">📞 Call Now</a>
-      <button onclick="openModal()" style="background:transparent;border:2px solid #fff;color:#fff;padding:14px 32px;border-radius:4px;font-weight:700;font-size:16px;cursor:pointer;width:100%;max-width:400px;letter-spacing:0.3px;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">Request a Call</button>
+      <button onclick="openModal()" style="background:#fff;border:2px solid #fff;color:#1a1a1a;padding:14px 32px;border-radius:4px;font-weight:700;font-size:16px;cursor:pointer;width:100%;max-width:400px;letter-spacing:0.3px;transition:all 0.2s;" onmouseover="this.style.background='#e8e8e8';this.style.borderColor='#e8e8e8'" onmouseout="this.style.background='#fff';this.style.borderColor='#fff'">Request a Call</button>
     </div>
     <div class="hero-stats">
       <div class="hero-stat"><div class="num">25+</div><div class="label">Years in Business</div></div>
       <div class="hero-stat"><div class="num">300+</div><div class="label">Partners</div></div>
       <div class="hero-stat"><div class="num">8:30</div><div class="label">Opens daily</div></div>
-      <div class="hero-stat"><div class="num">100+</div><div class="label">Scrap types</div></div>
+      <div class="hero-stat"><div class="num">100kg+</div><div class="label">prices from</div></div>
     </div>
   </div>
 </section>
@@ -407,7 +407,7 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
     <div class="ptable-row"><span>ZAM alloy</span><span data-price="zam">56 UAH/kg</span><span style="display:inline-block;background:#444;color:#ccc;font-size:10px;font-weight:600;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:middle;letter-spacing:0.3px;">-4%</span></div>
     <div class="ptable-row"><span>Magnesium</span><span data-price="mag">25 UAH/kg</span><span style="display:inline-block;background:#444;color:#ccc;font-size:10px;font-weight:600;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:middle;letter-spacing:0.3px;">-1%</span></div>
     <div class="ptable-head"><a href="../med.html" target="_blank">🟤 Copper <span style="opacity:0.6;font-size:11px;">details →</span></a></div>
-    <div class="ptable-row ptable-hot"><span>Copper</span><span style="color:var(--gold);font-weight:700;"><span data-price="med">460 UAH/kg</span><span style="display:inline-block;background:#444;color:#ccc;font-size:10px;font-weight:600;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:middle;letter-spacing:0.3px;">-0.5%</span></div>
+    <div class="ptable-row ptable-hot"><span>Copper</span><span style="color:var(--gold);font-weight:700;display:flex;align-items:center;gap:6px;"><span data-price="med" style="color:var(--gold);">460 UAH/kg</span><span style="display:inline-block;background:#444;color:#ccc;font-size:10px;font-weight:600;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:middle;letter-spacing:0.3px;">-0.5%</span></div>
     <div class="ptable-row ptable-hot"><span>Copper bright</span><span style="color:var(--gold);font-weight:700;">470 UAH/kg</span><span style="display:inline-block;background:#2d5a2d;color:#7dbd7d;font-size:10px;font-weight:600;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:middle;letter-spacing:0.3px;">0% засор</span></div>
     <div class="ptable-row"><span>Cable (insulated)</span><span>150–250 UAH/kg</span></div>
     <div class="ptable-head"><a href="../latun.html" target="_blank">🔶 Brass <span style="opacity:0.6;font-size:11px;">details →</span></a></div>
