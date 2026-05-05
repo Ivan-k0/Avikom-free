@@ -392,7 +392,8 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
   <div class="container">
     <div class="section-title">Scrap Metal <span>Prices</span></div>
     <div class="divider"></div>
-    <p class="section-sub">Wholesale prices from 24.03.2025. Prices change daily — check Telegram or call us.</p>
+    <p class="section-sub">Wholesale prices from <span id="today-date"></span>. Prices change daily — check Telegram or call us.</p>
+    <script>var d=new Date();document.getElementById("today-date").textContent=("0"+d.getDate()).slice(-2)+"."+("0"+(d.getMonth()+1)).slice(-2)+"."+d.getFullYear();</script>
     <a class="tg-btn" href="https://t.me/avikom1998" target="_blank"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg> Live Prices on Telegram</a>
     <div class="price-table-wrap">
   <div class="price-col">
