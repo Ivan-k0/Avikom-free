@@ -16,7 +16,7 @@
   <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{--red:#c0392b;--dark:#1a1a1a;--gray:#f5f5f5;--gold:#e67e22;--text:#333;}
-html{scroll-behavior:smooth;-webkit-overflow-scrolling:touch;}body{-webkit-text-size-adjust:100%;}
+html{scroll-behavior:smooth;-webkit-overflow-scrolling:touch;overflow-x:hidden;}body{-webkit-text-size-adjust:100%;overflow-x:hidden;}
 body{font-family:'PT Sans',sans-serif;color:var(--text);background:#f8f6f3;}
 a{text-decoration:none;color:inherit;}
 header{background:#fff;border-bottom:2px solid var(--red);position:sticky;top:0;z-index:200;box-shadow:0 1px 6px rgba(0,0,0,0.08);}
@@ -36,8 +36,8 @@ nav a:hover{color:var(--red);}
 .mmenu a{display:block;padding:12px 24px;font-size:14px;font-weight:700;color:var(--dark);border-bottom:1px solid #f2f2f2;text-transform:uppercase;}
 .mmenu a:hover{color:var(--red);}
 .m-acts{display:flex;gap:8px;padding:12px 16px 0;flex-wrap:wrap;}
-.m-call{flex:1;background:#1a1a1a;color:#fff;text-align:center;padding:11px;border-radius:6px;font-weight:700;font-size:13px;min-width:140px;}
-.m-cb{flex:1;background:var(--red);color:#fff;text-align:center;padding:11px;border-radius:6px;font-weight:700;font-size:13px;cursor:pointer;border:none;min-width:140px;}
+.m-call{flex:1;background:#1a1a1a;color:#fff;text-align:center;padding:11px;border-radius:6px;font-weight:700;font-size:13px;min-width:0;}
+.m-cb{flex:1;background:var(--red);color:#fff;text-align:center;padding:11px;border-radius:6px;font-weight:700;font-size:13px;cursor:pointer;border:none;min-width:0;}
 .cat-hero{color:#fff;padding:52px 20px 44px;background-size:cover;background-position:center;}
 .cat-hero h1{font-family:'Oswald',sans-serif;font-size:clamp(26px,4vw,44px);font-weight:700;line-height:1.1;margin-bottom:12px;}
 .cat-hero h1 em{color:var(--gold);font-style:normal;}
@@ -73,7 +73,7 @@ nav a:hover{color:var(--red);}
 .seo-body ul{list-style:none;padding:0;margin-bottom:16px;}
 .seo-body ul li{font-size:15px;color:#444;padding:8px 0;border-bottom:1px solid #f0f0f0;display:flex;gap:8px;align-items:flex-start;}
 .seo-body ul li::before{content:'→';color:var(--red);flex-shrink:0;margin-top:2px;}
-.seo-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;}
+.seo-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:16px 0;}.seo-table{width:100%;border-collapse:collapse;font-size:14px;min-width:320px;}
 .seo-table th{background:var(--dark);color:#fff;padding:10px 12px;text-align:left;font-family:'Oswald',sans-serif;}
 .seo-table td{padding:10px 12px;border-bottom:1px solid #eee;}
 .seo-table td:last-child{font-weight:700;color:var(--red);}
@@ -290,7 +290,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
     <p>Принимаем алюминий от частных лиц и предприятий по всей Одессе: <strong>Суворовский, Малиновский, Киевский, Приморский районы</strong>. При объёме от 1 тонны — бесплатный вывоз. Работаем также с Черноморском, Южным, Беляевкой, Овидиополем.</p>
 
     <h2>Все виды алюминия — что принимаем и цены</h2>
-    <table class="seo-table">
+    <div class="seo-table-wrap"><table class="seo-table">
       <tr><th>Вид лома</th><th>Описание</th><th>Цена</th></tr>
       <tr><td>Алюминий первичный</td><td>Чистый сплав, минимальный засор. Самый дорогой вид.</td><td><span data-price="aly_perv">123 грн/кг</span></td></tr>
       <tr><td>Алюминий профиль</td><td>Оконные рамы, двери, строительные профили, жалюзи</td><td><span data-price="aly_prof">106 грн/кг</span></td></tr>
@@ -302,7 +302,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
       <tr><td>Магний</td><td>Магниевые сплавы</td><td><span data-price="mag">25 грн/кг</span></td></tr>
       <tr><td>Алюминиевая стружка</td><td>Производственные отходы, токарная стружка</td><td>по договорённости</td></tr>
       <tr><td>Алюминиевый кабель</td><td>Провода и кабели из алюминия</td><td>по договорённости</td></tr>
-    </table>
+    </table></div>
     <div class="ibox">⚙️ Не уверены в виде алюминия? Наш специалист определит сорт и цену прямо при вас — бесплатно.</div>
 
     <h2>Сдать алюминиевые окна и профиль в Одессе</h2>
