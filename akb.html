@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <meta name="color-scheme" content="light"/>
   <title>Сдать, продать аккумуляторы в Одессе — цена за кг 2026 | Авто-Виком</title>
   <meta name="description" content="Куда сдать аккумулятор в Одессе? Авто-Виком: белые АКБ — 24 грн/кг, гелевые — 17, ТНЖ от 7 грн/кг. Любое состояние. Звоните: 050 317 93 17."/>
     <link rel="icon" type="image/x-icon" href="favicon.ico"/>
@@ -44,7 +43,7 @@ nav a:hover{color:var(--red);}
 .cat-hero h1 em{color:var(--gold);font-style:normal;}
 .cat-hero p{color:rgba(255,255,255,0.85);font-size:15px;max-width:560px;line-height:1.6;margin-bottom:16px;}
 .price-badge{display:inline-block;background:var(--red);color:#fff;font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;padding:10px 24px;border-radius:6px;margin-bottom:18px;}
-.hero-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap;}@media(max-width:680px){.hero-btns{flex-direction:column;}.hero-btns a,.hero-btns button{width:100%;justify-content:center;text-align:center;}}
 .btn-primary{background:var(--red);color:#fff;padding:12px 28px;border-radius:4px;font-weight:700;font-size:15px;display:inline-flex;align-items:center;gap:8px;}
 .btn-tg{background:#229ED9;color:#fff;padding:12px 22px;border-radius:4px;font-weight:700;font-size:15px;display:inline-flex;align-items:center;gap:8px;}
 .breadcrumb{background:#fff;border-bottom:1px solid #eee;padding:10px 20px;font-size:13px;color:#888;max-width:1100px;margin:0 auto;}
@@ -104,8 +103,8 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
 .footer-col a,.footer-col p{font-size:13px;line-height:2;display:block;color:rgba(255,255,255,0.6);}
 .footer-col a:hover{color:#fff;}
 .footer-bot{max-width:1100px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.1);padding-top:16px;font-size:12px;color:rgba(255,255,255,0.35);}
-.float-btns{position:fixed;bottom:90px;right:20px;display:flex;flex-direction:column;gap:10px;z-index:999;}@media(max-width:600px){.float-btns{bottom:80px;right:14px;}}
-.fb{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,0.25);transition:transform 0.2s;}
+.float-btns{position:fixed;bottom:90px;right:20px;display:flex;flex-direction:column;gap:10px;z-index:999;}@media(max-width:600px){.float-btns{bottom:80px;right:20px;}}
+.fb{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,0.25);transition:transform 0.2s;}
 .fb:hover{transform:scale(1.1);}
 .fb-evg{background:#e67e22;color:#fff;animation:po 3s infinite;will-change:transform,opacity;}
 @keyframes po{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.85;transform:scale(0.97);}}
@@ -125,10 +124,93 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
 .ms-ok{text-align:center;padding:20px 0 8px;display:none;}
 .ms-ok .ck{font-size:48px;}
 .ms-ok h4{font-family:'Oswald',sans-serif;font-size:20px;margin-top:8px;}
-@media(max-width:900px){.cat-body{grid-template-columns:1fr;}.cat-sidebar{order:-1;}.sform{position:static;}.steps-row{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:900px){.cat-body{grid-template-columns:1fr;}.cat-sidebar{order:2;}.sform{position:static;}.steps-row{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:680px){nav,.btn-hdr{display:none;}.burger{display:flex;}.cat-hero{padding:36px 16px 32px;}.steps-row{grid-template-columns:1fr 1fr;}}
 </style>
   <script src="prices.js" defer></script>
+<style>
+    /* ── Тёмная тема каталога ── */
+    @media (prefers-color-scheme: dark) {
+      body { background: #1a1a1a !important; color: #e0ddd8 !important; }
+
+      header { background: #242424 !important; border-bottom-color: #c0392b !important; }
+      .logo { color: #e05040 !important; }
+      nav a { color: #ccc !important; }
+      .burger span { background: #aaa !important; }
+      .mmenu { background: #2a2a2a !important; }
+      .mmenu a { color: #ddd !important; border-bottom-color: #333 !important; }
+
+      /* Хлебные крошки */
+      .breadcrumb { background: #242424 !important; border-bottom-color: #333 !important; color: #888 !important; }
+      .breadcrumb a { color: #e05040 !important; }
+
+      /* Cat body */
+      .cat-body { background: #1a1a1a !important; }
+      .cat-main { background: #1a1a1a !important; }
+
+      /* Блок типов */
+      .types-box { background: #242424 !important; border-color: #333 !important; }
+      .types-box h3 { color: #f0ece6 !important; }
+      .types-box ul li { border-bottom-color: #333 !important; color: #ccc !important; }
+      .types-box ul li span:first-child { color: #ccc !important; }
+
+      /* SEO текст */
+      .seo-body h2 { color: #f0ece6 !important; }
+      .seo-body h3 { color: #f0ece6 !important; }
+      .seo-body p { color: #bbb !important; }
+      .seo-body ul li { color: #bbb !important; border-bottom-color: #333 !important; }
+      .seo-body ul li::before { color: #e05040 !important; }
+      .ibox { background: #2a2a2a !important; color: #ccc !important; }
+
+      /* Таблица */
+      .seo-table th { background: #111 !important; }
+      .seo-table td { border-bottom-color: #333 !important; color: #ccc !important; }
+      .seo-table tr:hover td { background: #2a2a2a !important; }
+
+      /* Шаги */
+      .steps-row { background: transparent !important; }
+      .step-c { background: #242424 !important; }
+      .step-c h4 { color: #f0ece6 !important; }
+      .step-c p { color: #999 !important; }
+
+      /* FAQ */
+      .faq-item { border-bottom-color: #333 !important; }
+      .faq-q { color: #f0ece6 !important; background: transparent !important; }
+      .faq-a { color: #bbb !important; }
+
+      /* Другие металлы */
+      .other-metals a { background: #2a2a2a !important; border-color: #444 !important; color: #ddd !important; }
+
+      /* Sidebar форма */
+      .sform { background: #242424 !important; box-shadow: none !important; }
+      .sform h3 { color: #f0ece6 !important; }
+      .sform p { color: #999 !important; }
+      .sf input, .sf textarea { background: #333 !important; border-color: #444 !important; color: #eee !important; }
+      .sf input::placeholder, .sf textarea::placeholder { color: #777 !important; }
+
+      /* Модальное окно */
+      .modal { background: #2a2a2a !important; }
+      .modal h3 { color: #f0ece6 !important; }
+      .modal p { color: #aaa !important; }
+      .mf label { color: #ccc !important; }
+      .mf input, .mf textarea { background: #333 !important; border-color: #444 !important; color: #eee !important; }
+
+      /* CTA bar */
+      .cta-bar { background: #111 !important; }
+
+      /* Футер */
+      footer { background: #111 !important; }
+      .footer-col a, .footer-col p { color: rgba(255,255,255,0.7) !important; }
+      .footer-col h4 { color: #fff !important; }
+
+      /* Телефоны */
+      a[href^="tel"] { color: #e05040 !important; }
+
+      /* Кнопки */
+      .btn-primary { background: var(--red) !important; color: #fff !important; }
+      a.btn-primary { color: #fff !important; }
+    }
+  </style>
 </head>
 <body>
 <div class="modal-overlay" id="cbModal">
@@ -188,10 +270,10 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
     <h1>Сдать и продать <em>аккумуляторы</em> в Одессе — цена 2026</h1>
     <div class="price-badge">7–24 грн/кг</div>
     <p>Приём в Одессе с 1998 года · ул. Олега Андрійця 9а · Пн–Пт 8:30–17:00</p>
-    <div class="hero-btns">
-      <a class="btn-primary" href="tel:+380503179317">📞 050 317 93 17</a>
-      <a class="btn-tg" href="https://t.me/avikom1998" target="_blank">Telegram</a>
-      <button class="btn-primary" onclick="openModal()" style="background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.4);">Перезвонить мне</button>
+        <div class="hero-btns">
+      <a class="btn-primary" href="tel:+380503179317">Позвонить</a>
+      <a class="btn-tg" href="https://t.me/avikom1998" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg> Telegram</a>
+      <button class="btn-primary" onclick="openModal()" style="background:transparent;border:2px solid rgba(255,255,255,0.6);">Перезвонить</button>
     </div>
   </div>
 </section>
