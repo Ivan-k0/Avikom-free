@@ -108,7 +108,6 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
 .fb{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,0.25);transition:transform 0.2s;}
 .fb:hover{transform:scale(1.1);}
 .fb-evg{background:#e67e22;color:#fff;animation:po 3s infinite;will-change:transform,opacity;}
-.fb-tg{background:#229ED9;color:#fff;will-change:transform;}
 @keyframes po{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.85;transform:scale(0.97);}}
 @keyframes pr{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.85;transform:scale(0.97);}}
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:1000;align-items:center;justify-content:center;}
@@ -276,8 +275,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
   <div class="footer-bot">© 2026 ПП Авто-Виком. Приём металлолома в Одессе с 1998 года.</div>
 </footer>
 <div class="float-btns">
-  <a class="fb fb-evg" href="tel:+380937277912" title="Евгений 093 727 79 12">📞</a>
-  <a class="fb fb-tg" href="https://t.me/avikom1998" target="_blank" title="Telegram"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg></a>
+  <a class="fb fb-evg" href="tel:+380503179317" title="Иван 050 317 93 17">📞</a>
 </div>
 <script>
 function openModal(){var m=document.getElementById('cbModal');if(m){m.classList.add('active');document.body.style.overflow='hidden';}}
@@ -298,5 +296,6 @@ function closeMenu(){document.getElementById('burger').classList.remove('open');
 document.addEventListener('click',function(e){var h=document.querySelector('header');if(h&&!h.contains(e.target))closeMenu();});
 function toggleFaq(btn){var item=btn.parentElement,isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');});if(!isOpen)item.classList.add('open');}
 </script>
+<script src="https://app-staging.noosphere.inc/widget.js" data-agent="metal-avikom-com-ua-ddabd498"></script>
 </body>
 </html>
