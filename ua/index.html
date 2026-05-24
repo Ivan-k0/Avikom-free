@@ -600,6 +600,7 @@ function toggleMenu(){var b=document.getElementById('burger'),m=document.getElem
 function closeMenu(){document.getElementById('burger').classList.remove('open');document.getElementById('mobileMenu').classList.remove('open');}
 document.addEventListener('click',function(e){var h=document.querySelector('header');if(h&&!h.contains(e.target))closeMenu();});
 function toggleFaq(btn){var item=btn.parentElement,isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');});if(!isOpen)item.classList.add('open');}
+</script>
 <script src="https://app-staging.noosphere.inc/widget.js" data-agent="metal-avikom-com-ua-ddabd498"></script>
 </body>
 </html>
