@@ -17,7 +17,7 @@
   <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{--red:#c0392b;--dark:#1a1a1a;--gray:#f5f5f5;--gold:#e67e22;--text:#333;}
-html{scroll-behavior:smooth;-webkit-overflow-scrolling:touch;overflow-x:hidden;}body{-webkit-text-size-adjust:100%;overflow-x:hidden;}
+html{scroll-behavior:smooth;-webkit-overflow-scrolling:touch;overflow-x:hidden;max-width:100%;}body{-webkit-text-size-adjust:100%;max-width:100%;word-wrap:break-word;}
 body{font-family:'PT Sans',sans-serif;color:var(--text);background:#f8f6f3;}
 a{text-decoration:none;color:inherit;}
 header{background:#fff;border-bottom:2px solid var(--red);position:sticky;top:0;z-index:200;box-shadow:0 1px 6px rgba(0,0,0,0.08);}
@@ -123,7 +123,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
 .ms-ok .ck{font-size:48px;}
 .ms-ok h4{font-family:'Oswald',sans-serif;font-size:20px;margin-top:8px;}
 @media(max-width:900px){.cat-body{grid-template-columns:1fr;}.cat-sidebar{order:2;}.sform{position:static;}.steps-row{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:680px){nav,.btn-hdr{display:none;}.burger{display:flex;}.cat-hero{padding:36px 16px 32px;}.steps-row{grid-template-columns:1fr 1fr;}}
+@media(max-width:680px){nav,.btn-hdr{display:none;}.burger{display:flex;}.cat-hero{padding:36px 16px 32px;}.steps-row{grid-template-columns:1fr 1fr;}.seo-body{overflow-wrap:break-word;word-break:break-word;}.seo-body p,.seo-body ul li{overflow-wrap:break-word;}}
   </style>
   <script src="../prices.js" defer></script>
 <style>
