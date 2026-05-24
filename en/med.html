@@ -17,7 +17,7 @@
   <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{--red:#c0392b;--dark:#1a1a1a;--gray:#f5f5f5;--gold:#e67e22;--text:#333;}
-html{scroll-behavior:smooth;-webkit-overflow-scrolling:touch;}body{-webkit-text-size-adjust:100%;}
+html{scroll-behavior:smooth;-webkit-overflow-scrolling:touch;overflow-x:hidden;}body{-webkit-text-size-adjust:100%;overflow-x:hidden;}
 body{font-family:'PT Sans',sans-serif;color:var(--text);background:#f8f6f3;}
 a{text-decoration:none;color:inherit;}
 header{background:#fff;border-bottom:2px solid var(--red);position:sticky;top:0;z-index:200;box-shadow:0 1px 6px rgba(0,0,0,0.08);}
@@ -37,8 +37,8 @@ nav a:hover{color:var(--red);}
 .mmenu a{display:block;padding:12px 24px;font-size:14px;font-weight:700;color:var(--dark);border-bottom:1px solid #f2f2f2;text-transform:uppercase;}
 .mmenu a:hover{color:var(--red);}
 .m-acts{display:flex;gap:8px;padding:12px 16px 0;flex-wrap:wrap;}
-.m-call{flex:1;background:#1a1a1a;color:#fff;text-align:center;padding:11px;border-radius:6px;font-weight:700;font-size:13px;min-width:140px;}
-.m-cb{flex:1;background:var(--red);color:#fff;text-align:center;padding:11px;border-radius:6px;font-weight:700;font-size:13px;cursor:pointer;border:none;min-width:140px;}
+.m-call{flex:1;background:#1a1a1a;color:#fff;text-align:center;padding:11px;border-radius:6px;font-weight:700;font-size:13px;min-width:0;}
+.m-cb{flex:1;background:var(--red);color:#fff;text-align:center;padding:11px;border-radius:6px;font-weight:700;font-size:13px;cursor:pointer;border:none;min-width:0;}
 .cat-hero{color:#fff;padding:52px 20px 44px;background-size:cover;background-position:center;}
 .cat-hero h1{font-family:'Oswald',sans-serif;font-size:clamp(26px,4vw,44px);font-weight:700;line-height:1.1;margin-bottom:12px;}
 .cat-hero h1 em{color:var(--gold);font-style:normal;}
@@ -72,7 +72,7 @@ nav a:hover{color:var(--red);}
 .seo-body ul{list-style:none;padding:0;margin-bottom:16px;}
 .seo-body ul li{font-size:15px;color:#444;padding:8px 0;border-bottom:1px solid #f0f0f0;display:flex;gap:8px;align-items:flex-start;}
 .seo-body ul li::before{content:'→';color:var(--red);flex-shrink:0;margin-top:2px;}
-.seo-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;}
+.seo-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:16px 0;}.seo-table{width:100%;border-collapse:collapse;font-size:14px;min-width:320px;}
 .seo-table th{background:var(--dark);color:#fff;padding:10px 12px;text-align:left;font-family:'Oswald',sans-serif;}
 .seo-table td{padding:10px 12px;border-bottom:1px solid #eee;}
 .seo-table td:last-child{font-weight:700;color:var(--red);}
@@ -294,7 +294,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
       <p>Residents and businesses across Odessa search for <em>where to sell copper for the best price</em>, <em>copper cable buyer in Odessa</em>, or <em>scrap copper collection point nearby</em>. Avto-Vikom is your answer. We operate in Suvorovsky, Malinovsky, Kyivsky and Primorsky districts, and accept scrap from the whole region: Chornomorsk, Yuzhne, Bilyaivka, Ovidiopol.</p>
 
       <h2>Types of copper we accept</h2>
-      <table class="seo-table">
+      <div class="seo-table-wrap"><table class="seo-table">
         <tr><th>Type</th><th>Description</th><th>Price</th></tr>
         <tr><td>Bright copper (Millberry)</td><td>Clean wire without insulation or oxidation. Bright orange shine. Top grade.</td><td><span data-price="med_blesk">500 UAH/kg</span></td></tr>
         <tr><td>Copper mix</td><td>Oxidised wire, items with solder, fittings, plumbing fixtures</td><td><span data-price-mix="med">490 UAH/kg</span></td></tr>
@@ -304,7 +304,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
         <tr><td>Copper pipes</td><td>Water, gas, heat exchanger pipes</td><td><span data-price="med">490 UAH/kg</span></td></tr>
         <tr><td>Burnt wires</td><td>Wires after insulation burning</td><td>below market</td></tr>
         <tr><td>Motor windings</td><td>Copper windings from electric motors and transformers</td><td>by negotiation</td></tr>
-      </table>
+      </table></div>
       <div class="ibox">💡 Not sure what grade you have? Bring it in — we'll analyse it free with a <strong>spectral analyser</strong> on the spot in 30 seconds.</div>
 
       <h2>Where copper scrap comes from</h2>
