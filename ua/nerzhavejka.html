@@ -103,7 +103,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
 .footer-col a,.footer-col p{font-size:13px;line-height:2;display:block;color:rgba(255,255,255,0.6);}
 .footer-col a:hover{color:#fff;}
 .footer-bot{max-width:1100px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.1);padding-top:16px;font-size:12px;color:rgba(255,255,255,0.35);}
-.float-btns{position:fixed;bottom:90px;right:20px;display:flex;flex-direction:column;gap:10px;z-index:999;}@media(max-width:600px){.float-btns{bottom:80px;right:20px;}}
+.float-btns{position:fixed;bottom:24px;right:80px;display:flex;flex-direction:column;gap:10px;z-index:999;}
 .fb{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,0.25);transition:transform 0.2s;}
 .fb:hover{transform:scale(1.1);}
 .fb-evg{background:#e67e22;color:#fff;animation:po 3s infinite;will-change:transform,opacity;}
@@ -236,7 +236,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
       <a href="/#gallery">Фото</a>
       <a href="/#map">Адреса</a>
       <a href="/#faq">FAQ</a>
-      <button class="btn-hdr" onclick="openModal()">Передзвонити</button>
+      <button class="btn-hdr" onclick="openModal()">Зворотній дзвінок</button>
     </nav>
     <div style="display:flex;align-items:center;gap:4px;font-size:11px;font-weight:700;">
       <a href="../med.html" style="">RU</a><span style="color:#ddd;">|</span>
@@ -258,7 +258,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
     <div class="m-acts">
       <a class="m-call" href="tel:+380503179317">📞 050 317 93 17</a>
       <a class="m-call" href="tel:+380937277912" style="background:#e67e22;">📞 093 727 79 12</a>
-      <button class="m-cb" onclick="closeMenu();openModal()">Передзвонити</button>
+      <button class="m-cb" onclick="closeMenu();openModal()">Зворотній дзвінок</button>
     </div>
   </div>
 </header>
@@ -273,7 +273,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
         <div class="hero-btns">
       <a class="btn-primary" href="tel:+380503179317">Зателефонувати</a>
       <a class="btn-tg" href="https://t.me/avikom1998" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg> Telegram</a>
-      <button class="btn-primary" onclick="openModal()" style="background:transparent;border:2px solid rgba(255,255,255,0.6);">Передзвонити</button>
+      <button class="btn-primary" onclick="openModal()" style="background:transparent;border:2px solid rgba(255,255,255,0.6);">Зворотній дзвінок</button>
     </div>
   </div>
 </section>
@@ -352,25 +352,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
 <div class="float-btns">
   <a class="fb fb-evg" href="tel:+380503179317" title="Иван 050 317 93 17">📞</a>
 </div>
-<script>
-function openModal(){var m=document.getElementById('cbModal');if(m){m.classList.add('active');document.body.style.overflow='hidden';}}
-function closeModal(){var m=document.getElementById('cbModal');if(m){m.classList.remove('active');document.body.style.overflow='';}setTimeout(function(){var f=document.getElementById('mForm');var s=document.getElementById('mOk');if(f)f.style.display='';if(s)s.style.display='none';var b=document.getElementById('ms-btn');if(b){b.disabled=false;b.textContent='📞 Жду звонка';}['cb-n','cb-p','cb-c'].forEach(function(id){var el=document.getElementById(id);if(el)el.value='';});},300);}
-function sendModal(){var n=document.getElementById('cb-n').value.trim();var p=document.getElementById('cb-p').value.trim();var c=document.getElementById('cb-c').value.trim();if(!p){document.getElementById('cb-p').style.borderColor='#c0392b';document.getElementById('cb-p').focus();return;}var btn=document.getElementById('ms-btn');btn.disabled=true;btn.textContent='Отправляем...';var now=new Date().toLocaleString('ru-UA',{timeZone:'Europe/Kiev'});var tk='8527453061'+':'+'AAGHfFHEn7zOgXI84O3YXM9Iw1fPgPzV1gA';var txt='Заявка: Перезвонить
-Имя: '+(n||'-')+'
-Тел: '+p+'
-Комм: '+(c||'-')+'
-Время: '+now;var xhr=new XMLHttpRequest();xhr.open('POST','https://api.telegram.org/bot'+tk+'/sendMessage',true);xhr.setRequestHeader('Content-Type','application/json');xhr.onload=function(){try{var d=JSON.parse(xhr.responseText);if(d.ok){document.getElementById('mForm').style.display='none';document.getElementById('mOk').style.display='block';}else{btn.disabled=false;btn.textContent='📞 Жду звонка';}}catch(e){btn.disabled=false;btn.textContent='📞 Жду звонка';}};xhr.onerror=function(){btn.disabled=false;btn.textContent='📞 Жду звонка';};xhr.send(JSON.stringify({chat_id:40272357,text:txt}));}
-function sendCatForm(metal){var n=document.getElementById('sf-n').value.trim();var p=document.getElementById('sf-p').value.trim();var w=document.getElementById('sf-w').value.trim();var c=document.getElementById('sf-c').value.trim();if(!p){document.getElementById('sf-p').style.borderColor='#c0392b';document.getElementById('sf-p').focus();return;}var btn=document.getElementById('sf-btn');btn.disabled=true;btn.textContent='Отправляем...';var now=new Date().toLocaleString('ru-UA',{timeZone:'Europe/Kiev'});var tk='8527453061'+':'+'AAGHfFHEn7zOgXI84O3YXM9Iw1fPgPzV1gA';var txt='Заявка: '+metal+'
-Имя: '+(n||'-')+'
-Тел: '+p+'
-Объём: '+(w||'-')+' кг
-Комм: '+(c||'-')+'
-Время: '+now;var xhr=new XMLHttpRequest();xhr.open('POST','https://api.telegram.org/bot'+tk+'/sendMessage',true);xhr.setRequestHeader('Content-Type','application/json');xhr.onload=function(){try{var d=JSON.parse(xhr.responseText);if(d.ok){document.getElementById('sf-form').style.display='none';document.getElementById('sf-ok').style.display='block';}else{btn.disabled=false;btn.textContent='📞 Перезвоните мне';}}catch(e){btn.disabled=false;btn.textContent='📞 Перезвоните мне';}};xhr.onerror=function(){btn.disabled=false;btn.textContent='📞 Перезвоните мне';};xhr.send(JSON.stringify({chat_id:40272357,text:txt}));}
-function toggleMenu(){var b=document.getElementById('burger'),m=document.getElementById('mmenu');b.classList.toggle('open');m.classList.toggle('open');}
-function closeMenu(){document.getElementById('burger').classList.remove('open');document.getElementById('mmenu').classList.remove('open');}
-document.addEventListener('click',function(e){var h=document.querySelector('header');if(h&&!h.contains(e.target))closeMenu();});
-window.toggleFaq=function(btn){var item=btn.parentElement;if(!item)return;var isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');});if(!isOpen){item.classList.add('open');}}
-</script>
+<script>function openModal(){var m=document.getElementById('cbModal');if(m){m.classList.add('active');document.body.style.overflow='hidden';}}function closeModal(){var m=document.getElementById('cbModal');if(m){m.classList.remove('active');document.body.style.overflow='';}setTimeout(function(){var f=document.getElementById('mForm');var s=document.getElementById('mOk');if(f)f.style.display='';if(s)s.style.display='none';var b=document.getElementById('ms-btn');if(b){b.disabled=false;b.textContent='Чекаю дзвінка';}['cb-n','cb-p','cb-c'].forEach(function(id){var el=document.getElementById(id);if(el)el.value='';});},300);}function sendModal(){var n=document.getElementById('cb-n').value.trim();var p=document.getElementById('cb-p').value.trim();var c=document.getElementById('cb-c').value.trim();if(!p){document.getElementById('cb-p').style.borderColor='#c0392b';document.getElementById('cb-p').focus();return;}var btn=document.getElementById('ms-btn');btn.disabled=true;btn.textContent='Надсилаємо...';var now=new Date().toLocaleString('ru-UA',{timeZone:'Europe/Kiev'});var tk='8527453061'+':'+'AAGHfFHEn7zOgXI84O3YXM9Iw1fPgPzV1gA';var txt='Заявка: Передзвонити\nІм-я: '+(n||'-')+'\nТел: '+p+'\nКоментар: '+(c||'-')+'\nЧас: '+now;var xhr=new XMLHttpRequest();xhr.open('POST','https://api.telegram.org/bot'+tk+'/sendMessage',true);xhr.setRequestHeader('Content-Type','application/json');xhr.onload=function(){try{var d=JSON.parse(xhr.responseText);if(d.ok){document.getElementById('mForm').style.display='none';document.getElementById('mOk').style.display='block';}else{btn.disabled=false;btn.textContent='Чекаю дзвінка';}}catch(e){btn.disabled=false;btn.textContent='Чекаю дзвінка';}};xhr.onerror=function(){btn.disabled=false;btn.textContent='Чекаю дзвінка';};xhr.send(JSON.stringify({chat_id:40272357,text:txt}));}function sendCatForm(metal){var n=document.getElementById('sf-n').value.trim();var p=document.getElementById('sf-p').value.trim();var w=document.getElementById('sf-w').value.trim();var c=document.getElementById('sf-c').value.trim();if(!p){document.getElementById('sf-p').style.borderColor='#c0392b';document.getElementById('sf-p').focus();return;}var btn=document.getElementById('sf-btn');btn.disabled=true;btn.textContent='Надсилаємо...';var now=new Date().toLocaleString('ru-UA',{timeZone:'Europe/Kiev'});var tk='8527453061'+':'+'AAGHfFHEn7zOgXI84O3YXM9Iw1fPgPzV1gA';var txt='Заявка: '+metal+'\nІм-я: '+(n||'-')+'\nТел: '+p+'\nОбсяг: '+(w||'-')+' кг'+'\nКоментар: '+(c||'-')+'\nЧас: '+now;var xhr=new XMLHttpRequest();xhr.open('POST','https://api.telegram.org/bot'+tk+'/sendMessage',true);xhr.setRequestHeader('Content-Type','application/json');xhr.onload=function(){try{var d=JSON.parse(xhr.responseText);if(d.ok){document.getElementById('sf-form').style.display='none';document.getElementById('sf-ok').style.display='block';}else{btn.disabled=false;btn.textContent='Передзвоніть мені';}}catch(e){btn.disabled=false;btn.textContent='Передзвоніть мені';}};xhr.onerror=function(){btn.disabled=false;btn.textContent='Передзвоніть мені';};xhr.send(JSON.stringify({chat_id:40272357,text:txt}));}function toggleMenu(){var b=document.getElementById('burger'),m=document.getElementById('mmenu');b.classList.toggle('open');m.classList.toggle('open');}function closeMenu(){document.getElementById('burger').classList.remove('open');document.getElementById('mmenu').classList.remove('open');}document.addEventListener('click',function(e){var h=document.querySelector('header');if(h&&!h.contains(e.target))closeMenu();});window.toggleFaq=function(btn){var item=btn.parentElement;if(!item)return;var isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');});if(!isOpen){item.classList.add('open');}}</script>
 <script src="https://app-staging.noosphere.inc/widget.js" data-agent="metal-avikom-com-ua-ddabd498"></script>
 </body>
 </html>
