@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="color-scheme" content="light">
+  <meta name="color-scheme" content="dark">
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Scrap Metal Buying in Odessa — Prices COSMOS | Avto-Vikom</title>
   <meta name="description" content="Buying copper, aluminium, brass, stainless steel and batteries in Odessa. Best prices, honest weighing, instant payment. Call: +380 50 317 93 17."/>
@@ -22,7 +22,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{--red:#c0392b;--dark:#1a1a1a;--gray:#f5f5f5;--text:#333;--border:#ddd;--gold:#e67e22;}
 html{scroll-behavior:smooth;-webkit-overflow-scrolling:touch;}body{-webkit-text-size-adjust:100%;}
-body{font-family:'PT Sans',sans-serif;color:#333 !important;font-size:16px;line-height:1.6;color-scheme:light;}
+body{font-family:'PT Sans',sans-serif;color:#333 !important;font-size:16px;line-height:1.6;color-scheme:dark;}
 a{text-decoration:none;color:inherit;}
 header{background:#f8f6f3;border-bottom:2px solid var(--red);position:sticky;top:0;z-index:200;box-shadow:0 1px 6px rgba(0,0,0,0.08);}
 .header-inner{max-width:1100px;margin:0 auto;padding:0 20px;height:46px;display:flex;align-items:center;justify-content:space-between;gap:8px;}
@@ -157,21 +157,6 @@ footer{background:var(--dark);color:rgba(255,255,255,0.7);padding:48px 20px 24px
   section{padding:44px 16px;}
 }
 
-    /* Force light mode - prevent Noir/dark mode overrides */
-    @media (prefers-color-scheme: dark) {
-      body { background:#f8f6f3 !important; color:#333 !important; }
-      .step h3 { color:#1a1a1a !important; }
-      .step p { color:#444 !important; }
-      .adv-text h3 { color:#1a1a1a !important; }
-      .adv-text p { color:#444 !important; }
-      .section-title { color:#1a1a1a !important; }
-      .section-sub { color:#555 !important; }
-      .ptable-row span:first-child { color:#333 !important; }
-      .faq-q { color:#1a1a1a !important; }
-      .faq-a { color:#444 !important; }
-      .map-info ul li { color:#333 !important; }
-      header { background:#fff !important; }
-    }
   </style>
 <script>
 var TG_TOKEN='8527453061'+':AAGHfFHEn7zOgXI84O3YXM9Iw1fPgPzV1gA';
@@ -185,16 +170,15 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
     section[style*="background:#fff"],
     section[style*="background: #fff"] { background: #f8f5f1 !important; }
 
-    /* ── Тёмная тема ── */
-    @media (prefers-color-scheme: dark) {
+    /* ── Тёмная тема (теперь постоянная, для всех посетителей) ── */
       body { background: #1a1a1a !important; color: #e0ddd8 !important; }
 
       header { background: #242424 !important; border-bottom-color: #c0392b !important; }
       .logo { color: #e05040 !important; }
       nav a { color: #ccc !important; }
       .burger span { background: #aaa !important; }
-      .mmenu { background: #2a2a2a !important; }
-      .mmenu a { color: #ddd !important; border-bottom-color: #333 !important; }
+      .mobile-menu { background: #2a2a2a !important; }
+      .mobile-menu a { color: #ddd !important; border-bottom-color: #333 !important; }
 
       section { background: #1a1a1a !important; }
       section[style*="background:#f"] { background: #222222 !important; }
@@ -249,8 +233,8 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
       .modal { background: #2a2a2a !important; }
       .modal h3 { color: #f0ece6 !important; }
       .modal p { color: #aaa !important; }
-      .mf label { color: #ccc !important; }
-      .mf input, .mf textarea { background: #333 !important; border-color: #444 !important; color: #eee !important; }
+      .modal-field label { color: #ccc !important; }
+      .modal-field input, .modal-field textarea { background: #333 !important; border-color: #444 !important; color: #eee !important; }
 
       /* Футер */
       footer { background: #111 !important; }
@@ -297,7 +281,6 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
       .map-info li { color: #ccc !important; }
       /* Footer links */
       .footer-col a, .footer-col p { color: rgba(255,255,255,0.7) !important; }
-    }
       .fb{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,0.3);transition:transform 0.2s;border:none;cursor:pointer;}
 .fb:hover{transform:scale(1.1);}
 .fb-evg{background:#e67e22;color:#fff;animation:po 3s infinite;will-change:transform,opacity;}
