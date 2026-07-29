@@ -86,11 +86,11 @@ section{padding:60px 20px;}
 .step::before{content:counter(steps);display:block;width:56px;height:56px;background:#c0392b;color:#fff !important;font-family:'Oswald',sans-serif;font-size:26px;font-weight:700;border-radius:50%;line-height:56px;margin:0 auto 16px;}
 .step h3{font-family:'Oswald',sans-serif;font-size:17px;margin-bottom:8px;color:#1a1a1a !important;}
 .step p{font-size:14px;color:#444 !important;}
-.adv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:28px;}
-.adv-item{display:flex;gap:20px;align-items:flex-start;}
-.adv-icon{width:56px;height:56px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:24px;}
-.adv-text h3{font-family:'Oswald',sans-serif;font-size:18px;margin-bottom:6px;color:#1a1a1a !important;}
-.adv-text p{font-size:14px;color:#444 !important;line-height:1.6;}
+.benefit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:28px;}
+.benefit-item{display:flex;gap:20px;align-items:flex-start;}
+.benefit-icon{width:56px;height:56px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:24px;}
+.benefit-text h3{font-family:'Oswald',sans-serif;font-size:18px;margin-bottom:6px;color:#1a1a1a !important;}
+.benefit-text p{font-size:14px;color:#444 !important;line-height:1.6;}
 .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;}
 .gallery-item{border-radius:8px;overflow:hidden;aspect-ratio:4/3;position:relative;}
 .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s;will-change:transform;}
@@ -210,8 +210,8 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
       .step p { color: #999 !important; }
 
       /* Преимущества */
-      .adv-text h3 { color: #f0ece6 !important; }
-      .adv-text p { color: #aaa !important; }
+      .benefit-text h3 { color: #f0ece6 !important; }
+      .benefit-text p { color: #aaa !important; }
 
       /* Карточки преимуществ (новый блок) */
       div[style*="background:#fff;border-radius:10px"] { background: #2a2a2a !important; }
@@ -272,8 +272,8 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
       .step h3 { color: #f0ece6 !important; }
       .step p { color: #999 !important; }
       /* Advantages */
-      .adv-text h3 { color: #f0ece6 !important; }
-      .adv-text p { color: #aaa !important; }
+      .benefit-text h3 { color: #f0ece6 !important; }
+      .benefit-text p { color: #aaa !important; }
       /* FAQ */
       .faq-q { color: #f0ece6 !important; }
       .faq-a { color: #bbb !important; }
@@ -448,13 +448,13 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
   <div class="container">
     <div class="section-title">Наші <span>переваги</span></div>
     <div class="divider"></div>
-    <div class="adv-grid">
-      <div class="adv-item"><div class="adv-icon">🏆</div><div class="adv-text"><h3>Досвід з 1998</h3><p>25+ років на ринку брухту Одеси</p></div></div>
-      <div class="adv-item"><div class="adv-icon">💰</div><div class="adv-text"><h3>Високі ціни</h3><p>Прямі контракти з заводами</p></div></div>
-      <div class="adv-item"><div class="adv-icon">🚛</div><div class="adv-text"><h3>Безкоштовний вивіз</h3><p>По Одесі та області від 1 тонни</p></div></div>
-      <div class="adv-item"><div class="adv-icon">⚖️</div><div class="adv-text"><h3>Чесне зважування</h3><p>Повірені ваги при клієнті</p></div></div>
-      <div class="adv-item"><div class="adv-icon">⚡</div><div class="adv-text"><h3>Швидка оплата</h3><p>Готівка або картка одразу</p></div></div>
-      <div class="adv-item"><div class="adv-icon">📋</div><div class="adv-text"><h3>Офіційно</h3><p>Всі документи, працюємо з ПДВ</p></div></div>
+    <div class="benefit-grid">
+      <div class="benefit-item"><div class="benefit-icon">🏆</div><div class="benefit-text"><h3>Досвід з 1998</h3><p>25+ років на ринку брухту Одеси</p></div></div>
+      <div class="benefit-item"><div class="benefit-icon">💰</div><div class="benefit-text"><h3>Високі ціни</h3><p>Прямі контракти з заводами</p></div></div>
+      <div class="benefit-item"><div class="benefit-icon">🚛</div><div class="benefit-text"><h3>Безкоштовний вивіз</h3><p>По Одесі та області від 1 тонни</p></div></div>
+      <div class="benefit-item"><div class="benefit-icon">⚖️</div><div class="benefit-text"><h3>Чесне зважування</h3><p>Повірені ваги при клієнті</p></div></div>
+      <div class="benefit-item"><div class="benefit-icon">⚡</div><div class="benefit-text"><h3>Швидка оплата</h3><p>Готівка або картка одразу</p></div></div>
+      <div class="benefit-item"><div class="benefit-icon">📋</div><div class="benefit-text"><h3>Офіційно</h3><p>Всі документи, працюємо з ПДВ</p></div></div>
     </div>
   </div>
 </section>
