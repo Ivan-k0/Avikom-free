@@ -1,19 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://metal-avikom.com.ua/</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://metal-avikom.com.ua/"/>
     <xhtml:link rel="alternate" hreflang="uk" href="https://metal-avikom.com.ua/ua/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://metal-avikom.com.ua/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://metal-avikom.com.ua/"/>
-    <lastmod>2026-06-09</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
+    <lastmod>2026-07-29</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
+    <image:image><image:loc>https://metal-avikom.com.ua/img/copper1.jpg</image:loc><image:title>Медная катанка — приём меди в Одессе</image:title></image:image>
+    <image:image><image:loc>https://metal-avikom.com.ua/img/copper2.jpg</image:loc><image:title>Медный кабель и проволока</image:title></image:image>
+    <image:image><image:loc>https://metal-avikom.com.ua/img/brass1.jpg</image:loc><image:title>Латунь — фитинги и арматура</image:title></image:image>
+    <image:image><image:loc>https://metal-avikom.com.ua/img/brass2.jpg</image:loc><image:title>Латунные шестерни и литьё</image:title></image:image>
+    <image:image><image:loc>https://metal-avikom.com.ua/img/alu_shav.jpg</image:loc><image:title>Алюминиевая стружка</image:title></image:image>
+    <image:image><image:loc>https://metal-avikom.com.ua/img/alu_mix.jpg</image:loc><image:title>Алюминий микс — приём лома</image:title></image:image>
+    <image:image><image:loc>https://metal-avikom.com.ua/img/cans.jpg</image:loc><image:title>Алюминиевая банка прессованная</image:title></image:image>
+    <image:image><image:loc>https://metal-avikom.com.ua/img/akb.jpg</image:loc><image:title>Приём аккумуляторов АКБ</image:title></image:image>
+    <image:image><image:loc>https://metal-avikom.com.ua/img/warehouse1.jpg</image:loc><image:title>Территория склада — погрузчик</image:title></image:image>
+    <image:image><image:loc>https://metal-avikom.com.ua/img/sparks.jpg</image:loc><image:title>Работа на складе Авто-Виком</image:title></image:image>
+    <image:image><image:loc>https://metal-avikom.com.ua/img/crane.jpg</image:loc><image:title>Погрузка металлолома краном</image:title></image:image>
+    <image:image><image:loc>https://metal-avikom.com.ua/img/nerzhaveika-truby-1.jpg</image:loc><image:title>Трубы из нержавеющей стали</image:title></image:image>
+    <image:image><image:loc>https://metal-avikom.com.ua/img/cherniy-lom-avto.jpg</image:loc><image:title>Сдать авто на металлолом в Одессе</image:title></image:image>
   </url>
-  <url><loc>https://metal-avikom.com.ua/ua/</loc><lastmod>2026-06-09</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://metal-avikom.com.ua/en/</loc><lastmod>2026-06-09</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://metal-avikom.com.ua/med.html</loc><lastmod>2026-06-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://metal-avikom.com.ua/alyuminiy.html</loc><lastmod>2026-06-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://metal-avikom.com.ua/latun.html</loc><lastmod>2026-06-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://metal-avikom.com.ua/nerzhavejka.html</loc><lastmod>2026-06-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://metal-avikom.com.ua/akb.html</loc><lastmod>2026-06-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://metal-avikom.com.ua/ua/</loc><lastmod>2026-07-29</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://metal-avikom.com.ua/en/</loc><lastmod>2026-07-29</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url>
+    <loc>https://metal-avikom.com.ua/med.html</loc>
+    <lastmod>2026-07-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <image:image><image:loc>https://metal-avikom.com.ua/img/copper1.jpg</image:loc><image:title>Приём медного лома в Одессе — медь-блеск</image:title></image:image>
+    <image:image><image:loc>https://metal-avikom.com.ua/img/copper2.jpg</image:loc><image:title>Медный кабель и проволока, приём в Авто-Виком Одесса</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://metal-avikom.com.ua/alyuminiy.html</loc>
+    <lastmod>2026-07-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <image:image><image:loc>https://metal-avikom.com.ua/img/alu_mix.jpg</image:loc><image:title>Алюминий микс — приём лома в Одессе</image:title></image:image>
+    <image:image><image:loc>https://metal-avikom.com.ua/img/cans.jpg</image:loc><image:title>Приём алюминиевой банки прессованной в Одессе</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://metal-avikom.com.ua/latun.html</loc>
+    <lastmod>2026-07-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <image:image><image:loc>https://metal-avikom.com.ua/img/brass1.jpg</image:loc><image:title>Латунь — фитинги и арматура, приём в Одессе</image:title></image:image>
+    <image:image><image:loc>https://metal-avikom.com.ua/img/brass2.jpg</image:loc><image:title>Латунные шестерни и литьё — скупка лома</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://metal-avikom.com.ua/nerzhavejka.html</loc>
+    <lastmod>2026-07-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <image:image><image:loc>https://metal-avikom.com.ua/img/nerzhaveika-truby-1.jpg</image:loc><image:title>Трубы из нержавеющей стали — приём лома в Одессе</image:title></image:image>
+    <image:image><image:loc>https://metal-avikom.com.ua/img/nerzhaveika-truby-2.jpg</image:loc><image:title>Нержавеющая сталь, крупный лом труб</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://metal-avikom.com.ua/cherniy-lom.html</loc>
+    <lastmod>2026-07-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <image:image><image:loc>https://metal-avikom.com.ua/img/cherniy-lom-avto.jpg</image:loc><image:title>Сдать авто на металлолом в Одессе — приём чёрного лома</image:title></image:image>
+    <image:image><image:loc>https://metal-avikom.com.ua/img/crane.jpg</image:loc><image:title>Погрузка чёрного металлолома краном — вывоз по Одессе</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://metal-avikom.com.ua/akb.html</loc>
+    <lastmod>2026-07-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <image:image><image:loc>https://metal-avikom.com.ua/img/akb.jpg</image:loc><image:title>Приём аккумуляторов АКБ в Одессе — Авто-Виком</image:title></image:image>
+  </url>
 </urlset>
