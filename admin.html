@@ -193,10 +193,10 @@ async function savePrices() {
     '📞 050 317 93 17 (Иван)\n📞 093 727 79 12 (Евгений)';
 
   try {
-    var res = await fetch('https://api.telegram.org/bot8527453061:AAGHfFHEn7zOgXI84O3YXM9Iw1fPgPzV1gA/sendMessage', {
+    var res = await fetch('/api/callback', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({chat_id: 40272357, text: msg, parse_mode: 'Markdown'})
+      body: JSON.stringify({type: 'price_update', text: msg})
     });
     var data = await res.json();
     if (data.ok) {

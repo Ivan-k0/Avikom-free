@@ -6,7 +6,61 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Прийом металобрухту в Одесі — ціни КОСМОС | Авто-Віком</title>
   <meta name="description" content="Прийом міді, алюмінію, латуні, нержавійки та АКБ в Одесі. Високі ціни, чесне зважування, оплата одразу. Телефонуйте: 050 317 93 17."/>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Прийом металобрухту в Одесі — ціни КОСМОС | Авто-Віком">
+  <meta property="og:description" content="Прийом міді, алюмінію, латуні, нержавійки та АКБ в Одесі. Високі ціни, чесне зважування, оплата одразу. Телефонуйте: 050 317 93 17.">
+  <meta property="og:url" content="https://metal-avikom.com.ua/ua/">
+  <meta property="og:image" content="https://metal-avikom.com.ua/img/hero.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="900">
+  <meta property="og:locale" content="uk_UA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Прийом металобрухту в Одесі — ціни КОСМОС | Авто-Віком">
+  <meta name="twitter:description" content="Прийом міді, алюмінію, латуні, нержавійки та АКБ в Одесі. Високі ціни, чесне зважування, оплата одразу. Телефонуйте: 050 317 93 17.">
+  <meta name="twitter:image" content="https://metal-avikom.com.ua/img/hero.jpg">
+
   <meta property="og:site_name" content="Авто-Віком">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RecyclingCenter",
+  "name": "Авто-Віком",
+  "alternateName": "ПП Авто-Віком",
+  "image": "https://metal-avikom.com.ua/img/hero.jpg",
+  "logo": "https://metal-avikom.com.ua/favicon-32.png",
+  "url": "https://metal-avikom.com.ua/ua/",
+  "telephone": ["+380503179317", "+380937277912"],
+  "description": "Прийом міді, алюмінію, латуні, нержавіючої сталі, свинцю, титану, чорного металобрухту та АКБ в Одесі з 1998 року. Чесне зважування, оплата одразу, безкоштовне вивезення від 1 тонни.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "вул. Олега Андрійця 9а",
+    "addressLocality": "Одеса",
+    "addressRegion": "Одеська область",
+    "addressCountry": "UA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 46.4601,
+    "longitude": 30.6981
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:30",
+      "closes": "12:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "13:00",
+      "closes": "17:00"
+    }
+  ],
+  "areaServed": { "@type": "City", "name": "Одеса" },
+  "sameAs": ["https://t.me/avikom1998"]
+}
+</script>
     <link rel="icon" type="image/x-icon" href="../favicon.ico"/>
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"/>
   <link rel="apple-touch-icon" href="../favicon-32.png"/>
@@ -159,7 +213,6 @@ footer{background:var(--dark);color:rgba(255,255,255,0.7);padding:48px 20px 24px
 
   </style>
 <script>
-var TG_TOKEN='8527453061'+':AAGHfFHEn7zOgXI84O3YXM9Iw1fPgPzV1gA';
 function openModal(){var m=document.getElementById('callbackModal');if(m){m.classList.add('active');document.body.style.overflow='hidden';}}
 function closeModal(){var m=document.getElementById('callbackModal');if(m){m.classList.remove('active');document.body.style.overflow='';}setTimeout(function(){var f=document.getElementById('modalForm');var s=document.getElementById('modalSuccess');if(f)f.style.display='';if(s)s.style.display='none';var b=document.getElementById('cb-submit');if(b){b.disabled=false;b.textContent='📞 Жду звонка';}['cb-name','cb-phone','cb-comment'].forEach(function(id){var el=document.getElementById(id);if(el)el.value='';});},300);}
 </script>
@@ -555,10 +608,8 @@ function sendCallback(){
   btn.disabled=true; btn.textContent='Отправляем...';
   var now=new Date().toLocaleString('ru-UA',{timeZone:'Europe/Kiev'});
   var txt='Заявка: Перезвонить\n\nИмя: '+(n||'-')+'\nТел: '+p+'\nКомм: '+(cm||'-')+'\nВремя: '+now;
-  var tk='8527453061'+':'+'AAGHfFHEn7zOgXI84O3YXM9Iw1fPgPzV1gA';
-  var url='https://api.telegram.org/bot'+tk+'/sendMessage';
   var xhr=new XMLHttpRequest();
-  xhr.open('POST',url,true);
+  xhr.open('POST','/api/callback',true);
   xhr.setRequestHeader('Content-Type','application/json');
   xhr.onload=function(){
     try{
@@ -576,7 +627,7 @@ function sendCallback(){
     btn.disabled=false; btn.textContent='Жду звонка';
     alert('Нет соединения. Позвоните: 050 317 93 17');
   };
-  xhr.send(JSON.stringify({chat_id:40272357, text:txt}));
+  xhr.send(JSON.stringify({text:txt}));
 }
 function toggleMenu(){var b=document.getElementById('burger'),m=document.getElementById('mobileMenu');b.classList.toggle('open');m.classList.toggle('open');}
 function closeMenu(){document.getElementById('burger').classList.remove('open');document.getElementById('mobileMenu').classList.remove('open');}
