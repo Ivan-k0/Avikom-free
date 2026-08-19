@@ -88,8 +88,8 @@
   <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{--red:#c0392b;--dark:#1a1a1a;--gray:#f5f5f5;--text:#333;--border:#ddd;--gold:#e67e22;}
-html{scroll-behavior:smooth;-webkit-overflow-scrolling:touch;overflow-x:hidden;max-width:100%;}body{-webkit-text-size-adjust:100%;max-width:100%;word-wrap:break-word;}
-body{font-family:'PT Sans',sans-serif;color:#333 !important;font-size:16px;line-height:1.6;color-scheme:dark;}
+html{background:#f8f6f3;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;overflow-x:hidden;max-width:100%;overscroll-behavior-x:none;}body{-webkit-text-size-adjust:100%;max-width:100%;word-wrap:break-word;overscroll-behavior-x:none;}
+body{font-family:'PT Sans',sans-serif;color:#333 !important;font-size:16px;line-height:1.6;background:#f8f6f3;color-scheme:light;}
 a{text-decoration:none;color:inherit;}
 header{background:#fff;border-bottom:2px solid var(--red);position:sticky;top:0;z-index:200;box-shadow:0 1px 6px rgba(0,0,0,0.08);}
 .header-inner{max-width:1100px;margin:0 auto;padding:0 20px;height:46px;display:flex;align-items:center;justify-content:space-between;gap:8px;}
@@ -238,6 +238,7 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
     section[style*="background: #fff"] { background: #f8f5f1 !important; }
 
     /* ── Тёмная тема (теперь постоянная, для всех посетителей) ── */
+      html { background: #1a1a1a !important; }
       body { background: #1a1a1a !important; color: #e0ddd8 !important; }
 
       header { background: #242424 !important; border-bottom-color: #c0392b !important; }
@@ -388,13 +389,13 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
   <div class="header-inner">
     <a class="logo" href="/">АВТО-ВИКОМ</a>
     <nav>
-      <a href="#prices">Ціни</a>
-      <a href="../med.html" target="_blank">Каталог</a>
-      <a href="articles/" target="_blank">Статті</a>
-      <a href="#gallery">Фото</a>
-      <a href="#advantages">Переваги</a>
-      <a href="#map">Адреса</a>
-      <a href="#faq">FAQ</a>
+      <a href="/ua/#prices">Ціни</a>
+      <a href="/ua/med.html">Каталог</a>
+      <a href="/ua/articles/">Статті</a>
+      <a href="/ua/#gallery">Фото</a>
+      <a href="/ua/#advantages">Переваги</a>
+      <a href="/ua/#map">Адреса</a>
+      <a href="/ua/#faq">FAQ</a>
       <button class="btn-hdr" onclick="openModal()">Передзвоніть мені</button>
     </nav>
     <div class="lang-switch">
@@ -405,13 +406,13 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
     <button class="burger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#prices" onclick="closeMenu()">Ціни</a>
-    <a href="../med.html" target="_blank" onclick="closeMenu()">Каталог</a>
-    <a href="articles/" target="_blank" onclick="closeMenu()">Статті</a>
-    <a href="#gallery" onclick="closeMenu()">Фото</a>
-    <a href="#advantages" onclick="closeMenu()">Переваги</a>
-    <a href="#map" onclick="closeMenu()">Адреса</a>
-    <a href="#faq" onclick="closeMenu()">FAQ</a>
+    <a href="/ua/#prices" onclick="closeMenu()">Ціни</a>
+    <a href="/ua/med.html" onclick="closeMenu()">Каталог</a>
+    <a href="/ua/articles/" onclick="closeMenu()">Статті</a>
+    <a href="/ua/#gallery" onclick="closeMenu()">Фото</a>
+    <a href="/ua/#advantages" onclick="closeMenu()">Переваги</a>
+    <a href="/ua/#map" onclick="closeMenu()">Адреса</a>
+    <a href="/ua/#faq" onclick="closeMenu()">FAQ</a>
     <div style="padding:8px 16px;display:flex;gap:16px;justify-content:center;font-size:14px;font-weight:700;border-top:1px solid #eee;margin-top:4px;">
       <a href="/" style="color:#555;">RU</a>
       <a href="../ua/index.html" style="color:#c0392b;">UA</a>
@@ -428,7 +429,7 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
   <div class="hero-inner">
     <div class="hero-badge">⚙ Працюємо 1998 · Без вихідних!</div>
     <h1>Прийом <em>кольорового</em> і чорного металобрухту в Одесі</h1>
-    <p class="hero-desc">Купуємо <a href="med.html" target="_blank" style="color:var(--red);font-weight:700;">мідь</a>, <a href="alyuminiy.html" target="_blank" style="color:var(--red);font-weight:700;">алюміній</a>, <a href="latun.html" target="_blank" style="color:var(--red);font-weight:700;">латунь</a>, <a href="nerzhavejka.html" target="_blank" style="color:var(--red);font-weight:700;">нержавійку</a> і чорний брухт за найвищими цінами.</p>
+    <p class="hero-desc">Купуємо <a href="med.html" style="color:var(--red);font-weight:700;">мідь</a>, <a href="alyuminiy.html" style="color:var(--red);font-weight:700;">алюміній</a>, <a href="latun.html" style="color:var(--red);font-weight:700;">латунь</a>, <a href="nerzhavejka.html" style="color:var(--red);font-weight:700;">нержавійку</a> і чорний брухт за найвищими цінами.</p>
     <div class="hero-btns">
       <a class="btn-primary" href="tel:+380503179317">📞 Зателефонувати зараз</a>
       <button class="btn-hdr" onclick="openModal()" style="background:#fff;color:var(--dark);padding:14px 32px;font-size:16px;">Передзвоніть мені</button>
@@ -449,7 +450,7 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
     <a class="tg-btn" href="https://t.me/avikom1998" target="_blank"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg> Актуальні ціни в Telegram</a>
     <div class="price-table-wrap">
   <div class="price-col">
-    <div class="ptable-head"><a href="../alyuminiy.html" target="_blank">🔩 Алюміній <span style="opacity:0.6;font-size:11px;">детальніше →</span></a></div>
+    <div class="ptable-head"><a href="../alyuminiy.html">🔩 Алюміній <span style="opacity:0.6;font-size:11px;">детальніше →</span></a></div>
     <div class="ptable-row"><span>Первинний</span><span data-price="aly_perv">123 грн/кг</span><span style="display:inline-block;background:#444;color:#ccc;font-size:10px;font-weight:600;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:middle;letter-spacing:0.3px;">-0.5%</span></div>
     <div class="ptable-row"><span>Профіль</span><span data-price="aly_prof">106 грн/кг</span><span style="display:inline-block;background:#444;color:#ccc;font-size:10px;font-weight:600;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:middle;letter-spacing:0.3px;">-0.5%</span></div>
     <div class="ptable-row"><span>Мікс</span><span data-price="aly_mix">86 грн/кг</span><span style="display:inline-block;background:#444;color:#ccc;font-size:10px;font-weight:600;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:middle;letter-spacing:0.3px;">-1%</span></div>
@@ -458,19 +459,19 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
     <div class="ptable-row"><span>Банка</span><span data-price="aly_bank">72 грн/кг</span><span style="display:inline-block;background:#444;color:#ccc;font-size:10px;font-weight:600;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:middle;letter-spacing:0.3px;">-2%</span></div>
     <div class="ptable-row"><span>ЦАМ</span><span data-price="zam">56 грн/кг</span><span style="display:inline-block;background:#444;color:#ccc;font-size:10px;font-weight:600;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:middle;letter-spacing:0.3px;">-4%</span></div>
     <div class="ptable-row"><span>Магній</span><span data-price="mag">25 грн/кг</span><span style="display:inline-block;background:#444;color:#ccc;font-size:10px;font-weight:600;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:middle;letter-spacing:0.3px;">-1%</span></div>
-    <div class="ptable-head"><a href="../med.html" target="_blank">🟤 Мідь <span style="opacity:0.6;font-size:11px;">детальніше →</span></a></div>
+    <div class="ptable-head"><a href="../med.html">🟤 Мідь <span style="opacity:0.6;font-size:11px;">детальніше →</span></a></div>
     <div class="ptable-row ptable-hot"><span>Мідь</span><span data-price="med" style="color:var(--gold);font-weight:700;">490 грн/кг</span><span style="display:inline-block;background:#444;color:#ccc;font-size:10px;font-weight:600;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:middle;letter-spacing:0.3px;">-0.5%</span></div>
     <div class="ptable-row ptable-hot"><span>Мідь блиск</span><span data-price="med_blesk" style="color:var(--gold);font-weight:700;">500 грн/кг</span><span style="display:inline-block;background:#2d5a2d;color:#7dbd7d;font-size:10px;font-weight:600;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:middle;letter-spacing:0.3px;">0% засор</span></div>
     <div class="ptable-row"><span>Кабель в ізоляції</span><span>150–250 грн/кг</span></div>
-    <div class="ptable-head"><a href="../latun.html" target="_blank">🔶 Латунь <span style="opacity:0.6;font-size:11px;">детальніше →</span></a></div>
+    <div class="ptable-head"><a href="../latun.html">🔶 Латунь <span style="opacity:0.6;font-size:11px;">детальніше →</span></a></div>
     <div class="ptable-row"><span>Латунь</span><span data-price="latun">255 грн/кг</span><span style="display:inline-block;background:#444;color:#ccc;font-size:10px;font-weight:600;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:middle;letter-spacing:0.3px;">-1%</span></div>
     <div class="ptable-row"><span>Радіатори</span><span data-price="latun">255 грн/кг</span><span style="display:inline-block;background:#444;color:#ccc;font-size:10px;font-weight:600;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:middle;letter-spacing:0.3px;">-2%</span></div>
   </div>
   <div class="price-col">
-    <div class="ptable-head"><a href="../nerzhavejka.html" target="_blank">⚙️ Нержавійка <span style="opacity:0.6;font-size:11px;">детальніше →</span></a></div>
+    <div class="ptable-head"><a href="../nerzhavejka.html">⚙️ Нержавійка <span style="opacity:0.6;font-size:11px;">детальніше →</span></a></div>
     <div class="ptable-row"><span>Ni 10%</span><span data-price="nerj_10">26 грн/кг</span><span style="display:inline-block;background:#444;color:#ccc;font-size:10px;font-weight:600;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:middle;letter-spacing:0.3px;">-1%</span></div>
     <div class="ptable-row"><span>Ni 8%</span><span data-price="nerj_8">22 грн/кг</span><span style="display:inline-block;background:#444;color:#ccc;font-size:10px;font-weight:600;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:middle;letter-spacing:0.3px;">-1%</span></div>
-    <div class="ptable-head"><a href="../akb.html" target="_blank">🔋 АКБ <span style="opacity:0.6;font-size:11px;">детальніше →</span></a></div>
+    <div class="ptable-head"><a href="../akb.html">🔋 АКБ <span style="opacity:0.6;font-size:11px;">детальніше →</span></a></div>
     <div class="ptable-row"><span>Білі</span><span data-price="akb_w">24 грн/кг</span></div>
     <div class="ptable-row"><span>Білі залиті</span><span data-price="akb_wz">20 грн/кг</span></div>
     <div class="ptable-row"><span>Гелеві</span><span data-price="akb_gel">17 грн/кг</span></div>
@@ -600,18 +601,18 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
     </div>
     <div class="footer-col">
       <h4>Каталог металів</h4>
-      <a href="../med.html" target="_blank">🟤 Прийом міді в Одесі</a>
-      <a href="../alyuminiy.html" target="_blank">🔩 Прийом алюмінію в Одесі</a>
-      <a href="../latun.html" target="_blank">🔶 Прийом латуні в Одесі</a>
-      <a href="../nerzhavejka.html" target="_blank">⚙️ Прийом нержавійки</a>
-      <a href="../akb.html" target="_blank">🔋 Прийом акумуляторів</a>
-      <a href="../cherniy-lom.html" target="_blank">⚫ Прийом чорного металу</a>
+      <a href="../med.html">🟤 Прийом міді в Одесі</a>
+      <a href="../alyuminiy.html">🔩 Прийом алюмінію в Одесі</a>
+      <a href="../latun.html">🔶 Прийом латуні в Одесі</a>
+      <a href="../nerzhavejka.html">⚙️ Прийом нержавійки</a>
+      <a href="../akb.html">🔋 Прийом акумуляторів</a>
+      <a href="../cherniy-lom.html">⚫ Прийом чорного металу</a>
     </div>
     <div class="footer-col">
       <h4>Статті</h4>
-      <a href="articles/" target="_blank">💰 Ціни на металобрухт 2026</a>
-      <a href="articles/gde-sdat-metallolom-dorogo.html" target="_blank">📍 Де здати дорого</a>
-      <a href="articles/kak-podgotovit-metallolom-k-sdache.html" target="_blank">🛠 Як підготувати лом</a>
+      <a href="articles/">💰 Ціни на металобрухт 2026</a>
+      <a href="articles/gde-sdat-metallolom-dorogo.html">📍 Де здати дорого</a>
+      <a href="articles/kak-podgotovit-metallolom-k-sdache.html">🛠 Як підготувати лом</a>
     </div>
     <div class="footer-col">
       <h4>Контакти</h4>

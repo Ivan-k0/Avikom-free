@@ -123,7 +123,7 @@
   <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{--red:#c0392b;--dark:#1a1a1a;--gray:#f5f5f5;--gold:#e67e22;--text:#333;}
-html{scroll-behavior:smooth;-webkit-overflow-scrolling:touch;overflow-x:hidden;max-width:100%;}body{-webkit-text-size-adjust:100%;max-width:100%;word-wrap:break-word;}
+html{background:#f8f6f3;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;overflow-x:hidden;max-width:100%;overscroll-behavior-x:none;}body{-webkit-text-size-adjust:100%;max-width:100%;word-wrap:break-word;overscroll-behavior-x:none;}
 body{font-family:'PT Sans',sans-serif;color:var(--text);background:#f8f6f3;}
 a{text-decoration:none;color:inherit;}
 header{background:#fff;border-bottom:2px solid var(--red);position:sticky;top:0;z-index:200;box-shadow:0 1px 6px rgba(0,0,0,0.08);}
@@ -239,6 +239,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
 <style>
     /* ── Тёмная тема каталога ── */
     @media (prefers-color-scheme: dark) {
+      html { background: #1a1a1a !important; }
       body { background: #1a1a1a !important; color: #e0ddd8 !important; }
 
       header { background: #242424 !important; border-bottom-color: #c0392b !important; }
@@ -343,6 +344,8 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
       <a href="/#prices">Цены</a>
       <a href="/med.html">Каталог</a>
       <a href="/articles/" style="color:var(--red);">Статьи</a>
+      <a href="/#gallery">Фото</a>
+      <a href="/#advantages">Преимущества</a>
       <a href="/#map">Адрес</a>
       <a href="/#faq">FAQ</a>
       <button class="btn-hdr" onclick="openModal()">Обратный звонок</button>
@@ -357,7 +360,9 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
   <div class="mmenu" id="mmenu">
     <a href="/#prices" onclick="closeMenu()">Цены</a>
     <a href="/med.html" onclick="closeMenu()">Каталог</a>
-    <a href="/articles/" onclick="closeMenu()">Статьи</a>
+    <a href="/articles/" style="color:var(--red);" onclick="closeMenu()">Статьи</a>
+    <a href="/#gallery" onclick="closeMenu()">Фото</a>
+    <a href="/#advantages" onclick="closeMenu()">Преимущества</a>
     <a href="/#map" onclick="closeMenu()">Адрес</a>
     <a href="/#faq" onclick="closeMenu()">FAQ</a>
     <div style="padding:8px 16px;display:flex;gap:16px;justify-content:center;font-size:13px;font-weight:700;border-top:1px solid #eee;margin-top:4px;">

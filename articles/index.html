@@ -26,7 +26,7 @@
   <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{--red:#c0392b;--dark:#1a1a1a;--gray:#f5f5f5;--gold:#e67e22;--text:#333;}
-html{scroll-behavior:smooth;-webkit-overflow-scrolling:touch;overflow-x:hidden;max-width:100%;}body{-webkit-text-size-adjust:100%;max-width:100%;word-wrap:break-word;}
+html{background:#f8f6f3;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;overflow-x:hidden;max-width:100%;overscroll-behavior-x:none;}body{-webkit-text-size-adjust:100%;max-width:100%;word-wrap:break-word;overscroll-behavior-x:none;}
 body{font-family:'PT Sans',sans-serif;color:var(--text);background:#f8f6f3;}
 a{text-decoration:none;color:inherit;}
 header{background:#fff;border-bottom:2px solid var(--red);position:sticky;top:0;z-index:200;box-shadow:0 1px 6px rgba(0,0,0,0.08);}
@@ -104,6 +104,8 @@ nav a:hover{color:var(--red);}
 .other-metals{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 32px;}
 .other-metals a{background:#fff;border:1.5px solid #ddd;border-radius:20px;padding:6px 16px;font-size:13px;font-weight:700;color:var(--dark);transition:all 0.2s;}
 .other-metals a:hover{border-color:var(--red);color:var(--red);}
+.article-card{display:block;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.07);transition:transform 0.2s;}
+
 .cta-bar{background:var(--red);color:#fff;padding:32px 20px;text-align:center;margin-top:40px;}
 .cta-bar h2{font-family:'Oswald',sans-serif;font-size:28px;margin-bottom:8px;}
 .cta-bar p{opacity:0.9;margin-bottom:20px;}
@@ -142,6 +144,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
 <style>
     /* ── Тёмная тема каталога ── */
     @media (prefers-color-scheme: dark) {
+      html { background: #1a1a1a !important; }
       body { background: #1a1a1a !important; color: #e0ddd8 !important; }
 
       header { background: #242424 !important; border-bottom-color: #c0392b !important; }
@@ -191,6 +194,10 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
 
       /* Другие металлы */
       .other-metals a { background: #2a2a2a !important; border-color: #444 !important; color: #ddd !important; }
+      .article-card{background:#242424 !important;box-shadow:none !important;}
+      .article-card h2{color:#f0ece6 !important;}
+      .article-card p{color:#999 !important;}
+
 
       /* Sidebar форма */
       .sform { background: #242424 !important; box-shadow: none !important; }
@@ -246,6 +253,8 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
       <a href="/#prices">Цены</a>
       <a href="/med.html">Каталог</a>
       <a href="/articles/" style="color:var(--red);">Статьи</a>
+      <a href="/#gallery">Фото</a>
+      <a href="/#advantages">Преимущества</a>
       <a href="/#map">Адрес</a>
       <a href="/#faq">FAQ</a>
       <button class="btn-hdr" onclick="openModal()">Обратный звонок</button>
@@ -260,7 +269,9 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
   <div class="mmenu" id="mmenu">
     <a href="/#prices" onclick="closeMenu()">Цены</a>
     <a href="/med.html" onclick="closeMenu()">Каталог</a>
-    <a href="/articles/" onclick="closeMenu()">Статьи</a>
+    <a href="/articles/" style="color:var(--red);" onclick="closeMenu()">Статьи</a>
+    <a href="/#gallery" onclick="closeMenu()">Фото</a>
+    <a href="/#advantages" onclick="closeMenu()">Преимущества</a>
     <a href="/#map" onclick="closeMenu()">Адрес</a>
     <a href="/#faq" onclick="closeMenu()">FAQ</a>
     <div style="padding:8px 16px;display:flex;gap:16px;justify-content:center;font-size:13px;font-weight:700;border-top:1px solid #eee;margin-top:4px;">
@@ -286,28 +297,28 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
 </section>
 <div class="container" style="max-width:1100px;margin:0 auto;padding:40px 20px;">
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;">
-    <a href="/articles/tseny-na-metallolom-v-odesse-2026.html" style="display:block;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.07);transition:transform 0.2s;">
+    <a href="/articles/tseny-na-metallolom-v-odesse-2026.html" class="article-card">
     <img src="/img/warehouse1.jpg" alt="💰 Цены на металлолом в Одессе в 2026 году" style="width:100%;height:180px;object-fit:cover;display:block;">
     <div style="padding:20px;">
       <h2 style="font-family:'Oswald',sans-serif;font-size:19px;margin-bottom:8px;color:var(--dark);">💰 Цены на металлолом в Одессе в 2026 году</h2>
       <p style="font-size:14px;color:#666;line-height:1.6;">Актуальные цены по видам металла, от чего зависит стоимость и почему цены отличаются между пунктами приёма.</p>
     </div>
   </a>
-<a href="/articles/gde-sdat-metallolom-dorogo.html" style="display:block;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.07);transition:transform 0.2s;">
+<a href="/articles/gde-sdat-metallolom-dorogo.html" class="article-card">
     <img src="/img/copper2.jpg" alt="📍 Где сдать металлолом дорого — 7 советов" style="width:100%;height:180px;object-fit:cover;display:block;">
     <div style="padding:20px;">
       <h2 style="font-family:'Oswald',sans-serif;font-size:19px;margin-bottom:8px;color:var(--dark);">📍 Где сдать металлолом дорого — 7 советов</h2>
       <p style="font-size:14px;color:#666;line-height:1.6;">Практические советы: как выбрать пункт приёма, не продешевить и получить максимальную цену за лом.</p>
     </div>
   </a>
-<a href="/articles/kak-podgotovit-metallolom-k-sdache.html" style="display:block;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.07);transition:transform 0.2s;">
+<a href="/articles/kak-podgotovit-metallolom-k-sdache.html" class="article-card">
     <img src="/img/crane.jpg" alt="🛠 Как подготовить металлолом к сдаче" style="width:100%;height:180px;object-fit:cover;display:block;">
     <div style="padding:20px;">
       <h2 style="font-family:'Oswald',sans-serif;font-size:19px;margin-bottom:8px;color:var(--dark);">🛠 Как подготовить металлолом к сдаче</h2>
       <p style="font-size:14px;color:#666;line-height:1.6;">Пошаговая инструкция по сортировке и подготовке лома, чтобы получить больше денег за сдачу.</p>
     </div>
   </a>
-<a href="/articles/chernyy-i-tsvetnoy-metallolom-otlichiya.html" style="display:block;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.07);transition:transform 0.2s;">
+<a href="/articles/chernyy-i-tsvetnoy-metallolom-otlichiya.html" class="article-card">
     <img src="/img/alu_mix.jpg" alt="⚖️ Чёрный и цветной металлолом: в чём разница" style="width:100%;height:180px;object-fit:cover;display:block;">
     <div style="padding:20px;">
       <h2 style="font-family:'Oswald',sans-serif;font-size:19px;margin-bottom:8px;color:var(--dark);">⚖️ Чёрный и цветной металлолом: в чём разница</h2>
