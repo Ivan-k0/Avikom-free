@@ -2,6 +2,7 @@
 <html lang="ua">
 <head>
   <meta charset="UTF-8"/>
+  <meta name="color-scheme" content="dark">
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Статті про прийом металобрухту в Одесі | Авто-Віком</title>
   <meta name="description" content="Корисні статті про здачу металобрухту в Одесі: актуальні ціни, поради з підготовки лому, різниця між видами металу."/>
@@ -26,7 +27,7 @@
   <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{--red:#c0392b;--dark:#1a1a1a;--gray:#f5f5f5;--gold:#e67e22;--text:#333;}
-html{background:#f8f6f3;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;overflow-x:hidden;max-width:100%;overscroll-behavior-x:none;}body{-webkit-text-size-adjust:100%;max-width:100%;word-wrap:break-word;overscroll-behavior-x:none;}
+html{background:#f8f6f3;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;overflow-x:hidden;max-width:100%;overscroll-behavior-x:none;}body{-webkit-text-size-adjust:100%;max-width:100%;word-wrap:break-word;overscroll-behavior-x:none;;color-scheme:dark;}
 body{font-family:'PT Sans',sans-serif;color:var(--text);background:#f8f6f3;}
 a{text-decoration:none;color:inherit;}
 
@@ -175,9 +176,15 @@ nav a{font-size:12px;font-weight:700;color:var(--text);text-transform:uppercase;
 .modal-success h4{font-family:'Oswald',sans-serif;font-size:22px;margin-bottom:8px;}
 @media(max-width:680px){nav,.btn-hdr{display:none;}.burger{display:flex;}.cat-hero{padding:36px 16px 32px;}.steps-row{grid-template-columns:1fr 1fr;}.seo-body{overflow-wrap:break-word;word-break:break-word;}.seo-body p,.seo-body ul li{overflow-wrap:break-word;}}
 .float-btns{position:fixed;bottom:90px;right:20px;display:flex;flex-direction:column;align-items:flex-end;gap:12px;z-index:1001;}
-.fb{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 0 rgba(255,255,255,0);transition:box-shadow 0.28s ease,filter 0.15s ease;border:none;cursor:pointer;}
+.fb{width:56px;height:56px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 0 rgba(255,255,255,0);transition:box-shadow 0.22s cubic-bezier(.4,0,.2,1),filter 0.15s ease;border:none;cursor:pointer;}
 .fb:hover{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 8px rgba(255,255,255,0.14);}
 .fb:active{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 3px rgba(255,255,255,0.28);filter:brightness(1.18);}
+.fb-tg:hover{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 8px rgba(34,158,217,0.32);}
+.fb-tg:active{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 3px rgba(34,158,217,0.55);filter:brightness(1.15);}
+.fb-wa:hover{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 8px rgba(37,211,102,0.32);}
+.fb-wa:active{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 3px rgba(37,211,102,0.55);filter:brightness(1.15);}
+.fb-vb:hover{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 8px rgba(123,81,157,0.32);}
+.fb-vb:active{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 3px rgba(123,81,157,0.55);filter:brightness(1.15);}
 .fb-toggle{background:rgba(255,255,255,0.16);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.4);color:#fff;font-size:22px;animation:po 3s infinite;will-change:transform,opacity;position:relative;overflow:visible;}
 .fb-combo{position:relative;width:100%;height:100%;display:block;}
 .fb-mail-part{position:absolute;inset:0;margin:auto;width:32px;height:32px;object-fit:contain;opacity:1;transform:scale(1);transition:opacity 0.3s ease,transform 0.3s ease;}
@@ -188,11 +195,11 @@ nav a{font-size:12px;font-weight:700;color:var(--text);text-transform:uppercase;
 .fb-toggle.open .fb-badge{opacity:0;transform:scale(0);}
 @keyframes fbpulse{0%,100%{transform:scale(1);}50%{transform:scale(1.25);}}
 .fb-close-wrap{display:flex;flex-direction:column;align-items:center;height:0;overflow:hidden;opacity:0;transition:height 0.36s cubic-bezier(.34,1.2,.64,1) 0.16s,opacity 0.3s ease 0.16s;}
-.fb-close-wrap.open{height:42px;opacity:1;}
-.fb-close-line{width:2px;height:14px;background:#E24B4A;}
-.fb-close-btn{width:39px;height:39px;border-radius:50%;background:rgba(255,255,255,0.16);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;cursor:pointer;margin-top:2px;box-shadow:0 3px 10px rgba(0,0,0,0.2),0 0 0 0 rgba(255,255,255,0);transition:box-shadow 0.28s ease,filter 0.15s ease;}
-.fb-close-btn:hover{box-shadow:0 3px 10px rgba(0,0,0,0.2),0 0 0 6px rgba(255,255,255,0.14);}
-.fb-close-btn:active{box-shadow:0 3px 10px rgba(0,0,0,0.2),0 0 0 2px rgba(255,255,255,0.28);filter:brightness(1.18);}
+.fb-close-wrap.open{height:57px;opacity:1;}
+.fb-close-line{width:2px;height:14px;flex-shrink:0;background:#E24B4A;}
+.fb-close-btn{width:39px;height:39px;flex-shrink:0;border-radius:50%;background:rgba(255,255,255,0.16);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;cursor:pointer;margin-top:2px;box-shadow:0 3px 10px rgba(0,0,0,0.2),0 0 0 0 rgba(255,255,255,0);transition:box-shadow 0.22s cubic-bezier(.4,0,.2,1),filter 0.15s ease;}
+.fb-close-btn:hover{box-shadow:0 3px 10px rgba(0,0,0,0.2),0 0 0 6px rgba(226,75,74,0.3);}
+.fb-close-btn:active{box-shadow:0 3px 10px rgba(0,0,0,0.2),0 0 0 2px rgba(226,75,74,0.5);filter:brightness(1.18);}
 .fb-close-btn svg{width:16px;height:16px;}
 @keyframes po{0%,100%{box-shadow:0 4px 14px rgba(230,126,34,0.6);}50%{box-shadow:0 4px 24px rgba(230,126,34,0.1);}}
 .fb-menu{display:flex;flex-direction:column;gap:10px;pointer-events:none;}
@@ -205,99 +212,100 @@ nav a{font-size:12px;font-weight:700;color:var(--text);text-transform:uppercase;
 .fb-menu.open .fb:nth-child(1){transition-delay:0.02s;}
 .fb-menu.open .fb:nth-child(2){transition-delay:0.08s;}
 .fb-menu.open .fb:nth-child(3){transition-delay:0.14s;}
-.fb-tg,.fb-wa,.fb-vb{background:rgba(255,255,255,0.16);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.4);}
+.fb-tg,.fb-wa,.fb-vb{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}
+.fb-tg{background:rgba(34,158,217,0.32);border:1px solid rgba(34,158,217,0.55);}
+.fb-wa{background:rgba(37,211,102,0.32);border:1px solid rgba(37,211,102,0.55);}
+.fb-vb{background:rgba(123,81,157,0.32);border:1px solid rgba(123,81,157,0.55);}
 </style>
   <script src="prices.js" defer></script>
 <style>
     /* ── Тёмная тема каталога ── */
-    @media (prefers-color-scheme: dark) {
-      header { background: #242424 !important; border-bottom-color: #c0392b !important; }
-      .logo { color: #e05040 !important; }
-      nav a { color: #ccc !important; }
-      .lang-switch a { color: #999 !important; }
-      .lang-switch a.active { color: #e05040 !important; background: #2a2a2a !important; }
-      .burger span { background: #aaa !important; }
-      .mobile-menu { background: #2a2a2a !important; }
-      .mobile-menu a { color: #ddd !important; border-bottom-color: #333 !important; }
-      .modal { background: #2a2a2a !important; }
-      .modal h3 { color: #f0ece6 !important; }
-      .modal p { color: #aaa !important; }
-      .modal-field label { color: #ccc !important; }
-      .modal-field input, .modal-field textarea { background: #333 !important; border-color: #444 !important; color: #eee !important; }
-      html { background: #1a1a1a !important; }
-      body { background: #1a1a1a !important; color: #e0ddd8 !important; }
+        header { background: #242424 !important; border-bottom-color: #c0392b !important; }
+    .logo { color: #e05040 !important; }
+    nav a { color: #ccc !important; }
+    .lang-switch a { color: #999 !important; }
+    .lang-switch a.active { color: #e05040 !important; background: #2a2a2a !important; }
+    .burger span { background: #aaa !important; }
+    .mobile-menu { background: #2a2a2a !important; }
+    .mobile-menu a { color: #ddd !important; border-bottom-color: #333 !important; }
+    .modal { background: #2a2a2a !important; }
+    .modal h3 { color: #f0ece6 !important; }
+    .modal p { color: #aaa !important; }
+    .modal-field label { color: #ccc !important; }
+    .modal-field input, .modal-field textarea { background: #333 !important; border-color: #444 !important; color: #eee !important; }
+    html { background: #1a1a1a !important; }
+    body { background: #1a1a1a !important; color: #e0ddd8 !important; }
 
 
-      /* Хлебные крошки */
-      .breadcrumb { background: #242424 !important; border-bottom-color: #333 !important; color: #888 !important; }
-      .breadcrumb-wrap { background: #242424 !important; border-bottom-color: #333 !important; }
-      .breadcrumb a { color: #e05040 !important; }
+    /* Хлебные крошки */
+    .breadcrumb { background: #242424 !important; border-bottom-color: #333 !important; color: #888 !important; }
+    .breadcrumb-wrap { background: #242424 !important; border-bottom-color: #333 !important; }
+    .breadcrumb a { color: #e05040 !important; }
 
-      /* Cat body */
-      .cat-body { background: #1a1a1a !important; }
-      .cat-main { background: #1a1a1a !important; }
+    /* Cat body */
+    .cat-body { background: #1a1a1a !important; }
+    .cat-main { background: #1a1a1a !important; }
 
-      /* Блок типов */
-      .types-box { background: #242424 !important; border-color: #333 !important; }
-      .types-box h3 { color: #f0ece6 !important; }
-      .types-box ul li { border-bottom-color: #333 !important; color: #ccc !important; }
-      .types-box ul li span:first-child { color: #ccc !important; }
+    /* Блок типов */
+    .types-box { background: #242424 !important; border-color: #333 !important; }
+    .types-box h3 { color: #f0ece6 !important; }
+    .types-box ul li { border-bottom-color: #333 !important; color: #ccc !important; }
+    .types-box ul li span:first-child { color: #ccc !important; }
 
-      /* SEO текст */
-      .seo-body h2 { color: #f0ece6 !important; }
-      .seo-body h3 { color: #f0ece6 !important; }
-      .seo-body p { color: #bbb !important; }
-      .seo-body ul li { color: #bbb !important; border-bottom-color: #333 !important; }
-      .seo-body ul li::before { color: #e05040 !important; }
-      .ibox { background: #2a2a2a !important; color: #ccc !important; }
+    /* SEO текст */
+    .seo-body h2 { color: #f0ece6 !important; }
+    .seo-body h3 { color: #f0ece6 !important; }
+    .seo-body p { color: #bbb !important; }
+    .seo-body ul li { color: #bbb !important; border-bottom-color: #333 !important; }
+    .seo-body ul li::before { color: #e05040 !important; }
+    .ibox { background: #2a2a2a !important; color: #ccc !important; }
 
-      /* Таблица */
-      .seo-table th { background: #111 !important; }
-      .seo-table td { border-bottom-color: #333 !important; color: #ccc !important; }
-      .seo-table tr:hover td { background: #2a2a2a !important; }
+    /* Таблица */
+    .seo-table th { background: #111 !important; }
+    .seo-table td { border-bottom-color: #333 !important; color: #ccc !important; }
+    .seo-table tr:hover td { background: #2a2a2a !important; }
 
-      /* Шаги */
-      .steps-row { background: transparent !important; }
-      .step-c { background: #242424 !important; }
-      .step-c h4 { color: #f0ece6 !important; }
-      .step-c p { color: #999 !important; }
+    /* Шаги */
+    .steps-row { background: transparent !important; }
+    .step-c { background: #242424 !important; }
+    .step-c h4 { color: #f0ece6 !important; }
+    .step-c p { color: #999 !important; }
 
-      /* FAQ */
-      .faq-item { border-bottom-color: #333 !important; }
-      .faq-q { color: #f0ece6 !important; background: transparent !important; }
-      .faq-a { color: #bbb !important; }
+    /* FAQ */
+    .faq-item { border-bottom-color: #333 !important; }
+    .faq-q { color: #f0ece6 !important; background: transparent !important; }
+    .faq-a { color: #bbb !important; }
 
-      /* Другие металлы */
-      .other-metals a { background: #2a2a2a !important; border-color: #444 !important; color: #ddd !important; }
-      .article-card{background:#242424 !important;box-shadow:none !important;}
-      .article-card h2{color:#f0ece6 !important;}
-      .article-card p{color:#999 !important;}
+    /* Другие металлы */
+    .other-metals a { background: #2a2a2a !important; border-color: #444 !important; color: #ddd !important; }
+    .article-card{background:#242424 !important;box-shadow:none !important;}
+    .article-card h2{color:#f0ece6 !important;}
+    .article-card p{color:#999 !important;}
 
 
-      /* Sidebar форма */
-      .sform { background: #242424 !important; box-shadow: none !important; }
-      .sform h3 { color: #f0ece6 !important; }
-      .sform p { color: #999 !important; }
-      .sf input, .sf textarea { background: #333 !important; border-color: #444 !important; color: #eee !important; }
-      .sf input::placeholder, .sf textarea::placeholder { color: #777 !important; }
+    /* Sidebar форма */
+    .sform { background: #242424 !important; box-shadow: none !important; }
+    .sform h3 { color: #f0ece6 !important; }
+    .sform p { color: #999 !important; }
+    .sf input, .sf textarea { background: #333 !important; border-color: #444 !important; color: #eee !important; }
+    .sf input::placeholder, .sf textarea::placeholder { color: #777 !important; }
 
-      /* Модальное окно */
+    /* Модальное окно */
 
-      /* CTA bar */
-      .cta-bar { background: #111 !important; }
+    /* CTA bar */
+    .cta-bar { background: #111 !important; }
 
-      /* Футер */
-      footer { background: #111 !important; }
-      .footer-col a, .footer-col p { color: rgba(255,255,255,0.7) !important; }
-      .footer-col h4 { color: #fff !important; }
+    /* Футер */
+    footer { background: #111 !important; }
+    .footer-col a, .footer-col p { color: rgba(255,255,255,0.7) !important; }
+    .footer-col h4 { color: #fff !important; }
 
-      /* Телефоны */
-      a[href^="tel"] { color: #e05040 !important; }
+    /* Телефоны */
+    a[href^="tel"] { color: #e05040 !important; }
 
-      /* Кнопки */
-      .btn-primary { background: var(--red) !important; color: #fff !important; }
-      a.btn-primary { color: #fff !important; }
-    }
+    /* Кнопки */
+    .btn-primary { background: var(--red) !important; color: #fff !important; }
+    a.btn-primary { color: #fff !important; }
   </style>
 
 </head>
@@ -417,9 +425,9 @@ nav a{font-size:12px;font-weight:700;color:var(--text);text-transform:uppercase;
 </footer>
 <div class="float-btns" id="floatBtns">
   <div class="fb-menu" id="fbMenu">
-    <a class="fb fb-tg" href="https://t.me/avikom1998" target="_blank" title="Telegram"><img src="/img/fb-telegram.png" alt="Telegram" width="26" height="26"/></a>
-    <a class="fb fb-wa" href="https://wa.me/380503179317" target="_blank" title="WhatsApp"><img src="/img/fb-whatsapp.png" alt="WhatsApp" width="26" height="26"/></a>
-    <a class="fb fb-vb" href="viber://chat?number=%2B380503179317" title="Viber"><img src="/img/fb-viber.png" alt="Viber" width="26" height="26"/></a>
+    <a class="fb fb-tg" href="https://t.me/Spiritus_est" target="_blank" title="Telegram"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9 22 2Z"/></svg></a>
+    <a class="fb fb-wa" href="https://wa.me/380503179317" target="_blank" title="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M3 21l1.3-4.7A8.9 8.9 0 1 1 8 19.6L3 21Z"/><path d="M8.8 9.6c0 3.4 2.8 6.2 6.2 6.2.6 0 1-.4 1-1v-.9a.6.6 0 0 0-.4-.6l-1.7-.6a.6.6 0 0 0-.7.2l-.4.5a5.6 5.6 0 0 1-2.6-2.6l.5-.4a.6.6 0 0 0 .2-.7l-.6-1.7a.6.6 0 0 0-.6-.4h-.9c-.6 0-1 .4-1 1Z"/></svg></a>
+    <a class="fb fb-vb" href="viber://chat?number=%2B380503179317" title="Viber"><img src="/img/fb-viber-real.png" alt="Viber" width="26" height="27"/></a>
   </div>
   <button class="fb fb-toggle" id="fbToggle" onclick="toggleFbMenu()">
     <span class="fb-combo">
