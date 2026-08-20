@@ -271,11 +271,14 @@ nav a{font-size:12px;font-weight:700;color:var(--text);text-transform:uppercase;
 .fb{width:56px;height:56px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 0 rgba(255,255,255,0);transition:box-shadow 0.22s cubic-bezier(.4,0,.2,1),filter 0.15s ease;border:none;cursor:pointer;}
 .fb:hover{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 8px rgba(255,255,255,0.14);}
 .fb:active{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 3px rgba(255,255,255,0.28);filter:brightness(1.18);}
-.fb-tg:hover{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 8px rgba(34,158,217,0.32);}
+.fb-tg:hover{animation:fbPulseTg 1.3s ease-in-out infinite;}
+@keyframes fbPulseTg{0%,100%{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 6px rgba(34,158,217,0.4);}50%{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 12px rgba(34,158,217,0.1);}}
 .fb-tg:active{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 3px rgba(34,158,217,0.55);filter:brightness(1.15);}
-.fb-wa:hover{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 8px rgba(37,211,102,0.32);}
+.fb-wa:hover{animation:fbPulseWa 1.3s ease-in-out infinite;}
+@keyframes fbPulseWa{0%,100%{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 6px rgba(37,211,102,0.4);}50%{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 12px rgba(37,211,102,0.1);}}
 .fb-wa:active{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 3px rgba(37,211,102,0.55);filter:brightness(1.15);}
-.fb-vb:hover{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 8px rgba(123,81,157,0.32);}
+.fb-vb:hover{animation:fbPulseVb 1.3s ease-in-out infinite;}
+@keyframes fbPulseVb{0%,100%{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 6px rgba(123,81,157,0.4);}50%{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 12px rgba(123,81,157,0.1);}}
 .fb-vb:active{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 3px rgba(123,81,157,0.55);filter:brightness(1.15);}
 .fb-toggle{background:rgba(255,255,255,0.16);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.4);color:#fff;font-size:22px;animation:po 3s infinite;will-change:transform,opacity;position:relative;overflow:visible;}
 .fb-combo{position:relative;width:100%;height:100%;display:block;}
@@ -286,11 +289,12 @@ nav a{font-size:12px;font-weight:700;color:var(--text);text-transform:uppercase;
 .fb-badge{position:absolute;top:-2px;right:-2px;width:14px;height:14px;border-radius:50%;background:#E24B4A;border:2px solid #fff;animation:fbpulse 1.8s infinite;transition:opacity 0.2s ease,transform 0.2s ease;}
 .fb-toggle.open .fb-badge{opacity:0;transform:scale(0);}
 @keyframes fbpulse{0%,100%{transform:scale(1);}50%{transform:scale(1.25);}}
-.fb-close-wrap{display:flex;flex-direction:column;align-items:center;height:0;overflow:hidden;opacity:0;transition:height 0.36s cubic-bezier(.34,1.2,.64,1) 0.16s,opacity 0.3s ease 0.16s;}
+.fb-close-wrap{display:flex;flex-direction:column;align-items:center;width:56px;height:0;overflow:hidden;opacity:0;transition:height 0.36s cubic-bezier(.34,1.2,.64,1) 0.16s,opacity 0.3s ease 0.16s;}
 .fb-close-wrap.open{height:57px;opacity:1;}
 .fb-close-line{width:2px;height:14px;flex-shrink:0;background:#E24B4A;}
 .fb-close-btn{width:39px;height:39px;flex-shrink:0;border-radius:50%;background:rgba(255,255,255,0.16);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;cursor:pointer;margin-top:2px;box-shadow:0 3px 10px rgba(0,0,0,0.2),0 0 0 0 rgba(255,255,255,0);transition:box-shadow 0.22s cubic-bezier(.4,0,.2,1),filter 0.15s ease;}
-.fb-close-btn:hover{box-shadow:0 3px 10px rgba(0,0,0,0.2),0 0 0 6px rgba(226,75,74,0.3);}
+.fb-close-btn:hover{animation:fbPulseClose 1.3s ease-in-out infinite;}
+@keyframes fbPulseClose{0%,100%{box-shadow:0 3px 10px rgba(0,0,0,0.2),0 0 0 4px rgba(226,75,74,0.4);}50%{box-shadow:0 3px 10px rgba(0,0,0,0.2),0 0 0 9px rgba(226,75,74,0.1);}}
 .fb-close-btn:active{box-shadow:0 3px 10px rgba(0,0,0,0.2),0 0 0 2px rgba(226,75,74,0.5);filter:brightness(1.18);}
 .fb-close-btn svg{width:16px;height:16px;}
 @keyframes po{0%,100%{box-shadow:0 4px 14px rgba(230,126,34,0.6);}50%{box-shadow:0 4px 24px rgba(230,126,34,0.1);}}
@@ -520,8 +524,8 @@ nav a{font-size:12px;font-weight:700;color:var(--text);text-transform:uppercase;
 <div class="float-btns" id="floatBtns">
   <div class="fb-menu" id="fbMenu">
     <a class="fb fb-tg" href="https://t.me/Spiritus_est" target="_blank" title="Telegram"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9 22 2Z"/></svg></a>
-    <a class="fb fb-wa" href="https://wa.me/380503179317" target="_blank" title="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M3 21l1.3-4.7A8.9 8.9 0 1 1 8 19.6L3 21Z"/><path d="M8.8 9.6c0 3.4 2.8 6.2 6.2 6.2.6 0 1-.4 1-1v-.9a.6.6 0 0 0-.4-.6l-1.7-.6a.6.6 0 0 0-.7.2l-.4.5a5.6 5.6 0 0 1-2.6-2.6l.5-.4a.6.6 0 0 0 .2-.7l-.6-1.7a.6.6 0 0 0-.6-.4h-.9c-.6 0-1 .4-1 1Z"/></svg></a>
-    <a class="fb fb-vb" href="viber://chat?number=%2B380503179317" title="Viber"><img src="/img/fb-viber-real.png" alt="Viber" width="26" height="27"/></a>
+    <a class="fb fb-wa" href="https://wa.me/380503179317" target="_blank" title="WhatsApp"><img src="/img/fb-whatsapp-real.png" alt="WhatsApp" width="26" height="24" style="object-fit:contain;display:block;"/></a>
+    <a class="fb fb-vb" href="viber://chat?number=%2B380503179317" title="Viber"><img src="/img/fb-viber-real.png" alt="Viber" width="26" height="27" style="object-fit:contain;display:block;"/></a>
   </div>
   <button class="fb fb-toggle" id="fbToggle" onclick="toggleFbMenu()">
     <span class="fb-combo">
