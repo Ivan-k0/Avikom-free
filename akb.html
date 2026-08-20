@@ -135,10 +135,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
 .footer-col a:hover{color:#fff;}
 .footer-bot{max-width:1100px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.1);padding-top:16px;font-size:12px;color:rgba(255,255,255,0.35);}
 .float-btns{position:fixed;bottom:90px;right:20px;display:flex;flex-direction:column;gap:12px;z-index:1001;}
-.fb{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,0.25);transition:transform 0.2s;}
-.fb:hover{transform:scale(1.1);}
-.fb-evg{background:#e67e22;color:#fff;animation:po 3s infinite;will-change:transform,opacity;}
-@keyframes po{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.85;transform:scale(0.97);}}
+50%{opacity:0.85;transform:scale(0.97);}}
 @keyframes pr{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.85;transform:scale(0.97);}}
 
 
@@ -156,7 +153,6 @@ footer{background:#1a1a1a;color:rgba(255,255,255,0.65);padding:40px 20px 20px;}
 
 
 @media(max-width:900px){.cat-body{grid-template-columns:1fr;}.cat-sidebar{order:2;}.sform{position:static;}.steps-row{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:680px){nav,.btn-hdr{display:none;}.burger{display:flex;}.cat-hero{padding:36px 16px 32px;}.steps-row{grid-template-columns:1fr 1fr;}.seo-body{overflow-wrap:break-word;word-break:break-word;}.seo-body p,.seo-body ul li{overflow-wrap:break-word;}}
 header{background:#fff;border-bottom:2px solid var(--red);position:sticky;top:0;z-index:200;box-shadow:0 1px 6px rgba(0,0,0,0.08);}
 .header-inner{max-width:1100px;margin:0 auto;padding:0 20px;height:46px;display:flex;align-items:center;justify-content:space-between;gap:8px;}
 .logo{font-family:'Oswald',sans-serif;font-size:18px;font-weight:700;color:var(--red);letter-spacing:1.5px;white-space:nowrap;}
@@ -194,6 +190,39 @@ nav a{font-size:12px;font-weight:700;color:var(--text);text-transform:uppercase;
 .modal-success{text-align:center;padding:20px 0 8px;}
 .modal-success .check{font-size:52px;margin-bottom:12px;}
 .modal-success h4{font-family:'Oswald',sans-serif;font-size:22px;margin-bottom:8px;}
+@media(max-width:680px){nav,.btn-hdr{display:none;}.burger{display:flex;}.cat-hero{padding:36px 16px 32px;}.steps-row{grid-template-columns:1fr 1fr;}.seo-body{overflow-wrap:break-word;word-break:break-word;}.seo-body p,.seo-body ul li{overflow-wrap:break-word;}}
+.float-btns{position:fixed;bottom:90px;right:20px;display:flex;flex-direction:column;align-items:flex-end;gap:12px;z-index:1001;}
+.fb{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 0 rgba(255,255,255,0);transition:box-shadow 0.28s ease,filter 0.15s ease;border:none;cursor:pointer;}
+.fb:hover{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 8px rgba(255,255,255,0.14);}
+.fb:active{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 3px rgba(255,255,255,0.28);filter:brightness(1.18);}
+.fb-toggle{background:rgba(255,255,255,0.16);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.4);color:#fff;font-size:22px;animation:po 3s infinite;will-change:transform,opacity;position:relative;overflow:visible;}
+.fb-combo{position:relative;width:100%;height:100%;display:block;}
+.fb-mail-part{position:absolute;inset:0;margin:auto;width:32px;height:32px;object-fit:contain;opacity:1;transform:scale(1);transition:opacity 0.3s ease,transform 0.3s ease;}
+.fb-toggle.open .fb-mail-part{opacity:0;transform:scale(0.4) rotate(30deg);}
+.fb-phone-part{position:absolute;inset:0;margin:auto;width:32px;height:32px;object-fit:contain;opacity:0;transform:scale(0.4) rotate(-40deg);transition:opacity 0.3s ease,transform 0.3s ease;}
+.fb-toggle.open .fb-phone-part{opacity:1;transform:scale(1) rotate(0deg);}
+.fb-badge{position:absolute;top:-2px;right:-2px;width:14px;height:14px;border-radius:50%;background:#E24B4A;border:2px solid #fff;animation:fbpulse 1.8s infinite;transition:opacity 0.2s ease,transform 0.2s ease;}
+.fb-toggle.open .fb-badge{opacity:0;transform:scale(0);}
+@keyframes fbpulse{0%,100%{transform:scale(1);}50%{transform:scale(1.25);}}
+.fb-close-wrap{display:flex;flex-direction:column;align-items:center;height:0;overflow:hidden;opacity:0;transition:height 0.36s cubic-bezier(.34,1.2,.64,1) 0.16s,opacity 0.3s ease 0.16s;}
+.fb-close-wrap.open{height:42px;opacity:1;}
+.fb-close-line{width:2px;height:14px;background:#E24B4A;}
+.fb-close-btn{width:39px;height:39px;border-radius:50%;background:rgba(255,255,255,0.16);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;cursor:pointer;margin-top:2px;box-shadow:0 3px 10px rgba(0,0,0,0.2),0 0 0 0 rgba(255,255,255,0);transition:box-shadow 0.28s ease,filter 0.15s ease;}
+.fb-close-btn:hover{box-shadow:0 3px 10px rgba(0,0,0,0.2),0 0 0 6px rgba(255,255,255,0.14);}
+.fb-close-btn:active{box-shadow:0 3px 10px rgba(0,0,0,0.2),0 0 0 2px rgba(255,255,255,0.28);filter:brightness(1.18);}
+.fb-close-btn svg{width:16px;height:16px;}
+@keyframes po{0%,100%{box-shadow:0 4px 14px rgba(230,126,34,0.6);}50%{box-shadow:0 4px 24px rgba(230,126,34,0.1);}}
+.fb-menu{display:flex;flex-direction:column;gap:10px;pointer-events:none;}
+.fb-menu .fb{opacity:0;transform:translateY(10px) scale(0.85);transition:opacity 0.32s cubic-bezier(.34,1.56,.64,1),transform 0.32s cubic-bezier(.34,1.56,.64,1);}
+.fb-menu.open{pointer-events:auto;}
+.fb-menu.open .fb{opacity:1;transform:translateY(0) scale(1);}
+.fb-menu .fb:nth-child(1){transition-delay:0.1s;}
+.fb-menu .fb:nth-child(2){transition-delay:0.05s;}
+.fb-menu .fb:nth-child(3){transition-delay:0s;}
+.fb-menu.open .fb:nth-child(1){transition-delay:0.02s;}
+.fb-menu.open .fb:nth-child(2){transition-delay:0.08s;}
+.fb-menu.open .fb:nth-child(3){transition-delay:0.14s;}
+.fb-tg,.fb-wa,.fb-vb{background:rgba(255,255,255,0.16);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.4);}
 </style>
   <script src="prices.js" defer></script>
 <style>
@@ -351,7 +380,7 @@ nav a{font-size:12px;font-weight:700;color:var(--text);text-transform:uppercase;
     <p>Приём в Одессе с 1998 года · ул. Олега Андрійця 9а · Пн–Пт 8:30–17:00</p>
         <div class="hero-btns">
       <a class="btn-primary" href="tel:+380503179317">Позвонить</a>
-      <a class="btn-tg" href="https://t.me/avikom1998" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg> Telegram</a>
+      <a class="btn-tg" href="https://t.me/avikom1998" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="#229ED9"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg> Telegram</a>
       <button class="btn-primary" onclick="openModal()" style="background:transparent;border:2px solid rgba(255,255,255,0.6);">Обратный звонок</button>
     </div>
   </div>
@@ -436,10 +465,27 @@ nav a{font-size:12px;font-weight:700;color:var(--text);text-transform:uppercase;
       <p>🕐 Пн–Пт: 8:30–17:00</p><p style="color:#c0392b;font-weight:700;">Без выходных!</p>
     </div>
   </div>
-  <div class="footer-bot">© 2026 ПП Авто-Виком. Приём металлолома в Одессе с 1998 года.</div>
+  <div class="footer-bot">© 2026 ПП Авто-Виком. Приём металлолома в Одессе с 1998 года. · <a href="https://www.flaticon.com/ru/free-icons/-" title="Связаться с нами иконки" style="color:rgba(255,255,255,0.35);text-decoration:underline;">Связаться с нами иконки от Uniconlabs - Flaticon</a></div>
 </footer>
-<div class="float-btns">
-  <a class="fb fb-evg" href="tel:+380503179317" title="Иван 050 317 93 17">📞</a>
+<div class="float-btns" id="floatBtns">
+  <div class="fb-menu" id="fbMenu">
+    <a class="fb fb-tg" href="https://t.me/avikom1998" target="_blank" title="Telegram"><img src="/img/fb-telegram.png" alt="Telegram" width="26" height="26"/></a>
+    <a class="fb fb-wa" href="https://wa.me/380503179317" target="_blank" title="WhatsApp"><img src="/img/fb-whatsapp.png" alt="WhatsApp" width="26" height="26"/></a>
+    <a class="fb fb-vb" href="viber://chat?number=%2B380503179317" title="Viber"><img src="/img/fb-viber.png" alt="Viber" width="26" height="26"/></a>
+  </div>
+  <button class="fb fb-toggle" id="fbToggle" onclick="toggleFbMenu()">
+    <span class="fb-combo">
+      <img class="fb-mail-part" src="/img/fb-contact-icon.png" alt="Связаться с нами" width="32" height="32"/>
+      <img class="fb-phone-part" src="/img/fb-phone-icon.png" alt="Позвонить" width="32" height="32"/>
+      <span class="fb-badge"></span>
+    </span>
+  </button>
+  <div class="fb-close-wrap" id="fbCloseWrap">
+    <div class="fb-close-line"></div>
+    <button class="fb-close-btn" onclick="toggleFbMenu()" aria-label="Закрыть">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
 </div>
 <script>function openModal(){var m=document.getElementById('callbackModal');if(m){m.classList.add('active');document.body.style.overflow='hidden';}}
 function closeModal(){var m=document.getElementById('callbackModal');if(m){m.classList.remove('active');document.body.style.overflow='';}setTimeout(function(){var f=document.getElementById('modalForm');var s=document.getElementById('modalSuccess');if(f)f.style.display='';if(s)s.style.display='none';var b=document.getElementById('cb-submit');if(b){b.disabled=false;b.textContent='📞 Жду звонка';}['cb-name','cb-phone','cb-comment'].forEach(function(id){var el=document.getElementById(id);if(el)el.value='';});},300);}
@@ -452,5 +498,19 @@ function toggleMenu(){var b=document.getElementById('burger'),m=document.getElem
 function closeMenu(){document.getElementById('burger').classList.remove('open');document.getElementById('mobileMenu').classList.remove('open');}
 document.addEventListener('click',function(e){var h=document.querySelector('header');if(h&&!h.contains(e.target))closeMenu();});window.toggleFaq=function(btn){var item=btn.parentElement;if(!item)return;var isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');});if(!isOpen){item.classList.add('open');}}</script>
 <script src="https://app-staging.noosphere.inc/widget.js" data-agent="metal-avikom-com-ua-ddabd498"></script>
+<script>function toggleFbMenu(){
+  var menu=document.getElementById('fbMenu');
+  var btn=document.getElementById('fbToggle');
+  var closeWrap=document.getElementById('fbCloseWrap');
+  var isOpen=menu.classList.toggle('open');
+  btn.classList.toggle('open',isOpen);
+  if(closeWrap)closeWrap.classList.toggle('open',isOpen);
+  if(isOpen){
+    btn.onclick=function(){window.location.href='tel:+380503179317';};
+  }else{
+    btn.onclick=function(){toggleFbMenu();};
+  }
+}
+document.addEventListener('click',function(e){var fb=document.getElementById('floatBtns');if(fb&&!fb.contains(e.target)){var m=document.getElementById('fbMenu');var b=document.getElementById('fbToggle');var cw=document.getElementById('fbCloseWrap');if(m&&m.classList.contains('open')){m.classList.remove('open');b.classList.remove('open');if(cw)cw.classList.remove('open');b.onclick=function(){toggleFbMenu();};}}});</script>
 </body>
 </html>
