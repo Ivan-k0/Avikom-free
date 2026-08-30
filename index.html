@@ -191,6 +191,8 @@ section{padding:60px 20px;}
 .section-sub{color:#777;margin-bottom:40px;font-size:15px;}
 .divider{width:60px;height:4px;background:var(--red);margin:12px 0 32px;}
 .tg-btn{display:inline-flex;align-items:center;gap:10px;background:#229ED9;color:#fff;padding:13px 28px;border-radius:8px;font-weight:700;font-size:16px;margin-top:28px;transition:background 0.2s;}
+#prices .section-title,#prices .section-sub{text-align:center;}
+#prices .divider{margin-left:auto;margin-right:auto;}
 .tg-btn:hover{background:#1a7fb5;}
 .price-table-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;margin-top:28px;}
 .ptable-head{background:var(--dark);color:#fff;font-family:'Oswald',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;padding:7px 14px;margin-top:4px;transition:background 0.2s;}
@@ -272,7 +274,9 @@ footer{background:var(--dark);color:rgba(255,255,255,0.7);padding:48px 20px 24px
   section{padding:44px 16px;}
 }
 
-  </style>
+  .seo-info-section{background:#fff;}
+.seo-info-text{max-width:780px;color:#444;font-size:15px;line-height:1.8;}
+</style>
 <script>
 function openModal(){var m=document.getElementById('callbackModal');if(m){m.classList.add('active');document.body.style.overflow='hidden';}}
 function closeModal(){var m=document.getElementById('callbackModal');if(m){m.classList.remove('active');document.body.style.overflow='';}setTimeout(function(){var f=document.getElementById('modalForm');var s=document.getElementById('modalSuccess');if(f)f.style.display='';if(s)s.style.display='none';var b=document.getElementById('cb-submit');if(b){b.disabled=false;b.textContent='📞 Жду звонка';}['cb-name','cb-phone','cb-comment'].forEach(function(id){var el=document.getElementById(id);if(el)el.value='';});},300);}
@@ -296,6 +300,8 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
       .mobile-menu a { color: #ddd !important; border-bottom-color: #333 !important; }
 
       section { background: #1a1a1a !important; }
+      .seo-info-text{color:#ccc !important;}
+      .seo-info-text strong{color:#f0ece6 !important;}
       section[style*="background:#f"] { background: #222222 !important; }
       section[style*="background: #f"] { background: #222222 !important; }
       section[style*="background:#fff"] { background: #242424 !important; }
@@ -518,7 +524,7 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
     <div class="divider"></div>
     <p class="section-sub">Оптовые цены от <span id="today-date"></span>. Уточняйте по телефону или в Telegram — цены обновляются ежедневно.</p>
     <script>var d=new Date();document.getElementById("today-date").textContent=("0"+d.getDate()).slice(-2)+"."+("0"+(d.getMonth()+1)).slice(-2)+"."+d.getFullYear();</script>
-    <a class="tg-btn" href="https://t.me/avikom1998" target="_blank"><svg width="22" height="22" viewBox="0 0 24 24" fill="#229ED9"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg> Актуальные цены в Telegram</a>
+    <div style="text-align:center;"><a class="tg-btn" href="https://t.me/avikom1998" target="_blank"><svg width="22" height="22" viewBox="0 0 24 24" fill="#229ED9"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg> Актуальные цены в Telegram</a></div>
     <div class="price-table-wrap">
   <div class="price-col">
     <div class="ptable-head"><a href="alyuminiy.html">🔩 Алюминий <span style="opacity:0.6;font-size:11px;">подробнее →</span></a></div>
@@ -646,11 +652,11 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
     <div class="faq-list"><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Минимальный объём?<span class="arrow">▼</span></button><div class="faq-a">От 1 кг. Бесплатный вывоз от 1 тонны.</div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Как оплата?<span class="arrow">▼</span></button><div class="faq-a">Сразу после взвешивания — наличными или на карту.</div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Принимаете цветной и чёрный металл?<span class="arrow">▼</span></button><div class="faq-a">Да: медь, алюминий, латунь, нержавейку, свинец, титан, чёрный металл и АКБ.</div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Бесплатный вывоз есть?<span class="arrow">▼</span></button><div class="faq-a">Да! От 1 тонны по Одессе и области. Проводим демонтаж и погрузку.</div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Как узнать актуальные цены?<span class="arrow">▼</span></button><div class="faq-a">Звоните 050 317 93 17 или Telegram @avikom1998 — цены обновляются ежедневно.</div></div></div>
   </div>
 </section>
-<section id="seo-info" style="background:#fff;">
+<section id="seo-info" class="seo-info-section">
   <div class="container">
     <div class="section-title">Металлолом <span>в Одессе</span></div>
     <div class="divider"></div>
-    <div style="max-width:780px;color:#444;font-size:15px;line-height:1.8;">
+    <div class="seo-info-text">
       <p style="margin-bottom:16px;">Если вы ищете, <strong>где сдать металлолом в Одессе</strong> дорого и без лишних хлопот — «Авто-Виком» принимает лом чёрных и цветных металлов с 1998 года. К нам обращаются как частные лица после ремонта или разбора гаража, так и предприятия с промышленными объёмами отходов производства.</p>
       <p style="margin-bottom:16px;">Мы принимаем все основные виды лома: <a href="med.html" style="color:var(--red);">медь</a>, <a href="alyuminiy.html" style="color:var(--red);">алюминий</a>, <a href="latun.html" style="color:var(--red);">латунь</a>, <a href="nerzhavejka.html" style="color:var(--red);">нержавеющую сталь</a>, свинец, титан, <a href="cherniy-lom.html" style="color:var(--red);">чёрный металлолом</a> и <a href="akb.html" style="color:var(--red);">б/у аккумуляторы</a>. Пункт приёма металлолома находится по адресу ул. Олега Андрійця 9а — удобно добраться из любого района Одессы: Пересыпи, Молдаванки, Черёмушек, Малиновского и Киевского районов.</p>
       <p style="margin-bottom:16px;"><strong>Как подготовить металлолом к сдаче:</strong> по возможности рассортируйте лом по видам металла — это ускорит приёмку и повысит итоговую цену. Уберите крупные неметаллические включения (пластик, дерево, резину). Крупногабаритные партии от 1 тонны мы вывозим бесплатно по Одессе и области, с демонтажом и погрузкой на месте.</p>

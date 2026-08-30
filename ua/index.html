@@ -153,6 +153,8 @@ section{padding:60px 20px;}
 .section-sub{color:#777;margin-bottom:40px;font-size:15px;}
 .divider{width:60px;height:4px;background:var(--red);margin:12px 0 32px;}
 .tg-btn{display:inline-flex;align-items:center;gap:10px;background:#229ED9;color:#fff;padding:13px 28px;border-radius:8px;font-weight:700;font-size:16px;margin-top:28px;transition:background 0.2s;}
+#prices .section-title,#prices .section-sub{text-align:center;}
+#prices .divider{margin-left:auto;margin-right:auto;}
 .tg-btn:hover{background:#1a7fb5;}
 .price-table-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;margin-top:28px;}
 .ptable-head{background:var(--dark);color:#fff;font-family:'Oswald',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;padding:7px 14px;margin-top:4px;transition:background 0.2s;}
@@ -282,6 +284,8 @@ footer{background:var(--dark);color:rgba(255,255,255,0.7);padding:48px 20px 24px
 .fb-tg{background:rgba(34,158,217,0.32);border:1px solid rgba(34,158,217,0.55);}
 .fb-wa{background:rgba(37,211,102,0.32);border:1px solid rgba(37,211,102,0.55);}
 .fb-vb{background:rgba(123,81,157,0.32);border:1px solid rgba(123,81,157,0.55);}
+.seo-info-section{background:#fff;}
+.seo-info-text{max-width:780px;color:#444;font-size:15px;line-height:1.8;}
 </style>
 <script>
 function openModal(){var m=document.getElementById('callbackModal');if(m){m.classList.add('active');document.body.style.overflow='hidden';}}
@@ -306,6 +310,8 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
       .mobile-menu a { color: #ddd !important; border-bottom-color: #333 !important; }
 
       section { background: #1a1a1a !important; }
+      .seo-info-text{color:#ccc !important;}
+      .seo-info-text strong{color:#f0ece6 !important;}
       section[style*="background:#f"] { background: #222222 !important; }
       section[style*="background: #f"] { background: #222222 !important; }
       section[style*="background:#fff"] { background: #242424 !important; }
@@ -501,7 +507,7 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
     <div class="divider"></div>
     <p class="section-sub">Оптові ціни від <span id="today-date"></span>. Уточнюйте по телефону або в Telegram — ціни оновлюються щодня.</p>
     <script>var d=new Date();document.getElementById("today-date").textContent=("0"+d.getDate()).slice(-2)+"."+("0"+(d.getMonth()+1)).slice(-2)+"."+d.getFullYear();</script>
-    <a class="tg-btn" href="https://t.me/avikom1998" target="_blank"><svg width="22" height="22" viewBox="0 0 24 24" fill="#229ED9"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg> Актуальні ціни в Telegram</a>
+    <div style="text-align:center;"><a class="tg-btn" href="https://t.me/avikom1998" target="_blank"><svg width="22" height="22" viewBox="0 0 24 24" fill="#229ED9"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg> Актуальні ціни в Telegram</a></div>
     <div class="price-table-wrap">
   <div class="price-col">
     <div class="ptable-head"><a href="../alyuminiy.html">🔩 Алюміній <span style="opacity:0.6;font-size:11px;">детальніше →</span></a></div>
@@ -630,11 +636,11 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
     <div class="faq-list"><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Мінімальний обсяг?<span class="arrow">▼</span></button><div class="faq-a">Від 1 кг. Безкоштовний вивіз від 1 тонни.</div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Як оплата?<span class="arrow">▼</span></button><div class="faq-a">Одразу після зважування — готівкою або на картку.</div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Приймаєте кольоровий і чорний метал?<span class="arrow">▼</span></button><div class="faq-a">Так: мідь, алюміній, латунь, нержавійку, свинець, титан, чорний метал і АКБ.</div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Є безкоштовний вивіз?<span class="arrow">▼</span></button><div class="faq-a">Так! Від 1 тонни по Одесі та області.</div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Як дізнатися актуальні ціни?<span class="arrow">▼</span></button><div class="faq-a">Телефонуйте 050 317 93 17 або Telegram @avikom1998.</div></div></div>
   </div>
 </section>
-<section id="seo-info" style="background:#fff;">
+<section id="seo-info" class="seo-info-section">
   <div class="container">
     <div class="section-title">Металобрухт <span>в Одесі</span></div>
     <div class="divider"></div>
-    <div style="max-width:780px;color:#444;font-size:15px;line-height:1.8;">
+    <div class="seo-info-text">
       <p style="margin-bottom:16px;">Якщо ви шукаєте, <strong>де здати металобрухт в Одесі</strong> дорого і без зайвих клопотів — «Авто-Віком» приймає лом чорних і кольорових металів з 1998 року. До нас звертаються як приватні особи після ремонту чи розбору гаража, так і підприємства з промисловими обсягами відходів виробництва.</p>
       <p style="margin-bottom:16px;">Ми приймаємо всі основні види лому: <a href="../med.html" style="color:var(--red);">мідь</a>, <a href="../alyuminiy.html" style="color:var(--red);">алюміній</a>, <a href="../latun.html" style="color:var(--red);">латунь</a>, <a href="../nerzhavejka.html" style="color:var(--red);">нержавіючу сталь</a>, свинець, титан, <a href="../cherniy-lom.html" style="color:var(--red);">чорний металобрухт</a> та <a href="../akb.html" style="color:var(--red);">б/у акумулятори</a>. Пункт прийому металобрухту знаходиться за адресою вул. Олега Андрійця 9а — зручно дістатися з будь-якого району Одеси.</p>
       <p style="margin-bottom:16px;"><strong>Як підготувати металобрухт до здачі:</strong> за можливості розсортуйте лом за видами металу — це прискорить приймання і підвищить підсумкову ціну. Приберіть великі неметалеві включення (пластик, дерево, гуму). Великогабаритні партії від 1 тонни ми вивозимо безкоштовно по Одесі та області.</p>
