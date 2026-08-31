@@ -4,12 +4,8 @@
 //
 // Настройка (пример для Vercel):
 //   Project → Settings → Environment Variables
-//     TELEGRAM_BOT_TOKEN = <новый токен, полученный заново у @BotFather>
+//     TELEGRAM_BOT_TOKEN = <токен, полученный у @BotFather>
 //     TELEGRAM_CHAT_ID   = 40272357
-//
-// ВАЖНО: старый токен 8527453061:AAGHfFHEn7zOgXI84O3YXM9Iw1fPgPzV1gA был
-// виден в открытом исходном коде сайта — считайте его скомпрометированным
-// и отзовите через @BotFather (/revoke) до включения этой функции в работу.
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
