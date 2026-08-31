@@ -193,7 +193,7 @@ async function savePrices() {
     '📞 050 317 93 17 (Иван)\n📞 093 727 79 12 (Евгений)';
 
   try {
-    var res = await fetch('/api/callback', {
+    var res = await fetch('https://avikom-free.vercel.app/api/callback', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({type: 'price_update', text: msg})

@@ -720,7 +720,7 @@ function sendCallback(){
   var now=new Date().toLocaleString('ru-UA',{timeZone:'Europe/Kiev'});
   var txt='Заявка: Перезвонить\n\nИмя: '+(n||'-')+'\nТел: '+p+'\nКомм: '+(cm||'-')+'\nВремя: '+now;
   var xhr=new XMLHttpRequest();
-  xhr.open('POST','/api/callback',true);
+  xhr.open('POST','https://avikom-free.vercel.app/api/callback',true);
   xhr.setRequestHeader('Content-Type','application/json');
   xhr.onload=function(){
     try{
