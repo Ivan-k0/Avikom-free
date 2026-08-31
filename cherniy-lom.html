@@ -39,12 +39,25 @@
   "@type": "Service",
   "serviceType": "Приём чёрного металлолома",
   "url": "https://metal-avikom.com.ua/cherniy-lom.html",
-  "areaServed": { "@type": "City", "name": "Одесса" },
+  "areaServed": {
+    "@type": "City",
+    "name": "Одесса"
+  },
   "provider": {
     "@type": "RecyclingCenter",
     "name": "Авто-Виком",
-    "telephone": ["+380503179317", "+380937277912"],
+    "telephone": [
+      "+380503179317",
+      "+380937277912"
+    ],
     "url": "https://metal-avikom.com.ua/"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "4",
+    "priceCurrency": "UAH",
+    "priceValidUntil": "2026-08-27",
+    "availability": "https://schema.org/InStock"
   }
 }
 </script>
@@ -400,7 +413,7 @@ nav a{font-size:12px;font-weight:700;color:var(--text);text-transform:uppercase;
 <section class="cat-hero" style="background:linear-gradient(rgba(0,0,0,0.68),rgba(0,0,0,0.75)),url('img/crane.jpg') center/cover no-repeat">
   <div style="max-width:1100px;margin:0 auto;">
     <h1>Сдать и продать <em>чёрный металлолом</em> в Одессе — цена 2026</h1>
-    <div class="price-badge">от 4 грн/кг</div>
+    <div class="price-badge" data-price="chern_lom">от 4 грн/кг</div>
     <p>Приём в Одессе с 1998 года · ул. Олега Андрійця 9а · Пн–Пт 8:30–17:00</p>
         <div class="hero-btns">
       <a class="btn-primary" href="tel:+380503179317">Позвонить</a>

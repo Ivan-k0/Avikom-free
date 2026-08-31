@@ -4,21 +4,21 @@
 // ═══════════════════════════════════════
 var PRICES = {
   // АЛЮМИНИЙ
-  aly_perv: 139,   // Первичный
+  aly_perv: 135,   // Первичный
   aly_prof: 115,   // Профиль
-  aly_mix:  84,    // Микс
-  aly_mot:  84,    // Моторный
+  aly_mix:  83,    // Микс
+  aly_mot:  83,    // Моторный
   aly_rad:  55,    // Радиатор
   aly_bank: 72,    // Банка
-  zam:      75,    // ЦАМ
+  zam:      70,    // ЦАМ
   mag:      50,    // Магний
 
   // МЕДЬ
-  med:       510,  // Медь (-0.5%)
-  med_blesk: 520,  // Медь-блеск
+  med:       505,  // Медь (-0.5%)
+  med_blesk: 515,  // Медь-блеск
 
   // ЛАТУНЬ
-  latun: 288,      // Латунь и радиаторы (-2%)
+  latun: 284,      // Латунь и радиаторы (-2%)
 
   // НЕРЖАВЕЙКА
   nerj_10: 26,     // Ni 10%
@@ -36,6 +36,7 @@ var PRICES = {
   // ПРОЧИЕ
   svinec: 65,      // Свинец
   titan:  77,      // Титан
+  chern_lom: 4,    // Чёрный лом
 };
 
 // Вычисляемые цены (med_mix = med минус 0.5%)
@@ -85,6 +86,37 @@ document.addEventListener('DOMContentLoaded', function() {
     content = content.replace(/\d+–\d+\s*грн\/кг/g, PRICES.med_mix + '–' + PRICES.med_blesk + ' грн/кг');
     content = content.replace(/\d+–\d+\s*UAH\/kg/g, PRICES.med_mix + '–' + PRICES.med_blesk + ' UAH/kg');
     metaDesc.setAttribute('content', content);
+  }
+
+  // 5. Обновляем цену в structured data (JSON-LD Service → offers), синхронизировано с price-badge
+  var badge = document.querySelector('.price-badge');
+  if (badge) {
+    var lowVal, highVal;
+    if (badge.hasAttribute('data-price')) {
+      var k = badge.getAttribute('data-price');
+      if (PRICES[k] !== undefined) { lowVal = highVal = PRICES[k]; }
+    } else if (badge.hasAttribute('data-price-range')) {
+      var ks = badge.getAttribute('data-price-range').split(',');
+      var a = PRICES[ks[0].trim()], b = PRICES[ks[1].trim()];
+      if (a !== undefined && b !== undefined) { lowVal = Math.min(a, b); highVal = Math.max(a, b); }
+    }
+    if (lowVal !== undefined) {
+      var tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      var validUntil = tomorrow.toISOString().slice(0, 10);
+
+      document.querySelectorAll('script[type="application/ld+json"]').forEach(function(script) {
+        try {
+          var data = JSON.parse(script.textContent);
+          if (data['@type'] === 'Service') {
+            data.offers = (lowVal === highVal)
+              ? { '@type': 'Offer', price: String(lowVal), priceCurrency: 'UAH', priceValidUntil: validUntil, availability: 'https://schema.org/InStock' }
+              : { '@type': 'AggregateOffer', lowPrice: String(lowVal), highPrice: String(highVal), priceCurrency: 'UAH', priceValidUntil: validUntil, offerCount: '1' };
+            script.textContent = JSON.stringify(data);
+          }
+        } catch (e) {}
+      });
+    }
   }
 
 });
