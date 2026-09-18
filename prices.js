@@ -14,7 +14,7 @@ var PRICES = {
   mag:      25,    // Магний
 
   // МЕДЬ
-  med:       510,  // Медь (-0.5%)
+  med:       510,  // Медь / медь-микс (готовая цена, без доп. вычетов)
   med_blesk: 520,  // Медь-блеск
 
   // ЛАТУНЬ
@@ -38,9 +38,6 @@ var PRICES = {
   titan:  77,      // Титан
   chern_lom: 2,    // Чёрный лом
 };
-
-// Вычисляемые цены (med_mix = med минус 0.5%)
-PRICES.med_mix = Math.round(PRICES.med * 0.995);
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -68,11 +65,11 @@ document.addEventListener('DOMContentLoaded', function() {
     el.textContent = min + '–' + max + unit;
   });
 
-  // 3. Обновляем data-price-mix (медь-микс со скидкой -0.5%)
+  // 3. Обновляем data-price-mix (медь-микс — показываем метку "-0.5%" как декоративную, число берём как есть)
   document.querySelectorAll('[data-price-mix]').forEach(function(el) {
     var key = el.getAttribute('data-price-mix');
     if (PRICES[key] === undefined) return;
-    var val = Math.round(PRICES[key] * 0.995);
+    var val = PRICES[key];
     var text = el.textContent;
     var unit = text.indexOf('UAH') !== -1 ? ' UAH/kg' : ' грн/кг';
     el.textContent = '-0.5% → ' + val + unit;
@@ -83,9 +80,25 @@ document.addEventListener('DOMContentLoaded', function() {
   if (metaDesc) {
     var content = metaDesc.getAttribute('content');
     // Заменяем паттерны типа "460–470 грн/кг" и "460–470 UAH/kg"
-    content = content.replace(/\d+–\d+\s*грн\/кг/g, PRICES.med_mix + '–' + PRICES.med_blesk + ' грн/кг');
-    content = content.replace(/\d+–\d+\s*UAH\/kg/g, PRICES.med_mix + '–' + PRICES.med_blesk + ' UAH/kg');
+    content = content.replace(/\d+–\d+\s*грн\/кг/g, PRICES.med + '–' + PRICES.med_blesk + ' грн/кг');
+    content = content.replace(/\d+–\d+\s*UAH\/kg/g, PRICES.med + '–' + PRICES.med_blesk + ' UAH/kg');
     metaDesc.setAttribute('content', content);
+  }
+
+  // 6. Обновляем "голые" числа внутри предложений (FAQ и т.п.) — без добавления единиц измерения
+  document.querySelectorAll('[data-price-num]').forEach(function(el) {
+    var key = el.getAttribute('data-price-num');
+    if (PRICES[key] === undefined) return;
+    el.textContent = PRICES[key];
+  });
+
+  // 7. Если на странице задан свой шаблон мета-описания (window.buildMetaDescription) — пересобираем его целиком
+  if (typeof window.buildMetaDescription === 'function') {
+    var newDesc = window.buildMetaDescription(PRICES);
+    ['meta[name="description"]', 'meta[property="og:description"]', 'meta[name="twitter:description"]'].forEach(function(sel) {
+      var el = document.querySelector(sel);
+      if (el) el.setAttribute('content', newDesc);
+    });
   }
 
   // 5. Обновляем цену в structured data (JSON-LD Service → offers), синхронизировано с price-badge
