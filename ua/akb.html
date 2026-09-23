@@ -231,7 +231,7 @@ nav a{font-size:12px;font-weight:700;color:var(--text);text-transform:uppercase;
 .fb-vb:hover{animation:fbPulseVb 1.3s ease-in-out infinite;}
 @keyframes fbPulseVb{0%,100%{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 6px rgba(123,81,157,0.4);}50%{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 12px rgba(123,81,157,0.1);}}
 .fb-vb:active{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 3px rgba(123,81,157,0.55);filter:brightness(1.15);}
-.fb-toggle{background:rgba(245,198,203,0.32);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(245,198,203,0.55);color:#fff;font-size:22px;position:relative;overflow:visible;}
+.fb-toggle{background:var(--red);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:2px solid rgba(255,255,255,0.85);color:#fff;font-size:22px;position:relative;overflow:visible;box-shadow:0 4px 18px rgba(0,0,0,0.45);forced-color-adjust:none;}
 .fb-combo{position:relative;width:100%;height:100%;display:block;}
 .fb-mail-part{position:absolute;inset:0;margin:auto;width:32px;height:32px;object-fit:contain;opacity:1;transform:scale(1);transition:opacity 0.3s ease,transform 0.3s ease;}
 .fb-toggle.open .fb-mail-part{opacity:0;transform:scale(0.4) rotate(30deg);}
@@ -263,6 +263,11 @@ nav a{font-size:12px;font-weight:700;color:var(--text);text-transform:uppercase;
 .fb-tg{background:rgba(34,158,217,0.32);border:1px solid rgba(34,158,217,0.55);}
 .fb-wa{background:rgba(37,211,102,0.32);border:1px solid rgba(37,211,102,0.55);}
 .fb-vb{background:rgba(123,81,157,0.32);border:1px solid rgba(123,81,157,0.55);}
+
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;padding:24px;cursor:zoom-out;}
+.lightbox.open{display:flex;}
+.lightbox img{max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.6);cursor:default;}
+.lightbox-close{position:absolute;top:20px;right:28px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.4);color:#fff;font-size:24px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;}
 </style>
   <script>
 window.buildMetaDescription = function(P) {
@@ -440,7 +445,7 @@ window.buildMetaDescription = function(P) {
     <p>Шукаєте куди <strong>здати старий акумулятор</strong>, <strong>продати АКБ</strong> або <strong>утилізувати батарею</strong>? Авто-Віком <a href="/#prices" style="color:var(--red);font-weight:700;text-decoration:underline;">приймає всі типи акумуляторів в Одесі Приймаємо з усіх районів Одеси: <strong>Суворовський, Малиновський, Київський, Приморський</strong>, Таїрово, Черемушки, Котовського, Пересип.</a> з 1998 року. Приймаємо від 1 кг у будь-якому стані. Оплата одразу.</p>
     <p><strong>Важливо:</strong> викид акумуляторів у звичайне сміття <strong>заборонений законом</strong> — вони містять токсичний свинець і кислоту. Здайте нам — отримайте гроші та зробіть добру справу для екології Одеси.</p>
 
-    <img class="cat-photo" src="../img/akb.webp" alt="Прийом акумуляторів АКБ в Одесі — Авто-Віком">
+    <img class="cat-photo" src="../img/akb.webp" alt="Прийом акумуляторів АКБ в Одесі — Авто-Віком" onclick="openLightbox(this)" style="cursor:zoom-in">
     <h2>Ціни на акумулятори в Одесі 2025</h2>
     <div class="seo-table-wrap"><table class="seo-table">
       <tr><th>Тип АКБ</th><th>Опис</th><th>Ціна</th></tr>
@@ -545,5 +550,23 @@ document.addEventListener('click',function(e){var h=document.querySelector('head
   }
 }
 document.addEventListener('click',function(e){var fb=document.getElementById('floatBtns');if(fb&&!fb.contains(e.target)){var m=document.getElementById('fbMenu');var b=document.getElementById('fbToggle');var cw=document.getElementById('fbCloseWrap');if(m&&m.classList.contains('open')){m.classList.remove('open');b.classList.remove('open');if(cw)cw.classList.remove('open');b.onclick=function(){toggleFbMenu();};}}});</script>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+  <img id="lightboxImg" src="" alt="" onclick="event.stopPropagation()">
+</div>
+
+<script>
+function openLightbox(img){
+  document.getElementById('lightboxImg').src = img.src;
+  document.getElementById('lightboxImg').alt = img.alt;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox(e){
+  if(e) e.stopPropagation();
+  document.getElementById('lightbox').classList.remove('open');
+}
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeLightbox(); });
+</script>
 </body>
 </html>

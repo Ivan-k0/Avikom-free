@@ -252,7 +252,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.7);padding:48px 20px 24px
 .fb-vb:hover{animation:fbPulseVb 1.3s ease-in-out infinite;}
 @keyframes fbPulseVb{0%,100%{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 6px rgba(123,81,157,0.4);}50%{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 12px rgba(123,81,157,0.1);}}
 .fb-vb:active{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 0 3px rgba(123,81,157,0.55);filter:brightness(1.15);}
-.fb-toggle{background:rgba(245,198,203,0.32);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(245,198,203,0.55);color:#fff;font-size:22px;position:relative;overflow:visible;}
+.fb-toggle{background:var(--red);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:2px solid rgba(255,255,255,0.85);color:#fff;font-size:22px;position:relative;overflow:visible;box-shadow:0 4px 18px rgba(0,0,0,0.45);forced-color-adjust:none;}
 .fb-combo{position:relative;width:100%;height:100%;display:block;}
 .fb-mail-part{position:absolute;inset:0;margin:auto;width:32px;height:32px;object-fit:contain;opacity:1;transform:scale(1);transition:opacity 0.3s ease,transform 0.3s ease;}
 .fb-toggle.open .fb-mail-part{opacity:0;transform:scale(0.4) rotate(30deg);}
@@ -286,6 +286,11 @@ footer{background:var(--dark);color:rgba(255,255,255,0.7);padding:48px 20px 24px
 .fb-vb{background:rgba(123,81,157,0.32);border:1px solid rgba(123,81,157,0.55);}
 .seo-info-section{background:#fff;}
 .seo-info-text{max-width:780px;color:#444;font-size:15px;line-height:1.8;}
+
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;padding:24px;cursor:zoom-out;}
+.lightbox.open{display:flex;}
+.lightbox img{max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.6);cursor:default;}
+.lightbox-close{position:absolute;top:20px;right:28px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.4);color:#fff;font-size:24px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;}
 </style>
 <script>
 function openModal(){var m=document.getElementById('callbackModal');if(m){m.classList.add('active');document.body.style.overflow='hidden';}}
@@ -594,18 +599,18 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
     <div class="section-title">Наші <span>фото</span></div>
     <div class="divider"></div>
     <p class="section-sub">Територія складу, обладнання та робота з металобрухтом</p>
-    <div class="gallery-grid"><div class="gallery-item"><img src="../img/copper1.webp" alt="Медная катанка — приём меди в Одессе" loading="lazy"></div>
-<div class="gallery-item"><img src="../img/copper2.webp" alt="Медный кабель и проволока" loading="lazy"></div>
-<div class="gallery-item"><img src="../img/brass1.webp" alt="Латунь — фитинги и арматура" loading="lazy"></div>
-<div class="gallery-item"><img src="../img/brass2.webp" alt="Латунные шестерни и литьё" loading="lazy"></div>
-<div class="gallery-item"><img src="../img/alu_shav.webp" alt="Алюминиевая стружка" loading="lazy"></div>
-<div class="gallery-item"><img src="../img/alu_mix.webp" alt="Алюминий микс — приём лома" loading="lazy"></div>
-<div class="gallery-item"><img src="../img/cans.webp" alt="Алюминиевая банка прессованная" loading="lazy"></div>
-<div class="gallery-item"><img src="../img/akb.webp" alt="Приём аккумуляторов АКБ" loading="lazy"></div>
-<div class="gallery-item"><img src="../img/warehouse1.webp" alt="Территория склада — погрузчик" loading="lazy"></div>
-<div class="gallery-item"><img src="../img/sparks.webp" alt="Работа на складе Авто-Виком" loading="lazy"></div>
-<div class="gallery-item"><img src="../img/crane.webp" alt="Погрузка металлолома краном" loading="lazy"></div>
-<div class="gallery-item"><img src="../img/truck-loading.webp" alt="Завантаження металобрухту — Авто-Віком" loading="lazy"></div></div>
+    <div class="gallery-grid"><div class="gallery-item"><img src="../img/copper1.webp" alt="Медная катанка — приём меди в Одессе" onclick="openLightbox(this)" style="cursor:zoom-in" loading="lazy"></div>
+<div class="gallery-item"><img src="../img/copper2.webp" alt="Медный кабель и проволока" onclick="openLightbox(this)" style="cursor:zoom-in" loading="lazy"></div>
+<div class="gallery-item"><img src="../img/brass1.webp" alt="Латунь — фитинги и арматура" onclick="openLightbox(this)" style="cursor:zoom-in" loading="lazy"></div>
+<div class="gallery-item"><img src="../img/brass2.webp" alt="Латунные шестерни и литьё" onclick="openLightbox(this)" style="cursor:zoom-in" loading="lazy"></div>
+<div class="gallery-item"><img src="../img/alu_shav.webp" alt="Алюминиевая стружка" onclick="openLightbox(this)" style="cursor:zoom-in" loading="lazy"></div>
+<div class="gallery-item"><img src="../img/alu_mix.webp" alt="Алюминий микс — приём лома" onclick="openLightbox(this)" style="cursor:zoom-in" loading="lazy"></div>
+<div class="gallery-item"><img src="../img/cans.webp" alt="Алюминиевая банка прессованная" onclick="openLightbox(this)" style="cursor:zoom-in" loading="lazy"></div>
+<div class="gallery-item"><img src="../img/akb.webp" alt="Приём аккумуляторов АКБ" onclick="openLightbox(this)" style="cursor:zoom-in" loading="lazy"></div>
+<div class="gallery-item"><img src="../img/warehouse1.webp" alt="Территория склада — погрузчик" onclick="openLightbox(this)" style="cursor:zoom-in" loading="lazy"></div>
+<div class="gallery-item"><img src="../img/sparks.webp" alt="Работа на складе Авто-Виком" onclick="openLightbox(this)" style="cursor:zoom-in" loading="lazy"></div>
+<div class="gallery-item"><img src="../img/crane.webp" alt="Погрузка металлолома краном" onclick="openLightbox(this)" style="cursor:zoom-in" loading="lazy"></div>
+<div class="gallery-item"><img src="../img/truck-loading.webp" alt="Завантаження металобрухту — Авто-Віком" onclick="openLightbox(this)" style="cursor:zoom-in" loading="lazy"></div></div>
   </div>
 </section>
 <section id="map" style="background:var(--gray);">
@@ -625,7 +630,7 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
         </div>
       </div>
       <div class="map-frame">
-        <iframe src="https://maps.google.com/maps?q=46.4601,30.6981&z=16&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://maps.google.com/maps?q=46.541691,30.7096342&z=16&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </div>
@@ -677,7 +682,7 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
     </div>
     <div class="footer-col">
       <h4>Контакти</h4>
-      <a href="https://maps.google.com/maps?q=46.4601,30.6981" target="_blank">📍 г. Одесса, ул. Олега Андрійця 9а</a>
+      <a href="https://maps.google.com/maps?q=46.541691,30.7096342" target="_blank">📍 г. Одесса, ул. Олега Андрійця 9а</a>
       <a href="tel:+380503179317">📞 050 317 93 17 — Іван</a>
       <a href="tel:+380937277912">📞 093 727 79 12 — Євген</a>
       <p>🕐 Пн–Пт: 8:30–17:00</p>
@@ -763,5 +768,23 @@ function toggleFaq(btn){var item=btn.parentElement,isOpen=item.classList.contain
   }
 }
 document.addEventListener('click',function(e){var fb=document.getElementById('floatBtns');if(fb&&!fb.contains(e.target)){var m=document.getElementById('fbMenu');var b=document.getElementById('fbToggle');var cw=document.getElementById('fbCloseWrap');if(m&&m.classList.contains('open')){m.classList.remove('open');b.classList.remove('open');if(cw)cw.classList.remove('open');b.onclick=function(){toggleFbMenu();};}}});</script>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+  <img id="lightboxImg" src="" alt="" onclick="event.stopPropagation()">
+</div>
+
+<script>
+function openLightbox(img){
+  document.getElementById('lightboxImg').src = img.src;
+  document.getElementById('lightboxImg').alt = img.alt;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox(e){
+  if(e) e.stopPropagation();
+  document.getElementById('lightbox').classList.remove('open');
+}
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeLightbox(); });
+</script>
 </body>
 </html>
