@@ -49,9 +49,35 @@
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 46.4601,
-    "longitude": 30.6981
+    "latitude": 46.541691,
+    "longitude": 30.7096342
   },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "10",
+    "bestRating": "5"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Ivan Ko" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Лучшая компания по заготовке металлолома. Быстрый расчет, отличные цены и точный вес! Спасибо за ваши 25 лет партнёрства!)"
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Алексей Маслов" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Отличная компания! Сотрудники вежливые, помогают разобраться, цены адекватные. Видно, что работают профессионалы. Остался доволен сотрудничеством, смело рекомендую!"
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Елена Король" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Рекомендую к сотрудничеству! Порядочная компания, честные сотрудники! Точный вес, быстрая оплата. Рекомендую 100%! Многолетний опыт!"
+    }
+  ],
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
@@ -216,6 +242,17 @@ section{padding:60px 20px;}
 .adv-icon{width:56px;height:56px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:24px;}
 .adv-text h3{font-family:'Oswald',sans-serif;font-size:18px;margin-bottom:6px;color:#1a1a1a !important;}
 .adv-text p{font-size:14px;color:#444 !important;line-height:1.6;}
+.reviews-badge{display:flex;align-items:center;gap:16px;justify-content:center;margin-bottom:36px;flex-wrap:wrap;}
+.reviews-badge-score{font-family:'Oswald',sans-serif;font-size:44px;font-weight:700;color:var(--red);line-height:1;}
+.reviews-stars{color:var(--gold);font-size:18px;letter-spacing:2px;}
+.reviews-badge-sub{font-size:13px;color:#888;margin-top:2px;}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}
+.review-card{background:#fff;border-radius:8px;padding:26px;box-shadow:0 2px 10px rgba(0,0,0,0.06);display:flex;flex-direction:column;gap:14px;}
+.review-quote{font-size:15px;color:#444 !important;line-height:1.6;flex:1;}
+.review-author{display:flex;align-items:center;gap:12px;}
+.review-avatar{width:44px;height:44px;border-radius:50%;background:var(--red);color:#fff !important;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Oswald',sans-serif;flex-shrink:0;}
+.review-name{font-weight:700;color:#1a1a1a !important;font-size:14px;}
+.review-meta{font-size:12px;color:#888;}
 .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;}
 .gallery-item{border-radius:8px;overflow:hidden;aspect-ratio:4/3;position:relative;}
 .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s;will-change:transform;}
@@ -345,6 +382,12 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
 
       /* Галерея */
       .gallery-item { filter: brightness(0.85); }
+
+      /* Отзывы */
+      .review-card { background: #2a2a2a !important; box-shadow: none !important; }
+      .review-quote { color: #ccc !important; }
+      .review-name { color: #f0ece6 !important; }
+      .reviews-badge-sub { color: #999 !important; }
 
       /* Карта */
       .map-info h3 { color: #f0ece6 !important; }
@@ -627,6 +670,36 @@ function closeModal(){var m=document.getElementById('callbackModal');if(m){m.cla
 <div class="gallery-item"><img src="img/sparks.webp" alt="Работа на складе Авто-Виком" onclick="openLightbox(this)" style="cursor:zoom-in" loading="lazy"></div>
 <div class="gallery-item"><img src="img/crane.webp" alt="Погрузка металлолома краном" onclick="openLightbox(this)" style="cursor:zoom-in" loading="lazy"></div>
 <div class="gallery-item"><img src="img/truck-loading.webp" alt="Погрузка металлолома — Авто-Виком" onclick="openLightbox(this)" style="cursor:zoom-in" loading="lazy"></div></div>
+  </div>
+</section>
+<section id="reviews">
+  <div class="container">
+    <div class="section-title">Отзывы <span>клиентов</span></div>
+    <div class="divider"></div>
+    <div class="reviews-badge">
+      <div class="reviews-badge-score">5,0</div>
+      <div><div class="reviews-stars">★★★★★</div><div class="reviews-badge-sub">10 отзывов на Google</div></div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="reviews-stars">★★★★★</div>
+        <p class="review-quote">«Лучшая компания по заготовке металлолома. Быстрый расчет, отличные цены и точный вес! Спасибо за ваши 25 лет партнёрства!)»</p>
+        <div class="review-author"><div class="review-avatar">И</div><div><div class="review-name">Ivan Ko</div><div class="review-meta">Местный эксперт Google · 2 года назад</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="reviews-stars">★★★★★</div>
+        <p class="review-quote">«Отличная компания! Сотрудники вежливые, помогают разобраться, цены адекватные. Видно, что работают профессионалы. Остался доволен сотрудничеством, смело рекомендую!»</p>
+        <div class="review-author"><div class="review-avatar">А</div><div><div class="review-name">Алексей Маслов</div><div class="review-meta">Google Reviews · 2 месяца назад</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="reviews-stars">★★★★★</div>
+        <p class="review-quote">«Рекомендую к сотрудничеству! Порядочная компания, честные сотрудники! Точный вес, быстрая оплата. Рекомендую 100%! Многолетний опыт!»</p>
+        <div class="review-author"><div class="review-avatar">Е</div><div><div class="review-name">Елена Король</div><div class="review-meta">Google Reviews · месяц назад</div></div></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:32px;">
+      <a class="btn-primary" href="https://www.google.com/maps/place/Avto-Vikom/@46.541691,30.7096342,17z/data=!3m1!4b1!4m6!3m5!1s0x40c62f926c6943fb:0xe8cc291137b3e22f!8m2!3d46.541691!4d30.7096342!16s%2Fg%2F11vq9pc6lg" target="_blank" rel="noopener">Смотреть все отзывы на Google</a>
+    </div>
   </div>
 </section>
 <section id="map" style="background:var(--gray);">
