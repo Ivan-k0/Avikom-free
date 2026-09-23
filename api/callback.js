@@ -6,6 +6,12 @@
 //   Project → Settings → Environment Variables
 //     TELEGRAM_BOT_TOKEN = <токен, полученный у @BotFather>
 //     TELEGRAM_CHAT_ID   = 40272357
+//     ADMIN_PASSWORD     = <пароль для admin.html, придумать самому>
+//
+// Обновления цен (type: "price_update") требуют правильный ADMIN_PASSWORD —
+// admin.html открыт всем (это статическая страница, её нельзя закрыть
+// паролем на уровне хостинга), но реально сохранить цену без пароля нельзя,
+// потому что проверка здесь, на сервере, а не в коде страницы.
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -17,6 +23,7 @@ export default async function handler(req, res) {
 
   const TOKEN = process.env.TELEGRAM_BOT_TOKEN;
   const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+  const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 
   if (!TOKEN || !CHAT_ID) {
     res.status(500).json({ ok: false, error: 'Server is not configured (missing env vars)' });
@@ -26,6 +33,17 @@ export default async function handler(req, res) {
   try {
     const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
     const isPriceUpdate = body.type === 'price_update';
+
+    if (isPriceUpdate) {
+      if (!ADMIN_PASSWORD) {
+        res.status(500).json({ ok: false, error: 'Admin password is not configured on the server' });
+        return;
+      }
+      if (body.password !== ADMIN_PASSWORD) {
+        res.status(401).json({ ok: false, error: 'Wrong password' });
+        return;
+      }
+    }
 
     // Простая защита от пустых/слишком длинных запросов
     const text = String(body.text || '').slice(0, 3500);

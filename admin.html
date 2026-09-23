@@ -125,6 +125,19 @@
     </div>
   </div>
 
+  <!-- ПАРОЛЬ -->
+  <div class="card">
+    <div class="card-head">🔒 Пароль</div>
+    <div class="card-body">
+      <div class="price-row">
+        <label>Пароль для сохранения</label>
+        <div class="price-input" style="flex-shrink:0;">
+          <input type="password" id="admin_pw" placeholder="••••••" style="width:140px;text-align:left;font-weight:400;"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <button class="save-btn" onclick="savePrices()">💾 Сохранить и отправить в Telegram</button>
 
 </div>
@@ -144,6 +157,8 @@ window.onload = function() {
       });
     } catch(e) {}
   }
+  var savedPw = localStorage.getItem('avikom_admin_pw');
+  if (savedPw) document.getElementById('admin_pw').value = savedPw;
 };
 
 async function savePrices() {
@@ -157,6 +172,9 @@ async function savePrices() {
 
   // Save locally
   localStorage.setItem('avikom_prices', JSON.stringify(prices));
+
+  var pw = document.getElementById('admin_pw').value;
+  localStorage.setItem('avikom_admin_pw', pw);
 
   // Build Telegram message
   var latun = prices['latun'];
@@ -196,13 +214,15 @@ async function savePrices() {
     var res = await fetch('https://avikom-free.vercel.app/api/callback', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({type: 'price_update', text: msg})
+      body: JSON.stringify({type: 'price_update', text: msg, password: pw})
     });
     var data = await res.json();
     if (data.ok) {
       showToast('✅ Цены сохранены и отправлены в Telegram!');
+    } else if (res.status === 401) {
+      showToast('⛔ Неверный пароль — в Telegram не отправлено');
     } else {
-      showToast('💾 Цены сохранены (Telegram: ' + (data.description||'ошибка') + ')');
+      showToast('💾 Цены сохранены (Telegram: ' + (data.error||data.description||'ошибка') + ')');
     }
   } catch(e) {
     showToast('💾 Цены сохранены локально');
