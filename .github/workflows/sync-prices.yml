@@ -1,0 +1,32 @@
+name: Sync static prices
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'prices.js'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sync static price text from prices.js
+        run: python3 scripts/sync-static-prices.py
+
+      - name: Commit and push if anything changed
+        run: |
+          git config user.name "avikom-price-sync[bot]"
+          git config user.email "actions@github.com"
+          if git diff --quiet; then
+            echo "Static text already matches prices.js — nothing to do."
+          else
+            git add -A
+            git commit -m "Auto-sync static price text with prices.js"
+            git push
+          fi
